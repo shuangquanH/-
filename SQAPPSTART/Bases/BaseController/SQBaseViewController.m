@@ -129,4 +129,7 @@
     return barButtonItem;
 }
 
+- (void)hiddenStatusBar:(BOOL)hidden {
+    [[UIApplication sharedApplication] setStatusBarHidden:hidden animated:YES];
+}
 @end

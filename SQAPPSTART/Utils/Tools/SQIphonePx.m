@@ -23,10 +23,10 @@
     if (self = [super init]) {
         _phoneWidth = [UIScreen mainScreen].bounds.size.width;
         _phoneHeight = [UIScreen mainScreen].bounds.size.height;
-        _navHeight = (_isiPhoneX == YES ? 88.0f : 64.0f);
-        _tabHeight = (_isiPhoneX == YES ? 83.0f : 49.0f);
-        _statuHeight = (_isiPhoneX == YES ? 44.0f : 20.0f);
-        _uiScaling = (self.phoneWidth/750.0);
+        _navHeight = (self.isiPhoneX == YES ? 88.0f : 64.0f);
+        _tabHeight = (self.isiPhoneX == YES ? 83.0f : 49.0f);
+        _statuHeight = (self.isiPhoneX == YES ? 44.0f : 20.0f);
+        _uiScaling = (_phoneWidth/750.0);
     }
     return self;
 }

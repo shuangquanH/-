@@ -39,4 +39,7 @@
 - (void)addLeftBarbuttonItemIsImage:(BOOL)isImage title:(NSString *)title selector:(SEL)selector;
 - (void)addRightBarbuttonItemIsImage:(BOOL)isImage title:(NSString *)title selector:(SEL)selector;
 
+/** 显示隐藏状态栏  */
+- (void)hiddenStatusBar:(BOOL)hidden;
+
 @end

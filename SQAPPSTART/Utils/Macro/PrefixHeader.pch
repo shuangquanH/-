@@ -1,0 +1,24 @@
+//
+//  PrefixHeader.pch
+//  SQAPPSTART
+//
+//  Created by apple on 2018/4/25.
+//  Copyright © 2018年 apple. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+
+
+#import "SQHeaderFile.h"//头文件集合
+#import "SQConstantFile.h"//常量集合
+#import "SQMacroFile.h"//宏集合
+#import "SQApiUrlFile.h"//网络请求部分（接口url、服务器url...)
+
+
+#endif
+
+

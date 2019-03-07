@@ -801,8 +801,8 @@
 		E9EB2BC32230C1F300F7F152 /* SegmentView */ = {
 			isa = PBXGroup;
 			children = (
-				E9EB2BC42230C1F300F7F152 /* Y_StockChartSegmentView.m */,
 				E9EB2BC52230C1F300F7F152 /* Y_StockChartSegmentView.h */,
+				E9EB2BC42230C1F300F7F152 /* Y_StockChartSegmentView.m */,
 			);
 			path = SegmentView;
 			sourceTree = "<group>";

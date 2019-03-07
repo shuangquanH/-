@@ -44,8 +44,8 @@
         _kLineView = [Y_KLineView new];
         [self addSubview:_kLineView];
         [_kLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.right.top.equalTo(self);
-            make.left.equalTo(self.segmentView.mas_right);
+            make.top.equalTo(self.segmentView.mas_bottom);
+            make.left.right.bottom.equalTo(self);
         }];
     }
     return _kLineView;
@@ -59,8 +59,10 @@
         _segmentView.delegate = self;
         [self addSubview:_segmentView];
         [_segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.left.top.equalTo(self);
-            make.width.equalTo(@50);
+            make.left.top.right.equalTo(self);
+            make.height.mas_equalTo(50);
+//            make.bottom.left.top.equalTo(self);
+//            make.width.equalTo(@50);
         }];
     }
     return _segmentView;
@@ -82,7 +84,7 @@
     }
     if(self.dataSource)
     {
-        self.segmentView.selectedIndex = 4;
+        self.segmentView.selectedIndex = Y_StockChartSegmentCurrentKLineOrTimeLine;
     }
 }
 
@@ -91,7 +93,7 @@
     _dataSource = dataSource;
     if(self.itemModels)
     {
-        self.segmentView.selectedIndex = 4;
+        self.segmentView.selectedIndex = Y_StockChartSegmentCurrentKLineOrTimeLine;
     }
 }
 - (void)reloadData

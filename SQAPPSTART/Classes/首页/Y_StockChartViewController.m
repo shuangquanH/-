@@ -15,6 +15,7 @@
 
 @interface Y_StockChartViewController ()<Y_StockChartViewDataSource>
 
+/** K线图  */
 @property (nonatomic, strong) Y_StockChartView *stockChartView;
 
 @property (nonatomic, strong) Y_KLineGroupModel *groupModel;
@@ -33,12 +34,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.currentIndex = -1;
+    self.currentIndex = 0;
     self.stockChartView.backgroundColor = [UIColor backgroundColor];
 }
 
-- (NSMutableDictionary<NSString *,Y_KLineGroupModel *> *)modelsDict
-{
+- (NSMutableDictionary<NSString *,Y_KLineGroupModel *> *)modelsDict {
     if (!_modelsDict) {
         _modelsDict = @{}.mutableCopy;
     }
@@ -46,73 +46,23 @@
 }
 
 
--(id) stockDatasWithIndex:(NSInteger)index
-{
-    NSString *type;
-    switch (index) {
-        case 0:
-        {
-            type = @"1min";
-        }
-            break;
-        case 1:
-        {
-            type = @"1min";
-        }
-            break;
-        case 2:
-        {
-            type = @"1min";
-        }
-            break;
-        case 3:
-        {
-            type = @"5min";
-        }
-            break;
-        case 4:
-        {
-            type = @"30min";
-        }
-            break;
-        case 5:
-        {
-            type = @"1hour";
-        }
-            break;
-        case 6:
-        {
-            type = @"1day";
-        }
-            break;
-        case 7:
-        {
-            type = @"1week";
-        }
-            break;
-            
-        default:
-            break;
-    }
-    
+-(id) stockDatasWithIndex:(NSInteger)index {
+    NSArray *typeArr = @[@"1min", @"1min", @"1min", @"5min", @"30min", @"1hour", @"1day", @"1week"];
     self.currentIndex = index;
-    self.type = type;
-    if(![self.modelsDict objectForKey:type])
-    {
+    self.type = typeArr[index];
+    if(![self.modelsDict objectForKey:self.type]) {//如果没有存储数据，请求
         [self reloadData];
-    } else {
-        return [self.modelsDict objectForKey:type].models;
+    } else {//如果存储有数据，读取存储的数据
+        return [self.modelsDict objectForKey:self.type].models;
     }
     return nil;
 }
 
-- (void)reloadData
-{
+- (void)reloadData {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"type"] = self.type;
     param[@"market"] = @"btc_usdt";
     param[@"size"] = @"1000";
-    
     [NetWorking requestWithApi:@"http://api.bitkk.com/data/v1/kline" param:param thenSuccess:^(NSDictionary *responseObject) {
         Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];
         self.groupModel = groupModel;
@@ -136,7 +86,6 @@
                                        [Y_StockChartViewItemModel itemModelWithTitle:@"周线" type:Y_StockChartcenterViewTypeKline],
  
                                        ];
-        _stockChartView.backgroundColor = [UIColor orangeColor];
         _stockChartView.dataSource = self;
         [self.view addSubview:_stockChartView];
         

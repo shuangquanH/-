@@ -33,8 +33,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
 - (instancetype)initWithItems:(NSArray *)items
 {
     self = [super initWithFrame:CGRectZero];
-    if(self)
-    {
+    if(self) {
         self.items = items;
     }
     return self;
@@ -57,9 +56,19 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
     {
         _indicatorView = [UIView new];
         _indicatorView.backgroundColor = [UIColor assistBackgroundColor];
+        [self.superview addSubview:_indicatorView];
+        
+        [_indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self);
+            make.top.equalTo(self.mas_bottom);
+            make.height.mas_equalTo(30);
+        }];
+        
+        
         
         NSArray *titleArr = @[@"MACD",@"KDJ",@"关闭",@"MA",@"EMA",@"BOLL",@"关闭"];
-        __block UIButton *preBtn;
+        NSMutableArray  *buttonArr = [NSMutableArray array];
+        WeakSelf(weakSelf);
         [titleArr enumerateObjectsUsingBlock:^(NSString*  _Nonnull title, NSUInteger idx, BOOL * _Nonnull stop) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [btn setTitleColor:[UIColor mainTextColor] forState:UIControlStateNormal];
@@ -68,84 +77,47 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
             btn.tag = Y_StockChartSegmentStartTag + 100 + idx;
             [btn addTarget:self action:@selector(event_segmentButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [btn setTitle:title forState:UIControlStateNormal];
-            [_indicatorView addSubview:btn];
-            
-            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-                
-                make.height.equalTo(_indicatorView).multipliedBy(1.0f/titleArr.count);
-                make.width.equalTo(_indicatorView);
-                make.left.equalTo(_indicatorView);
-                if(preBtn)
-                {
-                    make.top.equalTo(preBtn.mas_bottom);
-                } else {
-                    make.top.equalTo(_indicatorView);
-                }
-            }];
-            UIView *view = [UIView new];
-            view.backgroundColor = [UIColor colorWithRed:52.f/255.f green:56.f/255.f blue:67/255.f alpha:1];
-            [_indicatorView addSubview:view];
-            [view mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.equalTo(btn);
-                make.top.equalTo(btn.mas_bottom);
-                make.height.equalTo(@0.5);
-            }];
-            preBtn = btn;
+            [weakSelf.indicatorView addSubview:btn];
+            [buttonArr addObject:btn];
         }];
+        
         UIButton *firstBtn = _indicatorView.subviews[0];
         [firstBtn setSelected:YES];
         _secondLevelSelectedBtn1 = firstBtn;
-        UIButton *firstBtn2 = _indicatorView.subviews[6];
+        UIButton *firstBtn2 = _indicatorView.subviews[3];
         [firstBtn2 setSelected:YES];
         _secondLevelSelectedBtn2 = firstBtn2;
-        [self addSubview:_indicatorView];
-        [_indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        [buttonArr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+        [buttonArr mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(self).multipliedBy(1.0f/titleArr.count);
             make.height.equalTo(self);
-            make.bottom.equalTo(self);
-            make.width.equalTo(self);
-            make.right.equalTo(self.mas_left);
         }];
+        
     }
     return _indicatorView;
 }
 
-- (void)setItems:(NSArray *)items
-{
+- (void)setItems:(NSArray *)items {
     _items = items;
-    if(items.count == 0 || !items)
-    {
+    if(items.count == 0 || !items) {
         return;
     }
     NSInteger index = 0;
     NSInteger count = items.count;
-    UIButton *preBtn = nil;
+    NSMutableArray  *buttonsArr = [NSMutableArray array];
     
-    for (NSString *title in items)
-    {
+    for (NSString *title in items) {
         UIButton *btn = [self private_createButtonWithTitle:title tag:Y_StockChartSegmentStartTag+index];
-        UIView *view = [UIView new];
-        view.backgroundColor = [UIColor colorWithRed:52.f/255.f green:56.f/255.f blue:67/255.f alpha:1];
         [self addSubview:btn];
-        [self addSubview:view];
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left);
-            make.height.equalTo(self).multipliedBy(1.0f/count);
-            make.width.equalTo(self);
-            if(preBtn)
-            {
-                make.top.equalTo(preBtn.mas_bottom).offset(0.5);
-            } else {
-                make.top.equalTo(self);
-            }
-        }];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(btn);
-            make.top.equalTo(btn.mas_bottom);
-            make.height.equalTo(@0.5);
-        }];
-        preBtn = btn;
+        [buttonsArr addObject:btn];
         index++;
     }
+    [buttonsArr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    [buttonsArr mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self).multipliedBy(1.0f/count);
+        make.height.equalTo(self);
+    }];
 }
 
 #pragma mark 设置底部按钮index
@@ -187,30 +159,17 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
 
     _selectedIndex = selectedBtn.tag - Y_StockChartSegmentStartTag;
     
-    if(_selectedIndex == 0 && self.indicatorView.frame.origin.x < 0)
-    {
-        [self.indicatorView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(self);
-            make.left.equalTo(self);
-            make.bottom.equalTo(self);
-            make.width.equalTo(self);
-        }];
+    /** 点击第一个按钮，弹出更多指标  */
+    if(_selectedIndex == 0 && self.indicatorView.hidden) {
         [UIView animateWithDuration:0.2f animations:^{
-            [self layoutIfNeeded];
+            self.indicatorView.hidden = NO;
+            [self.superview bringSubviewToFront:self.indicatorView];
         }];
     } else {
-        [self.indicatorView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(self);
-            make.right.equalTo(self.mas_left);
-            make.bottom.equalTo(self);
-            make.width.equalTo(self);
-        }];
         [UIView animateWithDuration:0.2f animations:^{
-            [self layoutIfNeeded];
+            self.indicatorView.hidden = YES;
         }];
-
     }
-    [self layoutIfNeeded];
 }
 
 #pragma mark - 私有方法

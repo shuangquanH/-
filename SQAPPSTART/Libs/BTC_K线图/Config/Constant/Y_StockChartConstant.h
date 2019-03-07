@@ -163,6 +163,9 @@
  */
 #define Y_StockChartTimeLineVolumeViewMinX 0
 
+/** 默认选择第几个K线图  */
+#define Y_StockChartSegmentCurrentKLineOrTimeLine         4
+
 //Kline种类
 typedef NS_ENUM(NSInteger, Y_StockChartCenterViewType) {
     Y_StockChartcenterViewTypeKline= 1, //K线

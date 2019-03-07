@@ -67,6 +67,10 @@ typedef NS_ENUM(NSInteger, Y_KLineType) {
 -(void) reloadData;
 @end
 
+
+
+
+
 /************************ItemModel类************************/
 @interface Y_StockChartViewItemModel : NSObject
 

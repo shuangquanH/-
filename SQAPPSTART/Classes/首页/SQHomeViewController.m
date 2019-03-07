@@ -34,7 +34,6 @@
         } completion:^(BOOL finished) {
             self.isFullScreen = NO;
             [self makeStockViewConstraints];
-            self.closeFullButton.hidden = YES;
         }];
     } else {
         /** 切换成横屏  */
@@ -44,7 +43,6 @@
         } completion:^(BOOL finished) {
             self.isFullScreen = YES;
             [self makeStockViewConstraints];
-            self.closeFullButton.hidden = NO;
         }];
     }
 }
@@ -57,14 +55,17 @@
 }
 - (void)makeStockViewConstraints {
     if (self.isFullScreen) {
+        self.closeFullButton.hidden = NO;
         [self hiddenStatusBar:YES];
         self.navigationController.navigationBar.hidden = YES;
         self.stockController.view.frame = CGRectMake(0, KSTATU_HEIGHT, KAPP_WIDTH, KAPP_HEIGHT-KSTATU_HEIGHT);
     } else {
+        self.closeFullButton.hidden = YES;
         [self hiddenStatusBar:NO];
         self.navigationController.navigationBar.hidden = NO;
         self.stockController.view.frame = CGRectMake(0, KNAV_HEIGHT, KAPP_WIDTH, 300);
     }
+    [self.stockController reloadData];
 }
 
 

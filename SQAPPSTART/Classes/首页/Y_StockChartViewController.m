@@ -47,7 +47,7 @@
 
 
 -(id) stockDatasWithIndex:(NSInteger)index {
-    NSArray *typeArr = @[@"1min", @"1min", @"1min", @"5min", @"30min", @"1hour", @"1day", @"1week"];
+    NSArray *typeArr = @[@"1min", @"1min", @"5min", @"30min", @"1hour", @"1day", @"1week", @"1min"];
     self.currentIndex = index;
     self.type = typeArr[index];
     if(![self.modelsDict objectForKey:self.type]) {//如果没有存储数据，请求
@@ -76,14 +76,13 @@
     if(!_stockChartView) {
         _stockChartView = [Y_StockChartView new];
         _stockChartView.itemModels = @[
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"指标" type:Y_StockChartcenterViewTypeOther],
                                        [Y_StockChartViewItemModel itemModelWithTitle:@"分时" type:Y_StockChartcenterViewTypeTimeLine],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"1分" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"5分" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"30分" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"60分" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"15分" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"1小时" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"4小时" type:Y_StockChartcenterViewTypeKline],
                                        [Y_StockChartViewItemModel itemModelWithTitle:@"日线" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"周线" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"更多" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"指标" type:Y_StockChartcenterViewTypeOther],
  
                                        ];
         _stockChartView.dataSource = self;

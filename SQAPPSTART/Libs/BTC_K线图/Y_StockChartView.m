@@ -61,8 +61,6 @@
         [_segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.equalTo(self);
             make.height.mas_equalTo(50);
-//            make.bottom.left.top.equalTo(self);
-//            make.width.equalTo(@50);
         }];
     }
     return _segmentView;
@@ -132,20 +130,14 @@
         {
             id stockData = [self.dataSource stockDatasWithIndex:index];
             
-            if(!stockData)
-            {
+            if(!stockData) {
                 return;
             }
             
             Y_StockChartViewItemModel *itemModel = self.itemModels[index];
-            
-            
             Y_StockChartCenterViewType type = itemModel.centerViewType;
             
-
-            
-            if(type != self.currentCenterViewType)
-            {
+            if(type != self.currentCenterViewType) {
                 //移除当前View，设置新的View
                 self.currentCenterViewType = type;
                 switch (type) {

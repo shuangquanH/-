@@ -42,8 +42,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if(self)
-    {
+    if(self) {
         self.clipsToBounds = YES;
         self.backgroundColor = [UIColor assistBackgroundColor];
     }
@@ -63,7 +62,6 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
             make.top.equalTo(self.mas_bottom);
             make.height.mas_equalTo(30);
         }];
-        
         
         
         NSArray *titleArr = @[@"MACD",@"KDJ",@"关闭",@"MA",@"EMA",@"BOLL",@"关闭"];
@@ -131,18 +129,13 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
 
 - (void)setSelectedBtn:(UIButton *)selectedBtn
 {
-    if(_selectedBtn == selectedBtn)
-    {
-        if(selectedBtn.tag != Y_StockChartSegmentStartTag)
-        {
+    if(_selectedBtn == selectedBtn) {
+        if(selectedBtn.tag != Y_StockChartSegmentStartTag) {
             return;
-        } else {
-            
         }
     }
     
-    if(selectedBtn.tag >= 2100 && selectedBtn.tag < 2103)
-    {
+    if(selectedBtn.tag >= 2100 && selectedBtn.tag < 2103) {
         [_secondLevelSelectedBtn1 setSelected:NO];
         [selectedBtn setSelected:YES];
         _secondLevelSelectedBtn1 = selectedBtn;
@@ -151,7 +144,8 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
         [_secondLevelSelectedBtn2 setSelected:NO];
         [selectedBtn setSelected:YES];
         _secondLevelSelectedBtn2 = selectedBtn;
-    } else if(selectedBtn.tag != Y_StockChartSegmentStartTag){
+        
+    } else if(selectedBtn.tag < Y_StockChartSegmentStartTag+self.items.count-2){
         [_selectedBtn setSelected:NO];
         [selectedBtn setSelected:YES];
         _selectedBtn = selectedBtn;
@@ -160,7 +154,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
     _selectedIndex = selectedBtn.tag - Y_StockChartSegmentStartTag;
     
     /** 点击第一个按钮，弹出更多指标  */
-    if(_selectedIndex == 0 && self.indicatorView.hidden) {
+    if(_selectedIndex == self.items.count-2 || _selectedIndex == self.items.count-1) {
         [UIView animateWithDuration:0.2f animations:^{
             self.indicatorView.hidden = NO;
             [self.superview bringSubviewToFront:self.indicatorView];
@@ -177,7 +171,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
 - (UIButton *)private_createButtonWithTitle:(NSString *)title tag:(NSInteger)tag
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitleColor:[UIColor mainTextColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor ma30Color] forState:UIControlStateSelected];
     btn.titleLabel.font = [UIFont systemFontOfSize:13];
     btn.tag = tag;
@@ -190,9 +184,8 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
 - (void)event_segmentButtonClicked:(UIButton *)btn
 {
     self.selectedBtn = btn;
-    
-    if(btn.tag == Y_StockChartSegmentStartTag)
-    {
+    if (btn.tag==Y_StockChartSegmentStartTag+self.items.count-2||
+        btn.tag==Y_StockChartSegmentStartTag+self.items.count-1) {
         return;
     }
     

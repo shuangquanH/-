@@ -10,8 +10,6 @@
 
 @interface Y_StockChartViewController : UIViewController
 
-
-
-- (void)reloadData;
+- (void)reloadDataWhenRotate;
 
 @end

@@ -44,6 +44,7 @@
     if (self) {
         _MA7Label = [self private_createLabel];
         _MA30Label = [self private_createLabel];
+        
         _dateDescLabel = [self private_createLabel];
         _openDescLabel = [self private_createLabel];
         _openDescLabel.text = @" 开:";
@@ -70,81 +71,81 @@
         _lowLabel.textColor = [UIColor whiteColor];
         _closeLabel.textColor = [UIColor whiteColor];
 
-        NSNumber *labelWidth = [NSNumber numberWithInt:47];
+//        NSNumber *labelWidth = [NSNumber numberWithInt:47];
         
-        [_dateDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-            make.width.equalTo(@100);
-
-        }];
-        
-        [_openDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_dateDescLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-        }];
-        
-        [_openLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_openDescLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-            make.width.equalTo(labelWidth);
- 
-        }];
-        
-        [_highDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_openLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-        }];
-        
-        [_highLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_highDescLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-            make.width.equalTo(labelWidth);
-
-        }];
-        
-        [_lowDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_highLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-        }];
-        
-        [_lowLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_lowDescLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-            make.width.equalTo(labelWidth);
-
-        }];
-        
-        [_closeDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_lowLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-        }];
-        
-        [_closeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_closeDescLabel.mas_right);
-            make.top.equalTo(self.mas_top);
-            make.bottom.equalTo(self.mas_bottom);
-            make.width.equalTo(labelWidth);
-
-        }];
+//        [_dateDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.mas_left);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//            make.width.equalTo(@100);
+//
+//        }];
+//
+//        [_openDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_dateDescLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//        }];
+//
+//        [_openLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_openDescLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//            make.width.equalTo(labelWidth);
+//
+//        }];
+//
+//        [_highDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_openLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//        }];
+//
+//        [_highLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_highDescLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//            make.width.equalTo(labelWidth);
+//
+//        }];
+//
+//        [_lowDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_highLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//        }];
+//
+//        [_lowLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_lowDescLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//            make.width.equalTo(labelWidth);
+//
+//        }];
+//
+//        [_closeDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_lowLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//        }];
+//
+//        [_closeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(_closeDescLabel.mas_right);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//            make.width.equalTo(labelWidth);
+//
+//        }];
         
         [_MA7Label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_closeLabel.mas_right);
+            make.left.equalTo(self.mas_left);
             make.top.equalTo(self.mas_top);
             make.bottom.equalTo(self.mas_bottom);
             
         }];
         
         [_MA30Label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_MA7Label.mas_right);
+            make.left.equalTo(self->_MA7Label.mas_right);
             make.top.equalTo(self.mas_top);
             make.bottom.equalTo(self.mas_bottom);
         }];

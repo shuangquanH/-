@@ -46,7 +46,7 @@
 }
 
 
--(id) stockDatasWithIndex:(NSInteger)index {
+-(id)stockDatasWithIndex:(NSInteger)index {
     NSArray *typeArr = @[@"1min", @"1min", @"5min", @"30min", @"1hour", @"1day", @"1week", @"1min"];
     self.currentIndex = index;
     self.type = typeArr[index];
@@ -57,7 +57,9 @@
     }
     return nil;
 }
-
+- (void)reloadDataWhenRotate {
+    [self.stockChartView reloadData];
+}
 - (void)reloadData {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"type"] = self.type;

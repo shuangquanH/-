@@ -65,7 +65,7 @@
         self.navigationController.navigationBar.hidden = NO;
         self.stockController.view.frame = CGRectMake(0, KNAV_HEIGHT, KAPP_WIDTH, 300);
     }
-    [self.stockController reloadData];
+    [self.stockController reloadDataWhenRotate];
 }
 
 

@@ -53,8 +53,7 @@
 
 - (Y_StockChartSegmentView *)segmentView
 {
-    if(!_segmentView)
-    {
+    if(!_segmentView) {
         _segmentView = [Y_StockChartSegmentView new];
         _segmentView.delegate = self;
         [self addSubview:_segmentView];
@@ -69,19 +68,16 @@
 - (void)setItemModels:(NSArray *)itemModels
 {
     _itemModels = itemModels;
-    if(itemModels)
-    {
+    if(itemModels) {
         NSMutableArray *items = [NSMutableArray array];
-        for(Y_StockChartViewItemModel *item in itemModels)
-        {
+        for(Y_StockChartViewItemModel *item in itemModels) {
             [items addObject:item.title];
         }
         self.segmentView.items = items;
         Y_StockChartViewItemModel *firstModel = itemModels.firstObject;
         self.currentCenterViewType = firstModel.centerViewType;
     }
-    if(self.dataSource)
-    {
+    if(self.dataSource) {
         self.segmentView.selectedIndex = Y_StockChartSegmentCurrentKLineOrTimeLine;
     }
 }

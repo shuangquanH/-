@@ -60,7 +60,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
         [_indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self);
             make.top.equalTo(self.mas_bottom);
-            make.height.mas_equalTo(30);
+            make.height.mas_equalTo(40);
         }];
         
         

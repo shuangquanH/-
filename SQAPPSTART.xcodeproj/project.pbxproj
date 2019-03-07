@@ -665,8 +665,8 @@
 		E9EB2B962230C1F300F7F152 /* KLine */ = {
 			isa = PBXGroup;
 			children = (
-				E9EB2B9A2230C1F300F7F152 /* Y_KLineView.m */,
 				E9EB2BB42230C1F300F7F152 /* Y_KLineView.h */,
+				E9EB2B9A2230C1F300F7F152 /* Y_KLineView.m */,
 				E9EB2B972230C1F300F7F152 /* KLine_MAView */,
 				E9EB2B9B2230C1F300F7F152 /* PriceView */,
 				E9EB2B9E2230C1F300F7F152 /* Volume_MAView */,
@@ -780,9 +780,9 @@
 		E9EB2BBB2230C1F300F7F152 /* MainKLineView */ = {
 			isa = PBXGroup;
 			children = (
+				E9EB2BC22230C1F300F7F152 /* Y_KLineMainView.h */,
 				E9EB2BBC2230C1F300F7F152 /* Y_KLineMainView.m */,
 				E9EB2BBD2230C1F300F7F152 /* Line */,
-				E9EB2BC22230C1F300F7F152 /* Y_KLineMainView.h */,
 			);
 			path = MainKLineView;
 			sourceTree = "<group>";

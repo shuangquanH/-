@@ -24,7 +24,7 @@
 #pragma mark 所有图表的背景颜色
 +(UIColor *)backgroundColor
 {
-    return KCOLOR_WHIT;
+    return KCOLOR(@"F0F0F0");
 }
 
 #pragma mark 辅助背景色

@@ -112,7 +112,7 @@
     CGContextFillRect(context, rect);
     
     //设置显示日期的区域背景颜色
-    CGContextSetFillColorWithColor(context, [UIColor assistBackgroundColor].CGColor);
+//    CGContextSetFillColorWithColor(context, [UIColor assistBackgroundColor].CGColor);
     CGContextFillRect(context, CGRectMake(0, Y_StockChartKLineMainViewMaxY, self.frame.size.width, self.frame.size.height - Y_StockChartKLineMainViewMaxY));
     
     Y_MALine *MALine = [[Y_MALine alloc]initWithContext:context];
@@ -139,25 +139,25 @@
         MALine.MAType = -1;
         [MALine draw];
         //
-        __block CGPoint lastDrawDatePoint = CGPointZero;//fix
-        [self.needDrawKLinePositionModels enumerateObjectsUsingBlock:^(Y_KLinePositionModel * _Nonnull positionModel, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            CGPoint point = [positions[idx] CGPointValue];
-            
-            //日期
-            
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.needDrawKLineModels[idx].Date.doubleValue];
-            NSDateFormatter *formatter = [NSDateFormatter new];
-            formatter.dateFormat = @"HH:mm";
-            NSString *dateStr = [formatter stringFromDate:date];
-            
-            CGPoint drawDatePoint = CGPointMake(point.x + 1, Y_StockChartKLineMainViewMaxY + 1.5);
-            if(CGPointEqualToPoint(lastDrawDatePoint, CGPointZero) || point.x - lastDrawDatePoint.x > 60 )
-            {
-                [dateStr drawAtPoint:drawDatePoint withAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11],NSForegroundColorAttributeName : [UIColor assistTextColor]}];
-                lastDrawDatePoint = drawDatePoint;
-            }
-        }];
+//        __block CGPoint lastDrawDatePoint = CGPointZero;//fix
+//        [self.needDrawKLinePositionModels enumerateObjectsUsingBlock:^(Y_KLinePositionModel * _Nonnull positionModel, NSUInteger idx, BOOL * _Nonnull stop) {
+//            
+//            CGPoint point = [positions[idx] CGPointValue];
+//            
+//            //日期
+//            
+//            NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.needDrawKLineModels[idx].Date.doubleValue];
+//            NSDateFormatter *formatter = [NSDateFormatter new];
+//            formatter.dateFormat = @"HH:mm";
+//            NSString *dateStr = [formatter stringFromDate:date];
+//            
+//            CGPoint drawDatePoint = CGPointMake(point.x + 1, Y_StockChartKLineMainViewMaxY + 1.5);
+//            if(CGPointEqualToPoint(lastDrawDatePoint, CGPointZero) || point.x - lastDrawDatePoint.x > 60 )
+//            {
+//                [dateStr drawAtPoint:drawDatePoint withAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11],NSForegroundColorAttributeName : [UIColor assistTextColor]}];
+//                lastDrawDatePoint = drawDatePoint;
+//            }
+//        }];
     }
     
     if (self.targetLineStatus == Y_StockChartTargetLineStatusBOLL) {

@@ -77,13 +77,6 @@
 @property (nonatomic, strong) UIView *verticalView;
 
 
-@property (nonatomic, strong) MASConstraint *kLineMainViewHeightConstraint;
-
-@property (nonatomic, strong) MASConstraint *kLineVolumeViewHeightConstraint;
-
-@property (nonatomic, strong) MASConstraint *priceViewHeightConstraint;
-
-@property (nonatomic, strong) MASConstraint *volumeViewHeightConstraint;
 
 @end
 
@@ -94,8 +87,8 @@
 {
     self = [super initWithFrame:frame];
     if(self) {
-        self.mainViewRatio = [Y_StockChartGlobalVariable kLineMainViewRadio];
-        self.volumeViewRatio = [Y_StockChartGlobalVariable kLineVolumeViewRadio];
+//        self.mainViewRatio = [Y_StockChartGlobalVariable kLineMainViewRadio];
+//        self.volumeViewRatio = [Y_StockChartGlobalVariable kLineVolumeViewRadio];
     }
     return self;
 }
@@ -135,6 +128,7 @@
     return _scrollView;
 }
 
+/** K线图上方显示时间的视图，宽度等于全屏  */
 - (Y_KLineMAView *)kLineMAView
 {
     if (!_kLineMAView) {
@@ -150,6 +144,7 @@
     return _kLineMAView;
 }
 
+/** 成交量上方显示时间的视图，宽度等于全屏  */
 - (Y_VolumeMAView *)volumeMAView
 {
     if (!_volumeMAView) {
@@ -165,6 +160,7 @@
     return _volumeMAView;
 }
 
+/** 技术图形上方显示时间的视图，宽度等于全屏  */
 - (Y_AccessoryMAView *)accessoryMAView
 {
     if(!_accessoryMAView) {
@@ -173,13 +169,15 @@
         [_accessoryMAView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self);
             make.left.equalTo(self);
-            make.top.equalTo(self.kLineAccessoryView.mas_top);
+            make.top.equalTo(self.kLineVolumeView.mas_top);
             make.height.equalTo(@10);
         }];
     }
     return _accessoryMAView;
 }
 
+
+/** 主K线图  */
 - (Y_KLineMainView *)kLineMainView
 {
     if (!_kLineMainView && self) {
@@ -189,18 +187,19 @@
         [_kLineMainView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.scrollView).offset(5);
             make.left.equalTo(self.scrollView);
-            self.kLineMainViewHeightConstraint = make.height.equalTo(self.scrollView).multipliedBy(self.mainViewRatio);
+            make.height.equalTo(self.mas_height).multipliedBy(0.7);
             make.width.equalTo(@0);
         }];
         
     }
-    //加载rightYYView
+    //加载rightYYView(右侧价格和两个指标的背景颜色)
     self.priceView.backgroundColor = [UIColor clearColor];
     self.volumeView.backgroundColor = [UIColor clearColor];
     self.accessoryView.backgroundColor = [UIColor clearColor];
     return _kLineMainView;
 }
 
+/** 成交量视图  */
 - (Y_KLineVolumeView *)kLineVolumeView
 {
     if(!_kLineVolumeView && self)
@@ -210,15 +209,16 @@
         [self.scrollView addSubview:_kLineVolumeView];
         [_kLineVolumeView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.kLineMainView);
-            make.top.equalTo(self.kLineMainView.mas_bottom).offset(10);
+            make.top.equalTo(self.kLineMainView.mas_bottom).offset(-10);
             make.width.equalTo(self.kLineMainView.mas_width);
-            self.kLineVolumeViewHeightConstraint = make.height.equalTo(self.scrollView.mas_height).multipliedBy(self.volumeViewRatio);
+            make.height.equalTo(self.mas_height).multipliedBy(0.3);
         }];
         [self layoutIfNeeded];
     }
     return _kLineVolumeView;
 }
 
+/** 技术图形视图  */
 - (Y_KLineAccessoryView *)kLineAccessoryView
 {
     if(!_kLineAccessoryView && self)
@@ -227,16 +227,18 @@
         _kLineAccessoryView.delegate = self;
         [self.scrollView addSubview:_kLineAccessoryView];
         [_kLineAccessoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.kLineVolumeView);
-            make.top.equalTo(self.kLineVolumeView.mas_bottom).offset(10);
-            make.width.equalTo(self.kLineVolumeView.mas_width);
-            make.height.equalTo(self.scrollView.mas_height).multipliedBy(0.2);
+            make.left.equalTo(self.kLineMainView);
+            make.top.equalTo(self.kLineMainView.mas_bottom).offset(-10);
+            make.width.equalTo(self.kLineMainView.mas_width);
+            make.height.equalTo(self.mas_height).multipliedBy(0.3);
         }];
         [self layoutIfNeeded];
     }
     return _kLineAccessoryView;
 }
 
+
+/** 右侧显示价格视图  */
 - (Y_StockChartRightYView *)priceView
 {
     if(!_priceView)
@@ -253,6 +255,7 @@
     return _priceView;
 }
 
+/** 成交量右侧视图  */
 - (Y_StockChartRightYView *)volumeView
 {
     if(!_volumeView)
@@ -262,13 +265,13 @@
         [_volumeView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.kLineVolumeView.mas_top).offset(10);
             make.right.width.equalTo(self.priceView);
-//            make.height.equalTo(self).multipliedBy(self.volumeViewRatio);
             make.bottom.equalTo(self.kLineVolumeView);
         }];
     }
     return _volumeView;
 }
 
+/** 技术图形右侧视图  */
 - (Y_StockChartRightYView *)accessoryView
 {
     if(!_accessoryView)
@@ -276,9 +279,9 @@
         _accessoryView = [Y_StockChartRightYView new];
         [self insertSubview:_accessoryView aboveSubview:self.scrollView];
         [_accessoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.kLineAccessoryView.mas_top).offset(10);
-            make.right.width.equalTo(self.volumeView);
-            make.height.equalTo(self.kLineAccessoryView.mas_height);
+            make.top.equalTo(self.kLineVolumeView.mas_top).offset(10);
+            make.right.width.equalTo(self.priceView);
+            make.bottom.equalTo(self.kLineVolumeView);
         }];
     }
     return _accessoryView;
@@ -312,31 +315,20 @@
 - (void)setTargetLineStatus:(Y_StockChartTargetLineStatus)targetLineStatus
 {
     _targetLineStatus = targetLineStatus;
-    if(targetLineStatus < 103)
-    {
-        if(targetLineStatus == Y_StockChartTargetLineStatusAccessoryClose){
-            
-            [Y_StockChartGlobalVariable setkLineMainViewRadio:0.65];
-            [Y_StockChartGlobalVariable setkLineVolumeViewRadio:0.28];
-
-        } else {
-            [Y_StockChartGlobalVariable setkLineMainViewRadio:0.5];
-            [Y_StockChartGlobalVariable setkLineVolumeViewRadio:0.2];
-
-        }
-        
-        [self.kLineMainViewHeightConstraint uninstall];
-        [_kLineMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-            self.kLineMainViewHeightConstraint = make.height.equalTo(self.scrollView).multipliedBy([Y_StockChartGlobalVariable kLineMainViewRadio]);
-        }];
-        [self.kLineVolumeViewHeightConstraint uninstall];
-        [self.kLineVolumeView mas_updateConstraints:^(MASConstraintMaker *make) {
-            self.kLineVolumeViewHeightConstraint = make.height.equalTo(self.scrollView.mas_height).multipliedBy([Y_StockChartGlobalVariable kLineVolumeViewRadio]);
-        }];
-        [self reDraw];
-    }
+    [self reDraw];
 
 }
+
+/** 是否隐藏技术图形  */
+- (void)hiddenAccessoryView:(BOOL)show {
+    _accessoryMAView.hidden = show;
+    _kLineAccessoryView.hidden = show;
+    _accessoryView.hidden = show;
+    _volumeMAView.hidden = !show;
+    _kLineVolumeView.hidden = !show;
+    _volumeView.hidden = !show;
+}
+
 #pragma mark - event事件处理方法
 #pragma mark 缩放执行方法
 - (void)event_pichMethod:(UIPinchGestureRecognizer *)pinch
@@ -438,6 +430,12 @@
         self.kLineMainView.targetLineStatus = self.targetLineStatus;
     }
     [self.kLineMainView drawMainView];
+    
+    if (self.targetLineStatus>99&&self.targetLineStatus<102) {
+        [self hiddenAccessoryView:NO];
+    } else {
+        [self hiddenAccessoryView:YES];
+    }
 }
 
 

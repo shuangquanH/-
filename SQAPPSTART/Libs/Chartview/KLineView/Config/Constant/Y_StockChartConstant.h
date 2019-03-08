@@ -30,12 +30,12 @@
 /**
  *  K线最大的数量
  */
-#define Y_StockChartKLineMaxCount 70
+#define Y_StockChartKLineMaxCount 40
 
 /**
  *  K线图最小的数量
  */
-#define Y_StockChartKLineMinCount 30
+#define Y_StockChartKLineMinCount 20
 
 /**
  *  K线图最小的高度

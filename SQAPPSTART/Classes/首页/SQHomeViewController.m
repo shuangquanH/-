@@ -8,6 +8,10 @@
 
 #import "SQHomeViewController.h"
 
+
+#import "ABKLineViewController.h"
+#import "ABDepthViewController.h"
+
 @interface SQHomeViewController ()
 
 @property (nonatomic, strong)   UIButton        *closeFullButton;
@@ -21,13 +25,33 @@
     [super viewDidLoad];
     [self addLeftBarbuttonItemIsImage:YES title:@"home_tab__icon3" selector:@selector(leftAction)];
     [self addRightBarbuttonItemIsImage:NO title:@"优惠券" selector:@selector(leftAction)];
+    [self addKLineViewController];
 }
 
 - (void)leftAction {
 
 }
 
-
+- (void)addKLineViewController {
+    ABKLineViewController   *klineVC = [ABKLineViewController new];
+    [self addChildVc:klineVC];
+    [self.view addSubview:klineVC.view];
+    [klineVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.height.mas_equalTo(400);
+        make.top.mas_equalTo(KNAV_HEIGHT);
+    }];
+    
+//    ABDepthViewController   *depthVC = [ABDepthViewController new];
+//    [self addChildVc:depthVC];
+//    [self.view addSubview:depthVC.view];
+//    [depthVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.equalTo(self.view);
+//        make.height.mas_equalTo(400);
+//        make.top.mas_equalTo(KNAV_HEIGHT);
+//    }];
+//    depthVC.view.hidden = YES;
+}
 
 - (UIButton *)closeFullButton {
     if (!_closeFullButton) {

@@ -87,6 +87,7 @@
 		E991869A22325211009650F7 /* ABDepthBidsData.json in Resources */ = {isa = PBXBuildFile; fileRef = E991869522325210009650F7 /* ABDepthBidsData.json */; };
 		E991869F22325217009650F7 /* ABDepthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991869C22325217009650F7 /* ABDepthViewController.m */; };
 		E99186A022325217009650F7 /* ABKLineData.json in Resources */ = {isa = PBXBuildFile; fileRef = E991869E22325217009650F7 /* ABKLineData.json */; };
+		E99186A42232590F009650F7 /* Y_StockChartSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99186A32232590F009650F7 /* Y_StockChartSegmentView.m */; };
 		E99DE11620AACAA8009CEF88 /* SQRootTabBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DE11520AACAA8009CEF88 /* SQRootTabBarControl.m */; };
 		E99DE11B20AACE69009CEF88 /* SQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DE11A20AACE69009CEF88 /* SQHomeViewController.m */; };
 		E99DE22320B58938009CEF88 /* SQBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DE22020B58938009CEF88 /* SQBaseCollectionViewCell.m */; };
@@ -276,6 +277,8 @@
 		E991869C22325217009650F7 /* ABDepthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABDepthViewController.m; sourceTree = "<group>"; };
 		E991869D22325217009650F7 /* ABDepthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABDepthViewController.h; sourceTree = "<group>"; };
 		E991869E22325217009650F7 /* ABKLineData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ABKLineData.json; sourceTree = "<group>"; };
+		E99186A22232590F009650F7 /* Y_StockChartSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartSegmentView.h; sourceTree = "<group>"; };
+		E99186A32232590F009650F7 /* Y_StockChartSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartSegmentView.m; sourceTree = "<group>"; };
 		E99DE11420AACAA8009CEF88 /* SQRootTabBarControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQRootTabBarControl.h; sourceTree = "<group>"; };
 		E99DE11520AACAA8009CEF88 /* SQRootTabBarControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQRootTabBarControl.m; sourceTree = "<group>"; };
 		E99DE11920AACE69009CEF88 /* SQHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeViewController.h; sourceTree = "<group>"; };
@@ -816,6 +819,7 @@
 		E9918691223251FA009650F7 /* KLineViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E99186A522325960009650F7 /* Views */,
 				E99186A12232522A009650F7 /* Datas */,
 				E991869B22325217009650F7 /* ABKLineViewController.h */,
 				E991869322325210009650F7 /* ABKLineViewController.m */,
@@ -828,13 +832,22 @@
 		E99186A12232522A009650F7 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				E991869E22325217009650F7 /* ABKLineData.json */,
 				E991869622325211009650F7 /* ABDataSourceManager.h */,
 				E991869422325210009650F7 /* ABDataSourceManager.m */,
+				E991869E22325217009650F7 /* ABKLineData.json */,
 				E991869222325210009650F7 /* ABDepthAsksData.json */,
 				E991869522325210009650F7 /* ABDepthBidsData.json */,
 			);
 			path = Datas;
+			sourceTree = "<group>";
+		};
+		E99186A522325960009650F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E99186A22232590F009650F7 /* Y_StockChartSegmentView.h */,
+				E99186A32232590F009650F7 /* Y_StockChartSegmentView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E99DE11720AACE32009CEF88 /* Classes */ = {
@@ -1091,6 +1104,7 @@
 				E90BBDE1209C0533006DCB7B /* SQBaseImageView.m in Sources */,
 				E991868122324BB6009650F7 /* Y_KLinePositionModel.m in Sources */,
 				E991869022324BB6009650F7 /* DepthAmountView.m in Sources */,
+				E99186A42232590F009650F7 /* Y_StockChartSegmentView.m in Sources */,
 				182A807120907E84009B244B /* UILabel+SQExtension.m in Sources */,
 				182A803B209052FB009B244B /* UIView+SDExtension.m in Sources */,
 				182A806B20907BC0009B244B /* UIImageView+SQExtension_m.m in Sources */,

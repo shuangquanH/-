@@ -38,7 +38,7 @@
     Y_KLineGroupModel *kLineGroupModel = [Y_KLineGroupModel objectWithArray:kLineDatasArray];
     kLineGroupModel.ask_fixed = @"2";
     kLineGroupModel.bid_fixed = @"3";
-    kLineGroupModel.defaultKLineType = KLineTypeWeek;
+    kLineGroupModel.defaultKLineType = KLineTypeOneMinute;
     
     self.kGroupModel = kLineGroupModel;
     return kLineGroupModel;

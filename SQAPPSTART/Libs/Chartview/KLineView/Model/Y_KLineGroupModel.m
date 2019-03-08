@@ -39,10 +39,6 @@
     }
     
     groupModel.models = mutableArr;
-    
-    NSInteger defaultKLineType = [[NSUserDefaults standardUserDefaults] integerForKey:@"DefaultKLineType"];
-    groupModel.defaultKLineType = defaultKLineType;
-
     return groupModel;
 }
 

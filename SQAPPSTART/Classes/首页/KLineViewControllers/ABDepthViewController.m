@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor backgroundColor];
-    self.title = @"Y_DepthView";
     
     [self addSubviews];
     [self addConstrains];

@@ -28,9 +28,16 @@
  */
 - (void)updateKLineStyle:(Y_StockChartScreenStyle)style;
 
+/** 更新k线图数据  */
 - (void)updateKLineData:(Y_KLineGroupModel *)groupModel;
-- (void)changeMainChartSegmentType:(Y_StockChartTargetLineStatus )lineType;
-- (void)changeDeputyChartSegmentType:(Y_StockChartTargetLineStatus )lineType;
+/** 更新技术图形数据  */
 - (void)updateAccessoryData:(Y_KLineModel *)model;
+
+
+/** 修改k线的技术图形  */
+- (void)changeMainChartSegmentType:(Y_StockChartTargetLineStatus )lineType;
+/** 修改副图的技术图形  */
+- (void)changeDeputyChartSegmentType:(Y_StockChartTargetLineStatus )lineType;
+
 
 @end

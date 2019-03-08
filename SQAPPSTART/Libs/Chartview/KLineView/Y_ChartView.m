@@ -106,12 +106,14 @@
         make.width.equalTo(weakSelf.scrollView);
         make.height.equalTo(weakSelf.scrollView).multipliedBy(0.7);
     }];
+    /** 技术图形上方信息行  */
     [self.fullScreenAccessoryInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.kLineMainView.mas_bottom);
         make.left.equalTo(weakSelf.scrollView);
         make.width.equalTo(weakSelf.kLineMainView);
         make.height.mas_equalTo(20);
     }];
+    /** 技术图形  */
     [self.kLineAccessoryView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.fullScreenAccessoryInformationView.mas_bottom);
         make.left.equalTo(weakSelf.scrollView);
@@ -236,7 +238,6 @@ static char *observerContext = NULL;
     CGFloat oldScale = 1.0f;
     CGFloat difValue = pinch.scale - oldScale;
     if(ABS(difValue) > Y_StockChartScaleBound) {
-        NSInteger oldNeedDrawStartIndex = self.kLineMainView.needDrawStartIndex;
         CGFloat oldKLineWidth = self.kLineWidth;
         //修改柱子宽度
         NSInteger KLineCount = [Y_StockChartGlobalVariable kLineCount];

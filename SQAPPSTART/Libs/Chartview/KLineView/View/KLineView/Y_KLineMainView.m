@@ -394,7 +394,7 @@
             minPrice = kLineModel.Low.floatValue;
             self.minIndex = idx;
         }
-        if (_targetLineStatus == Y_StockChartTargetLineStatusMA) {
+        if (self->_targetLineStatus == Y_StockChartTargetLineStatusMA) {
             
             if(kLineModel.MA7)
             {
@@ -423,7 +423,7 @@
                     maxAssert = kLineModel.MA99.floatValue;
                 }
             }
-        } else if (_targetLineStatus == Y_StockChartTargetLineStatusEMA) {
+        } else if (self->_targetLineStatus == Y_StockChartTargetLineStatusEMA) {
             
             if(kLineModel.EMA7)
             {
@@ -453,7 +453,7 @@
                 }
             }
             
-        } else if (_targetLineStatus == Y_StockChartTargetLineStatusBOLL) {
+        } else if (self->_targetLineStatus == Y_StockChartTargetLineStatusBOLL) {
             
             if(kLineModel.BOLL_MB)
             {

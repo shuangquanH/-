@@ -651,9 +651,9 @@
 			isa = PBXGroup;
 			children = (
 				E991862C22324BB5009650F7 /* Y_ChartView.h */,
+				E991864E22324BB5009650F7 /* Y_ChartView.m */,
 				E991862D22324BB5009650F7 /* Config */,
 				E991863622324BB5009650F7 /* Utils */,
-				E991864E22324BB5009650F7 /* Y_ChartView.m */,
 				E991864F22324BB5009650F7 /* Model */,
 				E991865822324BB5009650F7 /* View */,
 			);

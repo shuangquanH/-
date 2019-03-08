@@ -10,12 +10,12 @@
 
 
 #import "ABKLineViewController.h"
-#import "ABDepthViewController.h"
 
 @interface SQHomeViewController ()
 
 @property (nonatomic, strong)   UIButton        *closeFullButton;
 @property (nonatomic, assign)   BOOL        isFullScreen;
+@property (nonatomic, strong)   ABKLineViewController   *klineVC;
 
 @end
 
@@ -29,38 +29,59 @@
 }
 
 - (void)leftAction {
-
+    /** 切换成竖屏  */
+    if (self.isFullScreen) {
+        [UIView animateWithDuration:0.2f animations:^{
+            self.klineVC.view.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            self.isFullScreen = NO;
+            [self makeStockViewConstraints];
+            self.closeFullButton.hidden = YES;
+        }];
+    } else {
+        /** 切换成横屏  */
+        [UIView animateWithDuration:0.2f animations:^{
+            self.klineVC.view.transform = CGAffineTransformMakeRotation(M_PI/2);
+        } completion:^(BOOL finished) {
+            self.isFullScreen = YES;
+            [self makeStockViewConstraints];
+            self.closeFullButton.hidden = NO;
+        }];
+    }
+}
+- (void)makeStockViewConstraints {
+    if (self.isFullScreen) {
+        [self hiddenStatusBar:YES];
+        self.navigationController.navigationBar.hidden = YES;
+        self.klineVC.view.frame = CGRectMake(0, KSTATU_HEIGHT, KAPP_WIDTH, KAPP_HEIGHT-KSTATU_HEIGHT);
+    } else {
+        [self hiddenStatusBar:NO];
+        self.navigationController.navigationBar.hidden = NO;
+        self.klineVC.view.frame = CGRectMake(0, KNAV_HEIGHT, KAPP_WIDTH, 400);
+    }
 }
 
+
 - (void)addKLineViewController {
-    ABKLineViewController   *klineVC = [ABKLineViewController new];
-    [self addChildVc:klineVC];
-    [self.view addSubview:klineVC.view];
-    [klineVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(400);
-        make.top.mas_equalTo(KNAV_HEIGHT);
-    }];
-    
-//    ABDepthViewController   *depthVC = [ABDepthViewController new];
-//    [self addChildVc:depthVC];
-//    [self.view addSubview:depthVC.view];
-//    [depthVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.equalTo(self.view);
-//        make.height.mas_equalTo(400);
-//        make.top.mas_equalTo(KNAV_HEIGHT);
-//    }];
-//    depthVC.view.hidden = YES;
+    self.klineVC = [ABKLineViewController new];
+    [self addChildVc:self.klineVC];
+    [self.view addSubview:self.klineVC.view];
+    [self makeStockViewConstraints];
 }
 
 - (UIButton *)closeFullButton {
     if (!_closeFullButton) {
         _closeFullButton = [[UIButton alloc] init];
-        _closeFullButton.frame = CGRectMake(KAPP_WIDTH-44, KAPP_HEIGHT-44, 44, 44);
+        _closeFullButton.layer.cornerRadius = 11;
+        _closeFullButton.layer.masksToBounds = YES;
         _closeFullButton.backgroundColor = KCOLOR_MAIN;
         [_closeFullButton addTarget:self action:@selector(leftAction) forControlEvents:UIControlEventTouchUpInside];
         _closeFullButton.hidden = YES;
         [self.view addSubview:_closeFullButton];
+        [_closeFullButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(22);
+            make.bottom.right.equalTo(self.view).offset(-10);
+        }];
     }
     return _closeFullButton;
 }

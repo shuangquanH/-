@@ -12,7 +12,9 @@
 @implementation Y_KLineGroupModel
 
 + (instancetype) objectWithArray:(NSArray *)arr {
-    
+    if (arr==nil) {
+        return nil;
+    }
     NSAssert([arr isKindOfClass:[NSArray class]], @"arr不是一个数组");
     
     Y_KLineGroupModel *groupModel = [Y_KLineGroupModel new];

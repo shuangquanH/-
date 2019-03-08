@@ -7,11 +7,9 @@
 //
 
 #import "SQHomeViewController.h"
-#import "Y_StockChartViewController.h"
 
 @interface SQHomeViewController ()
 
-@property (nonatomic, strong)   Y_StockChartViewController        *stockController;
 @property (nonatomic, strong)   UIButton        *closeFullButton;
 @property (nonatomic, assign)   BOOL        isFullScreen;
 
@@ -23,50 +21,12 @@
     [super viewDidLoad];
     [self addLeftBarbuttonItemIsImage:YES title:@"home_tab__icon3" selector:@selector(leftAction)];
     [self addRightBarbuttonItemIsImage:NO title:@"优惠券" selector:@selector(leftAction)];
-    [self addStockChartViewController];
 }
 
 - (void)leftAction {
-    if (self.isFullScreen) {
-        /** 切换成竖屏  */
-        [UIView animateWithDuration:0.2f animations:^{
-            self.stockController.view.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            self.isFullScreen = NO;
-            [self makeStockViewConstraints];
-        }];
-    } else {
-        /** 切换成横屏  */
-        [UIView animateWithDuration:0.2f animations:^{
-            self.stockController.view.transform = CGAffineTransformMakeRotation(M_PI/2);
-            
-        } completion:^(BOOL finished) {
-            self.isFullScreen = YES;
-            [self makeStockViewConstraints];
-        }];
-    }
+
 }
 
-- (void)addStockChartViewController {
-    self.stockController = [[Y_StockChartViewController alloc] init];
-    [self addChildVc:self.stockController];
-    [self.view addSubview:self.stockController.view];
-    [self makeStockViewConstraints];
-}
-- (void)makeStockViewConstraints {
-    if (self.isFullScreen) {
-        self.closeFullButton.hidden = NO;
-        [self hiddenStatusBar:YES];
-        self.navigationController.navigationBar.hidden = YES;
-        self.stockController.view.frame = CGRectMake(0, KSTATU_HEIGHT, KAPP_WIDTH, KAPP_HEIGHT-KSTATU_HEIGHT);
-    } else {
-        self.closeFullButton.hidden = YES;
-        [self hiddenStatusBar:NO];
-        self.navigationController.navigationBar.hidden = NO;
-        self.stockController.view.frame = CGRectMake(0, KNAV_HEIGHT, KAPP_WIDTH, 300);
-    }
-    [self.stockController reloadDataWhenRotate];
-}
 
 
 - (UIButton *)closeFullButton {

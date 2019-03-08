@@ -52,32 +52,46 @@
 		E90BBDE7209C07D8006DCB7B /* SQRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDE6209C07D8006DCB7B /* SQRequest.m */; };
 		E90BBDF1209C086D006DCB7B /* SQRootNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDF0209C086D006DCB7B /* SQRootNavigationVC.m */; };
 		E90BBDF5209C0894006DCB7B /* SQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDF4209C0894006DCB7B /* SQLoginViewController.m */; };
+		E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */; };
+		E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863522324BB5009650F7 /* UIColor+Y_StockChart.m */; };
+		E991867622324BB6009650F7 /* Y_LayoutViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */; };
+		E991867722324BB6009650F7 /* Y_BaseLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863822324BB5009650F7 /* Y_BaseLine.m */; };
+		E991867822324BB6009650F7 /* Y_Extreme.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863C22324BB5009650F7 /* Y_Extreme.m */; };
+		E991867922324BB6009650F7 /* Y_MALine.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864222324BB5009650F7 /* Y_MALine.m */; };
+		E991867A22324BB6009650F7 /* Y_TimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864322324BB5009650F7 /* Y_TimeLine.m */; };
+		E991867B22324BB6009650F7 /* Y_KLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864422324BB5009650F7 /* Y_KLine.m */; };
+		E991867C22324BB6009650F7 /* Y_BrokenLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864522324BB5009650F7 /* Y_BrokenLine.m */; };
+		E991867D22324BB6009650F7 /* Y_KLineAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864822324BB5009650F7 /* Y_KLineAccessory.m */; };
+		E991867E22324BB6009650F7 /* UIFont+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864B22324BB5009650F7 /* UIFont+Y_StockChart.m */; };
+		E991867F22324BB6009650F7 /* NSString+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864C22324BB5009650F7 /* NSString+Y_StockChart.m */; };
+		E991868022324BB6009650F7 /* Y_ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991864E22324BB5009650F7 /* Y_ChartView.m */; };
+		E991868122324BB6009650F7 /* Y_KLinePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E991865022324BB5009650F7 /* Y_KLinePositionModel.m */; };
+		E991868222324BB6009650F7 /* Y_KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E991865522324BB5009650F7 /* Y_KLineModel.m */; };
+		E991868322324BB6009650F7 /* Y_KLineGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E991865622324BB5009650F7 /* Y_KLineGroupModel.m */; };
+		E991868422324BB6009650F7 /* Y_KLineVolumePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E991865722324BB5009650F7 /* Y_KLineVolumePositionModel.m */; };
+		E991868522324BB6009650F7 /* Y_YAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991865A22324BB5009650F7 /* Y_YAxisView.m */; };
+		E991868622324BB6009650F7 /* Y_AccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991865C22324BB5009650F7 /* Y_AccessoryView.m */; };
+		E991868722324BB6009650F7 /* Y_AccessoryInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991865F22324BB5009650F7 /* Y_AccessoryInfoView.m */; };
+		E991868822324BB6009650F7 /* Y_KLineMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991866122324BB5009650F7 /* Y_KLineMainView.m */; };
+		E991868922324BB6009650F7 /* DepthPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991866722324BB5009650F7 /* DepthPriceView.m */; };
+		E991868A22324BB6009650F7 /* DepthLongPressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991866822324BB5009650F7 /* DepthLongPressView.m */; };
+		E991868B22324BB6009650F7 /* DepthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E991866C22324BB5009650F7 /* DepthModel.m */; };
+		E991868C22324BB6009650F7 /* DepthGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E991866D22324BB5009650F7 /* DepthGroupModel.m */; };
+		E991868D22324BB6009650F7 /* NSNumber+Y_ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991866E22324BB5009650F7 /* NSNumber+Y_ChartView.m */; };
+		E991868E22324BB6009650F7 /* DepthView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991867122324BB5009650F7 /* DepthView.m */; };
+		E991868F22324BB6009650F7 /* DepthChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991867222324BB5009650F7 /* DepthChartView.m */; };
+		E991869022324BB6009650F7 /* DepthAmountView.m in Sources */ = {isa = PBXBuildFile; fileRef = E991867322324BB5009650F7 /* DepthAmountView.m */; };
+		E991869722325211009650F7 /* ABDepthAsksData.json in Resources */ = {isa = PBXBuildFile; fileRef = E991869222325210009650F7 /* ABDepthAsksData.json */; };
+		E991869822325211009650F7 /* ABKLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991869322325210009650F7 /* ABKLineViewController.m */; };
+		E991869922325211009650F7 /* ABDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E991869422325210009650F7 /* ABDataSourceManager.m */; };
+		E991869A22325211009650F7 /* ABDepthBidsData.json in Resources */ = {isa = PBXBuildFile; fileRef = E991869522325210009650F7 /* ABDepthBidsData.json */; };
+		E991869F22325217009650F7 /* ABDepthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991869C22325217009650F7 /* ABDepthViewController.m */; };
+		E99186A022325217009650F7 /* ABKLineData.json in Resources */ = {isa = PBXBuildFile; fileRef = E991869E22325217009650F7 /* ABKLineData.json */; };
 		E99DE11620AACAA8009CEF88 /* SQRootTabBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DE11520AACAA8009CEF88 /* SQRootTabBarControl.m */; };
 		E99DE11B20AACE69009CEF88 /* SQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DE11A20AACE69009CEF88 /* SQHomeViewController.m */; };
 		E99DE22320B58938009CEF88 /* SQBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DE22020B58938009CEF88 /* SQBaseCollectionViewCell.m */; };
 		E99DE22420B58938009CEF88 /* SQBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E99DE22220B58938009CEF88 /* SQBaseCollectionView.m */; };
-		E9EB2BC92230C1F300F7F152 /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2B8F2230C1F300F7F152 /* Y_StockChartGlobalVariable.m */; };
-		E9EB2BCA2230C1F300F7F152 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2B942230C1F300F7F152 /* UIColor+Y_StockChart.m */; };
-		E9EB2BCB2230C1F300F7F152 /* Y_StockChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2B952230C1F300F7F152 /* Y_StockChartView.m */; };
-		E9EB2BCC2230C1F300F7F152 /* Y_KLineMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2B992230C1F300F7F152 /* Y_KLineMAView.m */; };
-		E9EB2BCD2230C1F300F7F152 /* Y_KLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2B9A2230C1F300F7F152 /* Y_KLineView.m */; };
-		E9EB2BCE2230C1F300F7F152 /* Y_StockChartRightYView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2B9C2230C1F300F7F152 /* Y_StockChartRightYView.m */; };
-		E9EB2BCF2230C1F300F7F152 /* Y_VolumeMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BA02230C1F300F7F152 /* Y_VolumeMAView.m */; };
-		E9EB2BD02230C1F300F7F152 /* Y_KLineAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BA22230C1F300F7F152 /* Y_KLineAccessoryView.m */; };
-		E9EB2BD12230C1F300F7F152 /* Y_KLineAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BA52230C1F300F7F152 /* Y_KLineAccessory.m */; };
-		E9EB2BD22230C1F300F7F152 /* Y_AccessoryMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BA82230C1F300F7F152 /* Y_AccessoryMAView.m */; };
-		E9EB2BD32230C1F300F7F152 /* Y_KLinePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BAC2230C1F300F7F152 /* Y_KLinePositionModel.m */; };
-		E9EB2BD42230C1F300F7F152 /* Y_KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BB12230C1F300F7F152 /* Y_KLineModel.m */; };
-		E9EB2BD52230C1F300F7F152 /* Y_KLineGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BB22230C1F300F7F152 /* Y_KLineGroupModel.m */; };
-		E9EB2BD62230C1F300F7F152 /* Y_KLineVolumePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BB32230C1F300F7F152 /* Y_KLineVolumePositionModel.m */; };
-		E9EB2BD72230C1F300F7F152 /* Y_KLineVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BB62230C1F300F7F152 /* Y_KLineVolumeView.m */; };
-		E9EB2BD82230C1F300F7F152 /* Y_KLineVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BB82230C1F300F7F152 /* Y_KLineVolume.m */; };
-		E9EB2BD92230C1F300F7F152 /* Y_KLineMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BBC2230C1F300F7F152 /* Y_KLineMainView.m */; };
-		E9EB2BDA2230C1F300F7F152 /* Y_MALine.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BC02230C1F300F7F152 /* Y_MALine.m */; };
-		E9EB2BDB2230C1F300F7F152 /* Y_KLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BC12230C1F300F7F152 /* Y_KLine.m */; };
-		E9EB2BDC2230C1F300F7F152 /* Y_StockChartSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BC42230C1F300F7F152 /* Y_StockChartSegmentView.m */; };
 		E9EB2BDD2230C1F300F7F152 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BC72230C1F300F7F152 /* NetWorking.m */; };
-		E9EB2BE02230C26200F7F152 /* Y_StockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB2BDF2230C26200F7F152 /* Y_StockChartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +208,74 @@
 		E90BBDF0209C086D006DCB7B /* SQRootNavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQRootNavigationVC.m; sourceTree = "<group>"; };
 		E90BBDF3209C0894006DCB7B /* SQLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SQLoginViewController.h; path = SQAPPSTART/Other/AppLogin/SQLoginViewController.h; sourceTree = SOURCE_ROOT; };
 		E90BBDF4209C0894006DCB7B /* SQLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SQLoginViewController.m; path = SQAPPSTART/Other/AppLogin/SQLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		E991862C22324BB5009650F7 /* Y_ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_ChartView.h; sourceTree = "<group>"; };
+		E991862F22324BB5009650F7 /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
+		E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
+		E991863222324BB5009650F7 /* Y_StockChartConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartConstant.h; sourceTree = "<group>"; };
+		E991863422324BB5009650F7 /* UIColor+Y_StockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Y_StockChart.h"; sourceTree = "<group>"; };
+		E991863522324BB5009650F7 /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
+		E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_LayoutViewUtil.m; sourceTree = "<group>"; };
+		E991863822324BB5009650F7 /* Y_BaseLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_BaseLine.m; sourceTree = "<group>"; };
+		E991863922324BB5009650F7 /* Y_LayoutViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_LayoutViewUtil.h; sourceTree = "<group>"; };
+		E991863A22324BB5009650F7 /* Y_BaseLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_BaseLine.h; sourceTree = "<group>"; };
+		E991863C22324BB5009650F7 /* Y_Extreme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_Extreme.m; sourceTree = "<group>"; };
+		E991863D22324BB5009650F7 /* Y_MALine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_MALine.h; sourceTree = "<group>"; };
+		E991863E22324BB5009650F7 /* Y_TimeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_TimeLine.h; sourceTree = "<group>"; };
+		E991863F22324BB5009650F7 /* Y_BrokenLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_BrokenLine.h; sourceTree = "<group>"; };
+		E991864022324BB5009650F7 /* Y_KLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLine.h; sourceTree = "<group>"; };
+		E991864122324BB5009650F7 /* Y_Extreme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_Extreme.h; sourceTree = "<group>"; };
+		E991864222324BB5009650F7 /* Y_MALine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_MALine.m; sourceTree = "<group>"; };
+		E991864322324BB5009650F7 /* Y_TimeLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_TimeLine.m; sourceTree = "<group>"; };
+		E991864422324BB5009650F7 /* Y_KLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLine.m; sourceTree = "<group>"; };
+		E991864522324BB5009650F7 /* Y_BrokenLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_BrokenLine.m; sourceTree = "<group>"; };
+		E991864722324BB5009650F7 /* Y_KLineAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineAccessory.h; sourceTree = "<group>"; };
+		E991864822324BB5009650F7 /* Y_KLineAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineAccessory.m; sourceTree = "<group>"; };
+		E991864A22324BB5009650F7 /* NSString+Y_StockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Y_StockChart.h"; sourceTree = "<group>"; };
+		E991864B22324BB5009650F7 /* UIFont+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Y_StockChart.m"; sourceTree = "<group>"; };
+		E991864C22324BB5009650F7 /* NSString+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Y_StockChart.m"; sourceTree = "<group>"; };
+		E991864D22324BB5009650F7 /* UIFont+Y_StockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Y_StockChart.h"; sourceTree = "<group>"; };
+		E991864E22324BB5009650F7 /* Y_ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_ChartView.m; sourceTree = "<group>"; };
+		E991865022324BB5009650F7 /* Y_KLinePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLinePositionModel.m; sourceTree = "<group>"; };
+		E991865122324BB5009650F7 /* Y_KLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineModel.h; sourceTree = "<group>"; };
+		E991865222324BB5009650F7 /* Y_KLineGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineGroupModel.h; sourceTree = "<group>"; };
+		E991865322324BB5009650F7 /* Y_KLineVolumePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolumePositionModel.h; sourceTree = "<group>"; };
+		E991865422324BB5009650F7 /* Y_KLinePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLinePositionModel.h; sourceTree = "<group>"; };
+		E991865522324BB5009650F7 /* Y_KLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineModel.m; sourceTree = "<group>"; };
+		E991865622324BB5009650F7 /* Y_KLineGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineGroupModel.m; sourceTree = "<group>"; };
+		E991865722324BB5009650F7 /* Y_KLineVolumePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolumePositionModel.m; sourceTree = "<group>"; };
+		E991865922324BB5009650F7 /* Y_YAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_YAxisView.h; sourceTree = "<group>"; };
+		E991865A22324BB5009650F7 /* Y_YAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_YAxisView.m; sourceTree = "<group>"; };
+		E991865C22324BB5009650F7 /* Y_AccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_AccessoryView.m; sourceTree = "<group>"; };
+		E991865D22324BB5009650F7 /* Y_AccessoryInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_AccessoryInfoView.h; sourceTree = "<group>"; };
+		E991865E22324BB5009650F7 /* Y_AccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_AccessoryView.h; sourceTree = "<group>"; };
+		E991865F22324BB5009650F7 /* Y_AccessoryInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_AccessoryInfoView.m; sourceTree = "<group>"; };
+		E991866122324BB5009650F7 /* Y_KLineMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineMainView.m; sourceTree = "<group>"; };
+		E991866222324BB5009650F7 /* Y_KLineMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineMainView.h; sourceTree = "<group>"; };
+		E991866422324BB5009650F7 /* NSNumber+Y_ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Y_ChartView.h"; sourceTree = "<group>"; };
+		E991866522324BB5009650F7 /* DepthGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthGroupModel.h; sourceTree = "<group>"; };
+		E991866622324BB5009650F7 /* DepthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthModel.h; sourceTree = "<group>"; };
+		E991866722324BB5009650F7 /* DepthPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthPriceView.m; sourceTree = "<group>"; };
+		E991866822324BB5009650F7 /* DepthLongPressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthLongPressView.m; sourceTree = "<group>"; };
+		E991866922324BB5009650F7 /* DepthAmountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthAmountView.h; sourceTree = "<group>"; };
+		E991866A22324BB5009650F7 /* DepthChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthChartView.h; sourceTree = "<group>"; };
+		E991866B22324BB5009650F7 /* DepthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthView.h; sourceTree = "<group>"; };
+		E991866C22324BB5009650F7 /* DepthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthModel.m; sourceTree = "<group>"; };
+		E991866D22324BB5009650F7 /* DepthGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthGroupModel.m; sourceTree = "<group>"; };
+		E991866E22324BB5009650F7 /* NSNumber+Y_ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Y_ChartView.m"; sourceTree = "<group>"; };
+		E991866F22324BB5009650F7 /* DepthPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthPriceView.h; sourceTree = "<group>"; };
+		E991867022324BB5009650F7 /* DepthLongPressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthLongPressView.h; sourceTree = "<group>"; };
+		E991867122324BB5009650F7 /* DepthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthView.m; sourceTree = "<group>"; };
+		E991867222324BB5009650F7 /* DepthChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthChartView.m; sourceTree = "<group>"; };
+		E991867322324BB5009650F7 /* DepthAmountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepthAmountView.m; sourceTree = "<group>"; };
+		E991869222325210009650F7 /* ABDepthAsksData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ABDepthAsksData.json; sourceTree = "<group>"; };
+		E991869322325210009650F7 /* ABKLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKLineViewController.m; sourceTree = "<group>"; };
+		E991869422325210009650F7 /* ABDataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABDataSourceManager.m; sourceTree = "<group>"; };
+		E991869522325210009650F7 /* ABDepthBidsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ABDepthBidsData.json; sourceTree = "<group>"; };
+		E991869622325211009650F7 /* ABDataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABDataSourceManager.h; sourceTree = "<group>"; };
+		E991869B22325217009650F7 /* ABKLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKLineViewController.h; sourceTree = "<group>"; };
+		E991869C22325217009650F7 /* ABDepthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABDepthViewController.m; sourceTree = "<group>"; };
+		E991869D22325217009650F7 /* ABDepthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABDepthViewController.h; sourceTree = "<group>"; };
+		E991869E22325217009650F7 /* ABKLineData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ABKLineData.json; sourceTree = "<group>"; };
 		E99DE11420AACAA8009CEF88 /* SQRootTabBarControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQRootTabBarControl.h; sourceTree = "<group>"; };
 		E99DE11520AACAA8009CEF88 /* SQRootTabBarControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQRootTabBarControl.m; sourceTree = "<group>"; };
 		E99DE11920AACE69009CEF88 /* SQHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeViewController.h; sourceTree = "<group>"; };
@@ -202,51 +284,8 @@
 		E99DE22020B58938009CEF88 /* SQBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		E99DE22120B58938009CEF88 /* SQBaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQBaseCollectionView.h; sourceTree = "<group>"; };
 		E99DE22220B58938009CEF88 /* SQBaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQBaseCollectionView.m; sourceTree = "<group>"; };
-		E9EB2B8B2230C1F300F7F152 /* Y_StockChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartView.h; sourceTree = "<group>"; };
-		E9EB2B8E2230C1F300F7F152 /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
-		E9EB2B8F2230C1F300F7F152 /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
-		E9EB2B912230C1F300F7F152 /* Y_StockChartConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartConstant.h; sourceTree = "<group>"; };
-		E9EB2B932230C1F300F7F152 /* UIColor+Y_StockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Y_StockChart.h"; sourceTree = "<group>"; };
-		E9EB2B942230C1F300F7F152 /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
-		E9EB2B952230C1F300F7F152 /* Y_StockChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartView.m; sourceTree = "<group>"; };
-		E9EB2B982230C1F300F7F152 /* Y_KLineMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineMAView.h; sourceTree = "<group>"; };
-		E9EB2B992230C1F300F7F152 /* Y_KLineMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineMAView.m; sourceTree = "<group>"; };
-		E9EB2B9A2230C1F300F7F152 /* Y_KLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineView.m; sourceTree = "<group>"; };
-		E9EB2B9C2230C1F300F7F152 /* Y_StockChartRightYView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartRightYView.m; sourceTree = "<group>"; };
-		E9EB2B9D2230C1F300F7F152 /* Y_StockChartRightYView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartRightYView.h; sourceTree = "<group>"; };
-		E9EB2B9F2230C1F300F7F152 /* Y_VolumeMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_VolumeMAView.h; sourceTree = "<group>"; };
-		E9EB2BA02230C1F300F7F152 /* Y_VolumeMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_VolumeMAView.m; sourceTree = "<group>"; };
-		E9EB2BA22230C1F300F7F152 /* Y_KLineAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineAccessoryView.m; sourceTree = "<group>"; };
-		E9EB2BA42230C1F300F7F152 /* Y_KLineAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineAccessory.h; sourceTree = "<group>"; };
-		E9EB2BA52230C1F300F7F152 /* Y_KLineAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineAccessory.m; sourceTree = "<group>"; };
-		E9EB2BA62230C1F300F7F152 /* Y_KLineAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineAccessoryView.h; sourceTree = "<group>"; };
-		E9EB2BA82230C1F300F7F152 /* Y_AccessoryMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_AccessoryMAView.m; sourceTree = "<group>"; };
-		E9EB2BA92230C1F300F7F152 /* Y_AccessoryMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_AccessoryMAView.h; sourceTree = "<group>"; };
-		E9EB2BAC2230C1F300F7F152 /* Y_KLinePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLinePositionModel.m; sourceTree = "<group>"; };
-		E9EB2BAD2230C1F300F7F152 /* Y_KLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineModel.h; sourceTree = "<group>"; };
-		E9EB2BAE2230C1F300F7F152 /* Y_KLineGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineGroupModel.h; sourceTree = "<group>"; };
-		E9EB2BAF2230C1F300F7F152 /* Y_KLineVolumePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolumePositionModel.h; sourceTree = "<group>"; };
-		E9EB2BB02230C1F300F7F152 /* Y_KLinePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLinePositionModel.h; sourceTree = "<group>"; };
-		E9EB2BB12230C1F300F7F152 /* Y_KLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineModel.m; sourceTree = "<group>"; };
-		E9EB2BB22230C1F300F7F152 /* Y_KLineGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineGroupModel.m; sourceTree = "<group>"; };
-		E9EB2BB32230C1F300F7F152 /* Y_KLineVolumePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolumePositionModel.m; sourceTree = "<group>"; };
-		E9EB2BB42230C1F300F7F152 /* Y_KLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineView.h; sourceTree = "<group>"; };
-		E9EB2BB62230C1F300F7F152 /* Y_KLineVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolumeView.m; sourceTree = "<group>"; };
-		E9EB2BB82230C1F300F7F152 /* Y_KLineVolume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolume.m; sourceTree = "<group>"; };
-		E9EB2BB92230C1F300F7F152 /* Y_KLineVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolume.h; sourceTree = "<group>"; };
-		E9EB2BBA2230C1F300F7F152 /* Y_KLineVolumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolumeView.h; sourceTree = "<group>"; };
-		E9EB2BBC2230C1F300F7F152 /* Y_KLineMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineMainView.m; sourceTree = "<group>"; };
-		E9EB2BBE2230C1F300F7F152 /* Y_MALine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_MALine.h; sourceTree = "<group>"; };
-		E9EB2BBF2230C1F300F7F152 /* Y_KLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLine.h; sourceTree = "<group>"; };
-		E9EB2BC02230C1F300F7F152 /* Y_MALine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_MALine.m; sourceTree = "<group>"; };
-		E9EB2BC12230C1F300F7F152 /* Y_KLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLine.m; sourceTree = "<group>"; };
-		E9EB2BC22230C1F300F7F152 /* Y_KLineMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineMainView.h; sourceTree = "<group>"; };
-		E9EB2BC42230C1F300F7F152 /* Y_StockChartSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartSegmentView.m; sourceTree = "<group>"; };
-		E9EB2BC52230C1F300F7F152 /* Y_StockChartSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartSegmentView.h; sourceTree = "<group>"; };
 		E9EB2BC72230C1F300F7F152 /* NetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorking.m; sourceTree = "<group>"; };
 		E9EB2BC82230C1F300F7F152 /* NetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorking.h; sourceTree = "<group>"; };
-		E9EB2BDE2230C26200F7F152 /* Y_StockChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartViewController.h; sourceTree = "<group>"; };
-		E9EB2BDF2230C26200F7F152 /* Y_StockChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartViewController.m; sourceTree = "<group>"; };
 		FC21D2D5666D757136004434 /* libPods-SQAPPSTART.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQAPPSTART.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -570,7 +609,7 @@
 		E90BBDEA209C0801006DCB7B /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				E9EB2B8A2230C1F300F7F152 /* BTC_K线图 */,
+				E991862A22324BB5009650F7 /* Chartview */,
 				E9EB2BC62230C1F300F7F152 /* NetWorking */,
 			);
 			path = Libs;
@@ -596,6 +635,208 @@
 			path = AppLogin;
 			sourceTree = "<group>";
 		};
+		E991862A22324BB5009650F7 /* Chartview */ = {
+			isa = PBXGroup;
+			children = (
+				E991862B22324BB5009650F7 /* KLineView */,
+				E991866322324BB5009650F7 /* DepthView */,
+			);
+			path = Chartview;
+			sourceTree = "<group>";
+		};
+		E991862B22324BB5009650F7 /* KLineView */ = {
+			isa = PBXGroup;
+			children = (
+				E991862C22324BB5009650F7 /* Y_ChartView.h */,
+				E991862D22324BB5009650F7 /* Config */,
+				E991863622324BB5009650F7 /* Utils */,
+				E991864E22324BB5009650F7 /* Y_ChartView.m */,
+				E991864F22324BB5009650F7 /* Model */,
+				E991865822324BB5009650F7 /* View */,
+			);
+			path = KLineView;
+			sourceTree = "<group>";
+		};
+		E991862D22324BB5009650F7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E991862E22324BB5009650F7 /* GlobalVariable */,
+				E991863122324BB5009650F7 /* Constant */,
+				E991863322324BB5009650F7 /* Theme */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E991862E22324BB5009650F7 /* GlobalVariable */ = {
+			isa = PBXGroup;
+			children = (
+				E991862F22324BB5009650F7 /* Y_StockChartGlobalVariable.h */,
+				E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */,
+			);
+			path = GlobalVariable;
+			sourceTree = "<group>";
+		};
+		E991863122324BB5009650F7 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				E991863222324BB5009650F7 /* Y_StockChartConstant.h */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		E991863322324BB5009650F7 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				E991863422324BB5009650F7 /* UIColor+Y_StockChart.h */,
+				E991863522324BB5009650F7 /* UIColor+Y_StockChart.m */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		E991863622324BB5009650F7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */,
+				E991863822324BB5009650F7 /* Y_BaseLine.m */,
+				E991863922324BB5009650F7 /* Y_LayoutViewUtil.h */,
+				E991863A22324BB5009650F7 /* Y_BaseLine.h */,
+				E991863B22324BB5009650F7 /* KLine */,
+				E991864622324BB5009650F7 /* Accessory */,
+				E991864922324BB5009650F7 /* Categories */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E991863B22324BB5009650F7 /* KLine */ = {
+			isa = PBXGroup;
+			children = (
+				E991863C22324BB5009650F7 /* Y_Extreme.m */,
+				E991863D22324BB5009650F7 /* Y_MALine.h */,
+				E991863E22324BB5009650F7 /* Y_TimeLine.h */,
+				E991863F22324BB5009650F7 /* Y_BrokenLine.h */,
+				E991864022324BB5009650F7 /* Y_KLine.h */,
+				E991864122324BB5009650F7 /* Y_Extreme.h */,
+				E991864222324BB5009650F7 /* Y_MALine.m */,
+				E991864322324BB5009650F7 /* Y_TimeLine.m */,
+				E991864422324BB5009650F7 /* Y_KLine.m */,
+				E991864522324BB5009650F7 /* Y_BrokenLine.m */,
+			);
+			path = KLine;
+			sourceTree = "<group>";
+		};
+		E991864622324BB5009650F7 /* Accessory */ = {
+			isa = PBXGroup;
+			children = (
+				E991864722324BB5009650F7 /* Y_KLineAccessory.h */,
+				E991864822324BB5009650F7 /* Y_KLineAccessory.m */,
+			);
+			path = Accessory;
+			sourceTree = "<group>";
+		};
+		E991864922324BB5009650F7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E991864A22324BB5009650F7 /* NSString+Y_StockChart.h */,
+				E991864B22324BB5009650F7 /* UIFont+Y_StockChart.m */,
+				E991864C22324BB5009650F7 /* NSString+Y_StockChart.m */,
+				E991864D22324BB5009650F7 /* UIFont+Y_StockChart.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E991864F22324BB5009650F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E991865022324BB5009650F7 /* Y_KLinePositionModel.m */,
+				E991865122324BB5009650F7 /* Y_KLineModel.h */,
+				E991865222324BB5009650F7 /* Y_KLineGroupModel.h */,
+				E991865322324BB5009650F7 /* Y_KLineVolumePositionModel.h */,
+				E991865422324BB5009650F7 /* Y_KLinePositionModel.h */,
+				E991865522324BB5009650F7 /* Y_KLineModel.m */,
+				E991865622324BB5009650F7 /* Y_KLineGroupModel.m */,
+				E991865722324BB5009650F7 /* Y_KLineVolumePositionModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E991865822324BB5009650F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E991865922324BB5009650F7 /* Y_YAxisView.h */,
+				E991865A22324BB5009650F7 /* Y_YAxisView.m */,
+				E991865B22324BB5009650F7 /* AccessoryView */,
+				E991866022324BB5009650F7 /* KLineView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E991865B22324BB5009650F7 /* AccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				E991865C22324BB5009650F7 /* Y_AccessoryView.m */,
+				E991865D22324BB5009650F7 /* Y_AccessoryInfoView.h */,
+				E991865E22324BB5009650F7 /* Y_AccessoryView.h */,
+				E991865F22324BB5009650F7 /* Y_AccessoryInfoView.m */,
+			);
+			path = AccessoryView;
+			sourceTree = "<group>";
+		};
+		E991866022324BB5009650F7 /* KLineView */ = {
+			isa = PBXGroup;
+			children = (
+				E991866122324BB5009650F7 /* Y_KLineMainView.m */,
+				E991866222324BB5009650F7 /* Y_KLineMainView.h */,
+			);
+			path = KLineView;
+			sourceTree = "<group>";
+		};
+		E991866322324BB5009650F7 /* DepthView */ = {
+			isa = PBXGroup;
+			children = (
+				E991866422324BB5009650F7 /* NSNumber+Y_ChartView.h */,
+				E991866522324BB5009650F7 /* DepthGroupModel.h */,
+				E991866622324BB5009650F7 /* DepthModel.h */,
+				E991866722324BB5009650F7 /* DepthPriceView.m */,
+				E991866822324BB5009650F7 /* DepthLongPressView.m */,
+				E991866922324BB5009650F7 /* DepthAmountView.h */,
+				E991866A22324BB5009650F7 /* DepthChartView.h */,
+				E991866B22324BB5009650F7 /* DepthView.h */,
+				E991866C22324BB5009650F7 /* DepthModel.m */,
+				E991866D22324BB5009650F7 /* DepthGroupModel.m */,
+				E991866E22324BB5009650F7 /* NSNumber+Y_ChartView.m */,
+				E991866F22324BB5009650F7 /* DepthPriceView.h */,
+				E991867022324BB5009650F7 /* DepthLongPressView.h */,
+				E991867122324BB5009650F7 /* DepthView.m */,
+				E991867222324BB5009650F7 /* DepthChartView.m */,
+				E991867322324BB5009650F7 /* DepthAmountView.m */,
+			);
+			path = DepthView;
+			sourceTree = "<group>";
+		};
+		E9918691223251FA009650F7 /* KLineViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E99186A12232522A009650F7 /* Datas */,
+				E991869B22325217009650F7 /* ABKLineViewController.h */,
+				E991869322325210009650F7 /* ABKLineViewController.m */,
+				E991869D22325217009650F7 /* ABDepthViewController.h */,
+				E991869C22325217009650F7 /* ABDepthViewController.m */,
+			);
+			path = KLineViewControllers;
+			sourceTree = "<group>";
+		};
+		E99186A12232522A009650F7 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				E991869E22325217009650F7 /* ABKLineData.json */,
+				E991869622325211009650F7 /* ABDataSourceManager.h */,
+				E991869422325210009650F7 /* ABDataSourceManager.m */,
+				E991869222325210009650F7 /* ABDepthAsksData.json */,
+				E991869522325210009650F7 /* ABDepthBidsData.json */,
+			);
+			path = Datas;
+			sourceTree = "<group>";
+		};
 		E99DE11720AACE32009CEF88 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,202 +850,9 @@
 			children = (
 				E99DE11920AACE69009CEF88 /* SQHomeViewController.h */,
 				E99DE11A20AACE69009CEF88 /* SQHomeViewController.m */,
-				E9EB2BDE2230C26200F7F152 /* Y_StockChartViewController.h */,
-				E9EB2BDF2230C26200F7F152 /* Y_StockChartViewController.m */,
+				E9918691223251FA009650F7 /* KLineViewControllers */,
 			);
 			path = "首页";
-			sourceTree = "<group>";
-		};
-		E9EB2B8A2230C1F300F7F152 /* BTC_K线图 */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B8B2230C1F300F7F152 /* Y_StockChartView.h */,
-				E9EB2B952230C1F300F7F152 /* Y_StockChartView.m */,
-				E9EB2B8C2230C1F300F7F152 /* Config */,
-				E9EB2B962230C1F300F7F152 /* KLine */,
-			);
-			path = "BTC_K线图";
-			sourceTree = "<group>";
-		};
-		E9EB2B8C2230C1F300F7F152 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B8D2230C1F300F7F152 /* GlobalVariable */,
-				E9EB2B902230C1F300F7F152 /* Constant */,
-				E9EB2B922230C1F300F7F152 /* Theme */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		E9EB2B8D2230C1F300F7F152 /* GlobalVariable */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B8E2230C1F300F7F152 /* Y_StockChartGlobalVariable.h */,
-				E9EB2B8F2230C1F300F7F152 /* Y_StockChartGlobalVariable.m */,
-			);
-			path = GlobalVariable;
-			sourceTree = "<group>";
-		};
-		E9EB2B902230C1F300F7F152 /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B912230C1F300F7F152 /* Y_StockChartConstant.h */,
-			);
-			path = Constant;
-			sourceTree = "<group>";
-		};
-		E9EB2B922230C1F300F7F152 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B932230C1F300F7F152 /* UIColor+Y_StockChart.h */,
-				E9EB2B942230C1F300F7F152 /* UIColor+Y_StockChart.m */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
-		E9EB2B962230C1F300F7F152 /* KLine */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BB42230C1F300F7F152 /* Y_KLineView.h */,
-				E9EB2B9A2230C1F300F7F152 /* Y_KLineView.m */,
-				E9EB2B972230C1F300F7F152 /* KLine_MAView */,
-				E9EB2B9B2230C1F300F7F152 /* PriceView */,
-				E9EB2B9E2230C1F300F7F152 /* Volume_MAView */,
-				E9EB2BA12230C1F300F7F152 /* AccessoryView */,
-				E9EB2BA72230C1F300F7F152 /* Accessory_MAView */,
-				E9EB2BAA2230C1F300F7F152 /* Model */,
-				E9EB2BB52230C1F300F7F152 /* VolumeView */,
-				E9EB2BBB2230C1F300F7F152 /* MainKLineView */,
-				E9EB2BC32230C1F300F7F152 /* SegmentView */,
-			);
-			path = KLine;
-			sourceTree = "<group>";
-		};
-		E9EB2B972230C1F300F7F152 /* KLine_MAView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B982230C1F300F7F152 /* Y_KLineMAView.h */,
-				E9EB2B992230C1F300F7F152 /* Y_KLineMAView.m */,
-			);
-			path = KLine_MAView;
-			sourceTree = "<group>";
-		};
-		E9EB2B9B2230C1F300F7F152 /* PriceView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B9C2230C1F300F7F152 /* Y_StockChartRightYView.m */,
-				E9EB2B9D2230C1F300F7F152 /* Y_StockChartRightYView.h */,
-			);
-			path = PriceView;
-			sourceTree = "<group>";
-		};
-		E9EB2B9E2230C1F300F7F152 /* Volume_MAView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2B9F2230C1F300F7F152 /* Y_VolumeMAView.h */,
-				E9EB2BA02230C1F300F7F152 /* Y_VolumeMAView.m */,
-			);
-			path = Volume_MAView;
-			sourceTree = "<group>";
-		};
-		E9EB2BA12230C1F300F7F152 /* AccessoryView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BA22230C1F300F7F152 /* Y_KLineAccessoryView.m */,
-				E9EB2BA32230C1F300F7F152 /* Line */,
-				E9EB2BA62230C1F300F7F152 /* Y_KLineAccessoryView.h */,
-			);
-			path = AccessoryView;
-			sourceTree = "<group>";
-		};
-		E9EB2BA32230C1F300F7F152 /* Line */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BA42230C1F300F7F152 /* Y_KLineAccessory.h */,
-				E9EB2BA52230C1F300F7F152 /* Y_KLineAccessory.m */,
-			);
-			path = Line;
-			sourceTree = "<group>";
-		};
-		E9EB2BA72230C1F300F7F152 /* Accessory_MAView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BA82230C1F300F7F152 /* Y_AccessoryMAView.m */,
-				E9EB2BA92230C1F300F7F152 /* Y_AccessoryMAView.h */,
-			);
-			path = Accessory_MAView;
-			sourceTree = "<group>";
-		};
-		E9EB2BAA2230C1F300F7F152 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BAB2230C1F300F7F152 /* KLineModel */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E9EB2BAB2230C1F300F7F152 /* KLineModel */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BAC2230C1F300F7F152 /* Y_KLinePositionModel.m */,
-				E9EB2BAD2230C1F300F7F152 /* Y_KLineModel.h */,
-				E9EB2BAE2230C1F300F7F152 /* Y_KLineGroupModel.h */,
-				E9EB2BAF2230C1F300F7F152 /* Y_KLineVolumePositionModel.h */,
-				E9EB2BB02230C1F300F7F152 /* Y_KLinePositionModel.h */,
-				E9EB2BB12230C1F300F7F152 /* Y_KLineModel.m */,
-				E9EB2BB22230C1F300F7F152 /* Y_KLineGroupModel.m */,
-				E9EB2BB32230C1F300F7F152 /* Y_KLineVolumePositionModel.m */,
-			);
-			path = KLineModel;
-			sourceTree = "<group>";
-		};
-		E9EB2BB52230C1F300F7F152 /* VolumeView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BB62230C1F300F7F152 /* Y_KLineVolumeView.m */,
-				E9EB2BB72230C1F300F7F152 /* Line */,
-				E9EB2BBA2230C1F300F7F152 /* Y_KLineVolumeView.h */,
-			);
-			path = VolumeView;
-			sourceTree = "<group>";
-		};
-		E9EB2BB72230C1F300F7F152 /* Line */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BB82230C1F300F7F152 /* Y_KLineVolume.m */,
-				E9EB2BB92230C1F300F7F152 /* Y_KLineVolume.h */,
-			);
-			path = Line;
-			sourceTree = "<group>";
-		};
-		E9EB2BBB2230C1F300F7F152 /* MainKLineView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BC22230C1F300F7F152 /* Y_KLineMainView.h */,
-				E9EB2BBC2230C1F300F7F152 /* Y_KLineMainView.m */,
-				E9EB2BBD2230C1F300F7F152 /* Line */,
-			);
-			path = MainKLineView;
-			sourceTree = "<group>";
-		};
-		E9EB2BBD2230C1F300F7F152 /* Line */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BBE2230C1F300F7F152 /* Y_MALine.h */,
-				E9EB2BBF2230C1F300F7F152 /* Y_KLine.h */,
-				E9EB2BC02230C1F300F7F152 /* Y_MALine.m */,
-				E9EB2BC12230C1F300F7F152 /* Y_KLine.m */,
-			);
-			path = Line;
-			sourceTree = "<group>";
-		};
-		E9EB2BC32230C1F300F7F152 /* SegmentView */ = {
-			isa = PBXGroup;
-			children = (
-				E9EB2BC52230C1F300F7F152 /* Y_StockChartSegmentView.h */,
-				E9EB2BC42230C1F300F7F152 /* Y_StockChartSegmentView.m */,
-			);
-			path = SegmentView;
 			sourceTree = "<group>";
 		};
 		E9EB2BC62230C1F300F7F152 /* NetWorking */ = {
@@ -921,7 +969,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E991869A22325211009650F7 /* ABDepthBidsData.json in Resources */,
 				182A7FE8209031A7009B244B /* Assets.xcassets in Resources */,
+				E99186A022325217009650F7 /* ABKLineData.json in Resources */,
+				E991869722325211009650F7 /* ABDepthAsksData.json in Resources */,
 				182A802420903719009B244B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1006,71 +1057,82 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9EB2BCE2230C1F300F7F152 /* Y_StockChartRightYView.m in Sources */,
-				E9EB2BD82230C1F300F7F152 /* Y_KLineVolume.m in Sources */,
-				E9EB2BDA2230C1F300F7F152 /* Y_MALine.m in Sources */,
+				E991869822325211009650F7 /* ABKLineViewController.m in Sources */,
 				182A803E20905957009B244B /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				182A805C20907804009B244B /* NSString+SQSubString.m in Sources */,
-				E9EB2BD62230C1F300F7F152 /* Y_KLineVolumePositionModel.m in Sources */,
-				E9EB2BE02230C26200F7F152 /* Y_StockChartViewController.m in Sources */,
 				E90BBDDE209C04F9006DCB7B /* SQBaseHeaderFooterView.m in Sources */,
-				E9EB2BCF2230C1F300F7F152 /* Y_VolumeMAView.m in Sources */,
 				E99DE11B20AACE69009CEF88 /* SQHomeViewController.m in Sources */,
+				E991868722324BB6009650F7 /* Y_AccessoryInfoView.m in Sources */,
+				E991867F22324BB6009650F7 /* NSString+Y_StockChart.m in Sources */,
+				E991867C22324BB6009650F7 /* Y_BrokenLine.m in Sources */,
 				E90BBDDB209C04C2006DCB7B /* SQBaseTableViewCell.m in Sources */,
+				E991868A22324BB6009650F7 /* DepthLongPressView.m in Sources */,
 				182A806220907916009B244B /* NSString+SQSizeOfString.m in Sources */,
-				E9EB2BCB2230C1F300F7F152 /* Y_StockChartView.m in Sources */,
-				E9EB2BCC2230C1F300F7F152 /* Y_KLineMAView.m in Sources */,
-				E9EB2BCA2230C1F300F7F152 /* UIColor+Y_StockChart.m in Sources */,
+				E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */,
 				E90BBDF5209C0894006DCB7B /* SQLoginViewController.m in Sources */,
 				182A80802090841A009B244B /* SQGetNowDate.m in Sources */,
-				E9EB2BD52230C1F300F7F152 /* Y_KLineGroupModel.m in Sources */,
+				E991868022324BB6009650F7 /* Y_ChartView.m in Sources */,
+				E991868E22324BB6009650F7 /* DepthView.m in Sources */,
 				182A807420907F72009B244B /* UITabBar+SQExtension.m in Sources */,
-				E9EB2BD72230C1F300F7F152 /* Y_KLineVolumeView.m in Sources */,
+				E991868222324BB6009650F7 /* Y_KLineModel.m in Sources */,
+				E991867722324BB6009650F7 /* Y_BaseLine.m in Sources */,
 				182A8036209052FB009B244B /* TAAnimatedDotView.m in Sources */,
 				182A7FEE209031A7009B244B /* main.m in Sources */,
+				E991868C22324BB6009650F7 /* DepthGroupModel.m in Sources */,
 				182A8065209079B3009B244B /* NSString+SQCheckString.m in Sources */,
+				E991868422324BB6009650F7 /* Y_KLineVolumePositionModel.m in Sources */,
+				E991868922324BB6009650F7 /* DepthPriceView.m in Sources */,
 				E99DE22420B58938009CEF88 /* SQBaseCollectionView.m in Sources */,
-				E9EB2BD32230C1F300F7F152 /* Y_KLinePositionModel.m in Sources */,
 				182A8039209052FB009B244B /* SDCollectionViewCell.m in Sources */,
+				E991868B22324BB6009650F7 /* DepthModel.m in Sources */,
 				182A8035209052FB009B244B /* TAAbstractDotView.m in Sources */,
 				E99DE11620AACAA8009CEF88 /* SQRootTabBarControl.m in Sources */,
 				182A8086209087B8009B244B /* SQTimeDelay.m in Sources */,
 				E90BBDE1209C0533006DCB7B /* SQBaseImageView.m in Sources */,
+				E991868122324BB6009650F7 /* Y_KLinePositionModel.m in Sources */,
+				E991869022324BB6009650F7 /* DepthAmountView.m in Sources */,
 				182A807120907E84009B244B /* UILabel+SQExtension.m in Sources */,
-				E9EB2BD42230C1F300F7F152 /* Y_KLineModel.m in Sources */,
 				182A803B209052FB009B244B /* UIView+SDExtension.m in Sources */,
 				182A806B20907BC0009B244B /* UIImageView+SQExtension_m.m in Sources */,
 				E90BBDE7209C07D8006DCB7B /* SQRequest.m in Sources */,
-				E9EB2BDC2230C1F300F7F152 /* Y_StockChartSegmentView.m in Sources */,
 				182A806820907A87009B244B /* UIImage+SQExtension.m in Sources */,
 				182A7FE0209031A6009B244B /* AppDelegate.m in Sources */,
-				E9EB2BC92230C1F300F7F152 /* Y_StockChartGlobalVariable.m in Sources */,
-				E9EB2BD12230C1F300F7F152 /* Y_KLineAccessory.m in Sources */,
+				E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */,
 				182A8083209084D0009B244B /* UITableView+SQAddHeadTip.m in Sources */,
+				E991868522324BB6009650F7 /* Y_YAxisView.m in Sources */,
 				182A806E20907D83009B244B /* UIView+SQExtension.m in Sources */,
-				E9EB2BD02230C1F300F7F152 /* Y_KLineAccessoryView.m in Sources */,
+				E991867B22324BB6009650F7 /* Y_KLine.m in Sources */,
+				E991867622324BB6009650F7 /* Y_LayoutViewUtil.m in Sources */,
 				182A80892090896B009B244B /* SQStartManager.m in Sources */,
 				E90BBDE4209C05A2006DCB7B /* SQBaseTableView.m in Sources */,
+				E991867922324BB6009650F7 /* Y_MALine.m in Sources */,
+				E991869922325211009650F7 /* ABDataSourceManager.m in Sources */,
 				182A80592090775D009B244B /* NSString+SQUrlAnaly.m in Sources */,
 				182A805320906F07009B244B /* UIColor+Extension.m in Sources */,
+				E991868622324BB6009650F7 /* Y_AccessoryView.m in Sources */,
+				E991868F22324BB6009650F7 /* DepthChartView.m in Sources */,
 				182A8056209074DC009B244B /* SQBaseModel.m in Sources */,
-				E9EB2BD92230C1F300F7F152 /* Y_KLineMainView.m in Sources */,
-				E9EB2BDB2230C1F300F7F152 /* Y_KLine.m in Sources */,
 				182A807D209082DE009B244B /* SQDataCache.m in Sources */,
 				182A807A209081BA009B244B /* UIBarButtonItem+SQExtension.m in Sources */,
 				182A8037209052FB009B244B /* TADotView.m in Sources */,
+				E991868322324BB6009650F7 /* Y_KLineGroupModel.m in Sources */,
 				182A804420905AC7009B244B /* SQBaseTableViewController.m in Sources */,
 				182A804720905B2F009B244B /* SQBaseWebViewController.m in Sources */,
+				E991867822324BB6009650F7 /* Y_Extreme.m in Sources */,
+				E991868822324BB6009650F7 /* Y_KLineMainView.m in Sources */,
 				E90BBDF1209C086D006DCB7B /* SQRootNavigationVC.m in Sources */,
 				E9EB2BDD2230C1F300F7F152 /* NetWorking.m in Sources */,
-				E9EB2BD22230C1F300F7F152 /* Y_AccessoryMAView.m in Sources */,
+				E991867E22324BB6009650F7 /* UIFont+Y_StockChart.m in Sources */,
 				182A805020906B58009B244B /* SQIphonePx.m in Sources */,
 				182A8038209052FB009B244B /* TAPageControl.m in Sources */,
-				E9EB2BCD2230C1F300F7F152 /* Y_KLineView.m in Sources */,
 				E99DE22320B58938009CEF88 /* SQBaseCollectionViewCell.m in Sources */,
 				182A80772090801B009B244B /* UIButton+SQExtension.m in Sources */,
 				182A804120905977009B244B /* SQBaseViewController.m in Sources */,
 				182A803A209052FB009B244B /* SDCycleScrollView.m in Sources */,
+				E991869F22325217009650F7 /* ABDepthViewController.m in Sources */,
+				E991868D22324BB6009650F7 /* NSNumber+Y_ChartView.m in Sources */,
+				E991867D22324BB6009650F7 /* Y_KLineAccessory.m in Sources */,
+				E991867A22324BB6009650F7 /* Y_TimeLine.m in Sources */,
 				182A805F2090785B009B244B /* NSString+SQTimeStamp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

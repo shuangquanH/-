@@ -89,7 +89,10 @@
                    status==Y_StockChartTargetLineStatusVOL||
                    status==Y_StockChartTargetLineStatusRSI) {
             [self.customKLineView changeDeputyChartSegmentType:status];
-        }   else {
+        }   else if (status==Y_StockChartTargetLineStatusCloseMA){
+            [self.customKLineView changeMainChartSegmentType:status];
+        } else {
+            [self.customKLineView changeDeputyChartSegmentType:Y_StockChartTargetLineStatusVOL];
         }
     }
 }
@@ -226,8 +229,8 @@
         return Y_StockChartTargetLineStatusVOL;
     } else if ([typeStr isEqualToString:@"RSI"]) {
         return Y_StockChartTargetLineStatusRSI;
-    } else if ([typeStr isEqualToString:@"关闭 "]) {//关闭技术图形线，显示成交量
-        return Y_StockChartTargetLineStatusAccessoryClose;
+    } else if ([typeStr isEqualToString:@"隐藏"]) {//关闭k线技术图形，显示成交量
+        return Y_StockChartTargetLineStatusCloseMA;
     } else if ([typeStr isEqualToString:@"MA"]) {
         return Y_StockChartTargetLineStatusMA;
     } else if ([typeStr isEqualToString:@"EMA"]) {
@@ -235,7 +238,7 @@
     } else if ([typeStr isEqualToString:@"BOLL"]) {
         return Y_StockChartTargetLineStatusBOLL;
     } else {
-        return Y_StockChartTargetLineStatusCloseMA;//关闭k线图上的辅助线
+        return Y_StockChartTargetLineStatusAccessoryClose;;//关闭技术图上的辅助线
     }
 }
 @end

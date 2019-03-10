@@ -27,6 +27,10 @@
     NSMutableArray  *buttonsArr;
     
     BOOL            showMoreSegment;
+    
+    
+    NSMutableArray  *mainAcessBtnArr;//主图技术图形按钮数组
+    NSMutableArray  *subAcessBtnArr;//副图技术图形按钮数组
 }
 
 - (instancetype)initWithItems:(NSArray *)items {
@@ -97,6 +101,30 @@
         
         if (showMoreSegment) {
             showMoreSegment = NO;
+            if ([mainAcessBtnArr containsObject:btn]) {
+                for (UIButton *temp in mainAcessBtnArr) {
+                    temp.selected = NO;
+                }
+                btn.selected = YES;
+            }
+            if ([subAcessBtnArr containsObject:btn]) {
+                for (UIButton *temp in subAcessBtnArr) {
+                    temp.selected = NO;
+                }
+                btn.selected = YES;
+            }
+            
+            if ([btn.titleLabel.text isEqualToString:@"隐藏"]) {
+                for (UIButton *temp in mainAcessBtnArr) {
+                    temp.selected = NO;
+                }
+            }
+            if ([btn.titleLabel.text isEqualToString:@" 隐藏"]) {
+                for (UIButton *temp in subAcessBtnArr) {
+                    temp.selected = NO;
+                }
+            }
+            
             
             [self.popMoreSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.right.equalTo(self);
@@ -116,9 +144,12 @@
                 make.height.mas_equalTo(40);
             }];
             
+        }
+        
+        if ([self.items containsObject:btn.titleLabel.text]) {
+            self.selectedBtn = btn;
             [self.delegate y_StockChartSegmentView:self clickSegmentButton:btn];
         } else {
-            self.selectedBtn = btn;
             [self.delegate y_StockChartSegmentView:self clickSegmentButton:btn];
         }
     }
@@ -225,6 +256,8 @@
     if (!_popNormSegment) {
         _popNormSegment = [[UIView alloc] init];
         [self addSubview:_popNormSegment];
+        mainAcessBtnArr = [NSMutableArray array];
+        subAcessBtnArr = [NSMutableArray array];
         
         [_popNormSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self);
@@ -258,6 +291,7 @@
             make.left.equalTo(maBtn.mas_right);
             make.top.height.width.equalTo(mainBtn);
         }];
+        [mainAcessBtnArr addObjectsFromArray:@[maBtn, bollBtn]];
         
         
         
@@ -303,6 +337,24 @@
             make.left.equalTo(rsiBtn.mas_right);
             make.top.height.width.equalTo(subBtn);
         }];
+        [subAcessBtnArr addObjectsFromArray:@[macdBtn, kdjBtn, rsiBtn, wrBtn]];
+        
+        
+        UIButton *hiddenMainBtn = [self private_createButtonWithTitle:@"隐藏"];
+        [_popNormSegment addSubview:hiddenMainBtn];
+        [hiddenMainBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(_popNormSegment).offset(-KMARGIN);
+            make.centerY.equalTo(mainBtn);
+        }];
+        
+        
+        UIButton *hiddenSubBtn = [self private_createButtonWithTitle:@" 隐藏"];
+        [_popNormSegment addSubview:hiddenSubBtn];
+        [hiddenSubBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(_popNormSegment).offset(-KMARGIN);
+            make.centerY.equalTo(subBtn);
+        }];
+        
         
     }
     return _popNormSegment;

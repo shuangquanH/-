@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ABKLineViewController : UIViewController
 
+- (void)reloadKlineViews;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -45,6 +45,8 @@
 		182A8086209087B8009B244B /* SQTimeDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 182A8085209087B8009B244B /* SQTimeDelay.m */; };
 		182A80892090896B009B244B /* SQStartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 182A80882090896B009B244B /* SQStartManager.m */; };
 		996360B8AA029987D621F671 /* libPods-SQAPPSTART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC21D2D5666D757136004434 /* libPods-SQAPPSTART.a */; };
+		C6D441522233E41C00DC383C /* SQHomeTopInfosView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */; };
+		C6D441552234147900DC383C /* SQHomeBottomDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D441542234147900DC383C /* SQHomeBottomDealView.m */; };
 		E90BBDDB209C04C2006DCB7B /* SQBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDDA209C04C2006DCB7B /* SQBaseTableViewCell.m */; };
 		E90BBDDE209C04F9006DCB7B /* SQBaseHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDDD209C04F9006DCB7B /* SQBaseHeaderFooterView.m */; };
 		E90BBDE1209C0533006DCB7B /* SQBaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDE0209C0533006DCB7B /* SQBaseImageView.m */; };
@@ -194,6 +196,10 @@
 		182A80872090896B009B244B /* SQStartManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQStartManager.h; sourceTree = "<group>"; };
 		182A80882090896B009B244B /* SQStartManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQStartManager.m; sourceTree = "<group>"; };
 		7F81FF23EACCE665CD687ECC /* Pods-SQAPPSTART.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQAPPSTART.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART.debug.xcconfig"; sourceTree = "<group>"; };
+		C6D441502233E41C00DC383C /* SQHomeTopInfosView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeTopInfosView.h; sourceTree = "<group>"; };
+		C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeTopInfosView.m; sourceTree = "<group>"; };
+		C6D441532234147900DC383C /* SQHomeBottomDealView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeBottomDealView.h; sourceTree = "<group>"; };
+		C6D441542234147900DC383C /* SQHomeBottomDealView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeBottomDealView.m; sourceTree = "<group>"; };
 		D1EED8B745BDDA93AD30815D /* Pods-SQAPPSTART.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQAPPSTART.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART.release.xcconfig"; sourceTree = "<group>"; };
 		E90BBDD9209C04C2006DCB7B /* SQBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQBaseTableViewCell.h; sourceTree = "<group>"; };
 		E90BBDDA209C04C2006DCB7B /* SQBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQBaseTableViewCell.m; sourceTree = "<group>"; };
@@ -581,6 +587,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C6D4414D2233E3BF00DC383C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6D441502233E41C00DC383C /* SQHomeTopInfosView.h */,
+				C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */,
+				C6D441532234147900DC383C /* SQHomeBottomDealView.h */,
+				C6D441542234147900DC383C /* SQHomeBottomDealView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C6D4414E2233E3D500DC383C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C6D4414F2233E3DA00DC383C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E99DE11920AACE69009CEF88 /* SQHomeViewController.h */,
+				E99DE11A20AACE69009CEF88 /* SQHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E90BBDD8209C0494006DCB7B /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,8 +852,8 @@
 		E9918691223251FA009650F7 /* KLineViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E99186A522325960009650F7 /* Views */,
 				E99186A12232522A009650F7 /* Datas */,
+				E99186A522325960009650F7 /* Views */,
 				E991869B22325217009650F7 /* ABKLineViewController.h */,
 				E991869322325210009650F7 /* ABKLineViewController.m */,
 				E991869D22325217009650F7 /* ABDepthViewController.h */,
@@ -861,8 +894,9 @@
 		E99DE11820AACE3B009CEF88 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				E99DE11920AACE69009CEF88 /* SQHomeViewController.h */,
-				E99DE11A20AACE69009CEF88 /* SQHomeViewController.m */,
+				C6D4414F2233E3DA00DC383C /* Controller */,
+				C6D4414E2233E3D500DC383C /* Model */,
+				C6D4414D2233E3BF00DC383C /* Views */,
 				E9918691223251FA009650F7 /* KLineViewControllers */,
 			);
 			path = "首页";
@@ -1111,6 +1145,7 @@
 				E90BBDE7209C07D8006DCB7B /* SQRequest.m in Sources */,
 				182A806820907A87009B244B /* UIImage+SQExtension.m in Sources */,
 				182A7FE0209031A6009B244B /* AppDelegate.m in Sources */,
+				C6D441522233E41C00DC383C /* SQHomeTopInfosView.m in Sources */,
 				E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */,
 				182A8083209084D0009B244B /* UITableView+SQAddHeadTip.m in Sources */,
 				E991868522324BB6009650F7 /* Y_YAxisView.m in Sources */,
@@ -1121,6 +1156,7 @@
 				E90BBDE4209C05A2006DCB7B /* SQBaseTableView.m in Sources */,
 				E991867922324BB6009650F7 /* Y_MALine.m in Sources */,
 				E991869922325211009650F7 /* ABDataSourceManager.m in Sources */,
+				C6D441552234147900DC383C /* SQHomeBottomDealView.m in Sources */,
 				182A80592090775D009B244B /* NSString+SQUrlAnaly.m in Sources */,
 				182A805320906F07009B244B /* UIColor+Extension.m in Sources */,
 				E991868622324BB6009650F7 /* Y_AccessoryView.m in Sources */,
@@ -1299,8 +1335,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4WP4QR8QG;
+				DEVELOPMENT_TEAM = 7Y6WF3G6RV;
 				GCC_PREFIX_HEADER = SQAPPSTART/Utils/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = SQAPPSTART/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1319,8 +1356,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4WP4QR8QG;
+				DEVELOPMENT_TEAM = 7Y6WF3G6RV;
 				GCC_PREFIX_HEADER = SQAPPSTART/Utils/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = SQAPPSTART/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

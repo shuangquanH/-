@@ -22,12 +22,11 @@
 @property (nonatomic, strong) Y_ChartView *customKLineView;
 
 @property (nonatomic, strong)   Y_StockChartSegmentView        *segment;
-@property (nonatomic, strong)   Y_StockChartSegmentView        *macdSegment;
 
-/** 时分秒  */
-@property (nonatomic, assign)   NSInteger        currentIndex;
 /** 数据源  */
 @property (nonatomic, strong)   NSMutableDictionary        *dataDict;
+
+@property (nonatomic, copy)   NSString        *currentRequestType;
 
 @end
 
@@ -37,7 +36,9 @@
 }
 - (void)addSubviews {
     self.dataDict = [NSMutableDictionary dictionary];
-    kLineTypeArr = @[@"1min", @"5min", @"15min", @"30min", @"1hour", @"12hour", @"1day", @"1week"];
+    //K线图类型数组
+    kLineTypeArr = @[@"1min", @"5min", @"15min", @"30min", @"1hour", @"6hour", @"12hour", @"1day", @"1week"];
+    //技术图形类型数组
     macdTypeArr = @[@"macd", @"kdj", @"vol", @"rsi", @"ma", @"ema", @"boll", @"关闭1", @"关闭2"];
     [self.view addSubview:self.customKLineView];
     [self.view addSubview:self.segment];
@@ -45,8 +46,7 @@
 
 - (void)addConstrains {
     [self.segment mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.inset(20);
-        make.top.equalTo(self.view);
+        make.left.right.top.equalTo(self.view);
         make.height.mas_equalTo(40);
     }];
     
@@ -65,32 +65,57 @@
     
     [self addSubviews];
     [self addConstrains];
-    [self reloadData];
+    
+    self.currentRequestType = @"1min";
+    [self reloadDataWithType:self.currentRequestType];
 }
-
-- (void)y_StockChartSegmentView:(Y_StockChartSegmentView *)segmentView clickSegmentButtonIndex:(NSInteger)index {
-    self.currentIndex = index;
-    if(![self.dataDict objectForKey:kLineTypeArr[index]]) {//如果没有存储数据，请求
-        [self reloadData];
+- (void)y_StockChartSegmentView:(Y_StockChartSegmentView *)segmentView clickSegmentButton:(UIButton *)button {
+    //先获取按钮点击的类型
+    
+    NSString    *requestType = [self getRequestTypeWithButtonTitle:button.titleLabel.text];
+    //如果是修改k线类型
+    if ([kLineTypeArr containsObject:requestType]) {
+        self.currentRequestType = requestType;
+        [self reloadKlineViews];
+    } else {
+        //如果是修改技术图形
+        Y_StockChartTargetLineStatus status = [self getChartTargetLineTypeWithRequestType:button.titleLabel.text];
+        if (status==Y_StockChartTargetLineStatusMA||
+            status==Y_StockChartTargetLineStatusEMA||
+            status==Y_StockChartTargetLineStatusBOLL) {
+            [self.customKLineView changeMainChartSegmentType:status];
+        } else if (status==Y_StockChartTargetLineStatusMACD||
+                   status==Y_StockChartTargetLineStatusKDJ||
+                   status==Y_StockChartTargetLineStatusVOL||
+                   status==Y_StockChartTargetLineStatusRSI) {
+            [self.customKLineView changeDeputyChartSegmentType:status];
+        }   else {
+        }
+    }
+}
+- (void)reloadKlineViews {
+    //如果没有存储数据，请求
+    if(![self.dataDict objectForKey:self.currentRequestType]) {
+        [self reloadDataWithType:self.currentRequestType];
+        
     } else {//如果存储有数据，读取存储的数据
-        Y_KLineGroupModel *groupModel = [self.dataDict objectForKey:kLineTypeArr[index]];
+        Y_KLineGroupModel *groupModel = [self.dataDict objectForKey:self.currentRequestType];
         [self.customKLineView updateKLineData:groupModel];
         [self.customKLineView updateAccessoryData:[groupModel.models lastObject]];
     }
 }
-
-- (void)reloadData {
+- (void)reloadDataWithType:(NSString *)type {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"type"] = kLineTypeArr[self.currentIndex];
+    param[@"type"] = type;
     param[@"market"] = @"btc_usdt";
     param[@"size"] = @"1000";
     [NetWorking requestWithApi:@"http://api.bitkk.com/data/v1/kline" param:param thenSuccess:^(NSDictionary *responseObject) {
         Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];
-        groupModel.defaultKLineType = [self getKlineType];
-        [self.dataDict setValue:groupModel forKey:self->kLineTypeArr[self.currentIndex]];
+        groupModel.defaultKLineType = [self getKlineTypeWithRequestType:type];
+        [self.dataDict setValue:groupModel forKey:type];
+        
         [self.customKLineView updateKLineData:groupModel];
         [self.customKLineView updateAccessoryData:[groupModel.models lastObject]];
-        [self.customKLineView changeDeputyChartSegmentType:[self getChartTargetLineType]];
     } fail: nil];
 }
 
@@ -121,31 +146,53 @@
 - (Y_StockChartSegmentView *)segment {
     if (!_segment) {
         _segment = [[Y_StockChartSegmentView alloc] init];
-        _segment.items = kLineTypeArr;
+        _segment.items = @[@"分时", @"15分", @"1小时", @"6小时", @"日线", @"更多", @"指标"];
         _segment.delegate = self;
         _segment.selectedIndex = 0;
     }
     return _segment;
 }
-- (Y_StockChartSegmentView *)macdSegment {
-    if (!_macdSegment) {
-        _macdSegment = [[Y_StockChartSegmentView alloc] init];
-        _macdSegment.items = kLineTypeArr;
-        _macdSegment.delegate = self;
-        _macdSegment.selectedIndex = 0;
+
+
+
+
+/** 根据segment选中button的title来获取请求type  */
+- (NSString *)getRequestTypeWithButtonTitle:(NSString *)title {
+    if ([title isEqualToString:@"分时"]) {
+        return @"1min";
+    } else if ([title isEqualToString:@"1分"]) {
+        return @"1min";
+    } else if ([title isEqualToString:@"5分"]) {
+        return @"5min";
+    } else if ([title isEqualToString:@"15分"]) {
+        return @"15min";
+    } else if ([title isEqualToString:@"30分"]) {
+        return @"30min";
+    } else if ([title isEqualToString:@"1小时"]) {
+        return @"1hour";
+    } else if ([title isEqualToString:@"2小时"]) {
+        return @"2hour";
+    } else if ([title isEqualToString:@"4小时"]) {
+        return @"4hour";
+    } else if ([title isEqualToString:@"6小时"]) {
+        return @"6hour";
+    } else if ([title isEqualToString:@"12小时"]) {
+        return @"12hour";
+    } else if ([title isEqualToString:@"日线"]) {
+        return @"1day";
+    } else if ([title isEqualToString:@"1周"]) {
+        return @"1week";
+    } else {
+        return nil;
     }
-    return _macdSegment;
+    
 }
 
-
-
-
-
-- (KLineType)getKlineType {
-    NSString    *typeStr = kLineTypeArr[self.currentIndex];
+/** 根据请求的type来获取k线显示类型  */
+- (KLineType)getKlineTypeWithRequestType:(NSString *)typeStr {
     if ([typeStr isEqualToString:@"1min"]) {
         return KLineTypeTime;
-        //        return KLineTypeOneMinute;
+        //return KLineTypeOneMinute;
     } else if ([typeStr isEqualToString:@"5min"]) {
         return KLineTypeFiveMinute;
     } else if ([typeStr isEqualToString:@"15min"]) {
@@ -169,20 +216,26 @@
     }
     return KLineTypeTime;
 }
-
-- (Y_StockChartTargetLineStatus)getChartTargetLineType {
-    return Y_StockChartTargetLineStatusMACD;
+//根据按钮title获取技术图形类别
+- (Y_StockChartTargetLineStatus)getChartTargetLineTypeWithRequestType:(NSString *)typeStr {
+    if ([typeStr isEqualToString:@"MACD"]) {
+        return Y_StockChartTargetLineStatusMACD;
+    } else if ([typeStr isEqualToString:@"KDJ"]) {
+        return Y_StockChartTargetLineStatusKDJ;
+    } else if ([typeStr isEqualToString:@"VOL"]) {
+        return Y_StockChartTargetLineStatusVOL;
+    } else if ([typeStr isEqualToString:@"RSI"]) {
+        return Y_StockChartTargetLineStatusRSI;
+    } else if ([typeStr isEqualToString:@"关闭 "]) {//关闭技术图形线，显示成交量
+        return Y_StockChartTargetLineStatusAccessoryClose;
+    } else if ([typeStr isEqualToString:@"MA"]) {
+        return Y_StockChartTargetLineStatusMA;
+    } else if ([typeStr isEqualToString:@"EMA"]) {
+        return Y_StockChartTargetLineStatusEMA;
+    } else if ([typeStr isEqualToString:@"BOLL"]) {
+        return Y_StockChartTargetLineStatusBOLL;
+    } else {
+        return Y_StockChartTargetLineStatusCloseMA;//关闭k线图上的辅助线
+    }
 }
-
-//    Y_StockChartTargetLineStatusMACD = 100,    //MACD线
-//    Y_StockChartTargetLineStatusKDJ,    //KDJ线
-//    Y_StockChartTargetLineStatusVOL,    //VOL线
-//    Y_StockChartTargetLineStatusRSI,    //RSI线
-//    Y_StockChartTargetLineStatusAccessoryClose,    //关闭Accessory线
-//    Y_StockChartTargetLineStatusMA , //MA线
-//    Y_StockChartTargetLineStatusEMA,  //EMA线
-//    Y_StockChartTargetLineStatusBOLL,  //BOLL线
-//    Y_StockChartTargetLineStatusCloseMA  //MA关闭线
-
-//macdTypeArr = @[@"macd", @"kdj", @"vol", @"rsi", @"ma", @"ema", @"boll", @"关闭1", @"关闭2"];
 @end

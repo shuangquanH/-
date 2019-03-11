@@ -12,7 +12,7 @@
 
 @protocol Y_StockChartSegmentViewDelegate <NSObject>
 
-- (void)y_StockChartSegmentView:(Y_StockChartSegmentView *)segmentView clickSegmentButtonIndex:(NSInteger)index;
+- (void)y_StockChartSegmentView:(Y_StockChartSegmentView *)segmentView clickSegmentButton:(UIButton *)button;
 
 @end
 

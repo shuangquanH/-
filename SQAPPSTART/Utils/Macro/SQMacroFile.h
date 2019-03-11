@@ -37,14 +37,26 @@
 #define KISX                ([SQIphonePx shareInstance].isiPhoneX)
 /** ui缩放比例 */
 #define KSCAL(a)            ([SQIphonePx shareInstance].uiScaling*a)
+#define KMARGIN             15
+
 /** 字体大小 */
 #define KFONT(a)            [UIFont systemFontOfSize:KSCAL(a)]
+#define KSYSFONT(a)         [UIFont systemFontOfSize:a]
 
 
 /** app主色调 */
 #define KCOLOR_MAIN         [UIColor hexStringToColor:@"43c5ff"]
 /** 白色 */
 #define KCOLOR_WHIT         [UIColor hexStringToColor:@"ffffff"]
+/** 黑色 */
+#define KCOLOR_BLACK        [UIColor hexStringToColor:@"333333"]
+#define KCOLOR_LINE         [UIColor hexStringToColor:@"999999"]
+
+/** K线图下跌颜色 */
+#define KCOLOR_KLOW         [UIColor redColor]
+/** K线图上涨颜色 */
+#define KCOLOR_KUP          [UIColor greenColor]
+
 /** 颜色(传string格式) */
 #define KCOLOR(a)           [UIColor hexStringToColor:a]
 /** 颜色和透明度(颜色为string格式，透明度为float格式) */

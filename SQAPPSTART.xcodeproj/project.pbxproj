@@ -45,6 +45,7 @@
 		182A8086209087B8009B244B /* SQTimeDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 182A8085209087B8009B244B /* SQTimeDelay.m */; };
 		182A80892090896B009B244B /* SQStartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 182A80882090896B009B244B /* SQStartManager.m */; };
 		996360B8AA029987D621F671 /* libPods-SQAPPSTART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC21D2D5666D757136004434 /* libPods-SQAPPSTART.a */; };
+		C6A8B5162236968000F5DC8B /* SQHomeDataSouceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A8B5152236968000F5DC8B /* SQHomeDataSouceModel.m */; };
 		C6D441522233E41C00DC383C /* SQHomeTopInfosView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */; };
 		C6D441552234147900DC383C /* SQHomeBottomDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D441542234147900DC383C /* SQHomeBottomDealView.m */; };
 		E90BBDDB209C04C2006DCB7B /* SQBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDDA209C04C2006DCB7B /* SQBaseTableViewCell.m */; };
@@ -199,6 +200,8 @@
 		182A80872090896B009B244B /* SQStartManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQStartManager.h; sourceTree = "<group>"; };
 		182A80882090896B009B244B /* SQStartManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQStartManager.m; sourceTree = "<group>"; };
 		7F81FF23EACCE665CD687ECC /* Pods-SQAPPSTART.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQAPPSTART.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART.debug.xcconfig"; sourceTree = "<group>"; };
+		C6A8B5142236968000F5DC8B /* SQHomeDataSouceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeDataSouceModel.h; sourceTree = "<group>"; };
+		C6A8B5152236968000F5DC8B /* SQHomeDataSouceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeDataSouceModel.m; sourceTree = "<group>"; };
 		C6D441502233E41C00DC383C /* SQHomeTopInfosView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeTopInfosView.h; sourceTree = "<group>"; };
 		C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeTopInfosView.m; sourceTree = "<group>"; };
 		C6D441532234147900DC383C /* SQHomeBottomDealView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeBottomDealView.h; sourceTree = "<group>"; };
@@ -612,6 +615,8 @@
 		C6D4414E2233E3D500DC383C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6A8B5142236968000F5DC8B /* SQHomeDataSouceModel.h */,
+				C6A8B5152236968000F5DC8B /* SQHomeDataSouceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1127,6 +1132,7 @@
 				E991868722324BB6009650F7 /* Y_AccessoryInfoView.m in Sources */,
 				E9340E3A22363CC20065F37C /* ABKInfoWindowWhenPress.m in Sources */,
 				E991867F22324BB6009650F7 /* NSString+Y_StockChart.m in Sources */,
+				C6A8B5162236968000F5DC8B /* SQHomeDataSouceModel.m in Sources */,
 				E991867C22324BB6009650F7 /* Y_BrokenLine.m in Sources */,
 				E90BBDDB209C04C2006DCB7B /* SQBaseTableViewCell.m in Sources */,
 				E991868A22324BB6009650F7 /* DepthLongPressView.m in Sources */,

@@ -278,18 +278,20 @@
         }];
         
         UIButton *maBtn = [self private_createButtonWithTitle:@"MA"];
+        maBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_popNormSegment addSubview:maBtn];
         
         [maBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(mainBtn.mas_right);
+            make.left.equalTo(mainBtn.mas_right).offset(KMARGIN);
             make.top.height.width.equalTo(mainBtn);
         }];
         
         UIButton *bollBtn = [self private_createButtonWithTitle:@"BOLL"];
+        bollBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_popNormSegment addSubview:bollBtn];
         
         [bollBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(maBtn.mas_right);
+            make.left.equalTo(maBtn.mas_right).offset(KMARGIN);;
             make.top.height.width.equalTo(mainBtn);
         }];
         
@@ -306,36 +308,40 @@
         }];
         
         UIButton *macdBtn = [self private_createButtonWithTitle:@"MACD"];
+        macdBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_popNormSegment addSubview:macdBtn];
         
         [macdBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(subBtn.mas_right);
+            make.left.equalTo(subBtn.mas_right).offset(KMARGIN);
             make.top.height.width.equalTo(subBtn);
         }];
         
         UIButton *kdjBtn = [self private_createButtonWithTitle:@"KDJ"];
+        kdjBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_popNormSegment addSubview:kdjBtn];
         
         [kdjBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(macdBtn.mas_right);
+            make.left.equalTo(macdBtn.mas_right).offset(KMARGIN);;
             make.top.height.width.equalTo(subBtn);
         }];
         
         
         UIButton *rsiBtn = [self private_createButtonWithTitle:@"RSI"];
+        rsiBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_popNormSegment addSubview:rsiBtn];
         
         [rsiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(kdjBtn.mas_right);
+            make.left.equalTo(kdjBtn.mas_right).offset(KMARGIN);;
             make.top.height.width.equalTo(subBtn);
         }];
         
         
         UIButton *wrBtn = [self private_createButtonWithTitle:@"WR"];
+        wrBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_popNormSegment addSubview:wrBtn];
         
         [wrBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(rsiBtn.mas_right);
+            make.left.equalTo(rsiBtn.mas_right).offset(KMARGIN);;
             make.top.height.width.equalTo(subBtn);
         }];
         

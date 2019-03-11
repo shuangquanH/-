@@ -19,11 +19,6 @@
     UIButton    *sellButton;
     
     UILabel     *canUseMoney;
-    UIView      *bottomLine;
-    UIButton    *unfoldButton;
-    
-    UILabel     *totalWinOrLoss;
-    UILabel     *winOrLossCount;
 }
 
 - (instancetype)init
@@ -61,22 +56,6 @@
     canUseMoney = [self creatLabelWithFont:KSYSFONT(18) color:KCOLOR_BLACK];
     [self addSubview:canUseMoney];
     
-    bottomLine = [[UIView alloc] init];
-    bottomLine.backgroundColor = KCOLOR_LINE;
-    [self addSubview:bottomLine];
-    
-    unfoldButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self addSubview:unfoldButton];
-    unfoldButton.backgroundColor = KCOLOR_LINE;
-    [unfoldButton setTitle:@"展开" forState:UIControlStateNormal];
-    [unfoldButton setTintColor:KCOLOR_BLACK];
-    
-    totalWinOrLoss =  [self creatLabelWithFont:KSYSFONT(16) color:KCOLOR_BLACK];
-    [self addSubview:totalWinOrLoss];
-    
-    winOrLossCount = [self creatLabelWithFont:KSYSFONT(13) color:KCOLOR_BLACK];
-    [self addSubview:winOrLossCount];
-    
     
 }
 - (void)makeConstraints {
@@ -109,10 +88,10 @@
     }];
     
     [buyButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(maiUp.mas_bottom).offset(KMARGIN*2);
-        make.height.mas_equalTo(40);
+        make.centerY.equalTo(self);
         make.left.equalTo(self).offset(KMARGIN);
         make.right.equalTo(sellButton.mas_left).offset(-KMARGIN);
+        make.height.mas_equalTo(40);
     }];
     
     [sellButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -122,33 +101,11 @@
     
     [canUseMoney mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(buyButton.mas_bottom).offset(KMARGIN);
+        make.bottom.equalTo(self).offset(-KMARGIN);
         
     }];
     
-    [bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self);
-        make.height.mas_equalTo(1);
-        make.top.equalTo(canUseMoney.mas_bottom).offset(KMARGIN);
-    }];
     
-    [unfoldButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.top.equalTo(bottomLine);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(20);
-    }];
-    
-    
-    [totalWinOrLoss mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self).offset(-KMARGIN*2);
-        make.left.equalTo(self).offset(KMARGIN);
-    }];
-    
-    [winOrLossCount mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(totalWinOrLoss);
-        make.right.equalTo(self).offset(-KMARGIN);
-    }];
 }
 
 - (void)addDatas {
@@ -163,8 +120,7 @@
     lowPresent.text = @"42.0%";
     
     canUseMoney.text = @"可用余额(USDT)：23.32  充值";
-    totalWinOrLoss.text = @"总盈亏(USDT)";
-    winOrLossCount.text = @"+1000.00 (约￥296.32)";
+
 }
 
 

@@ -19,6 +19,9 @@
 #else
 # define NSLog(...) {}
 #endif
+#import "UIColor+Y_StockChart.h"
+
+
 
 /**弱引用weakself*/
 #define WeakSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
@@ -53,9 +56,12 @@
 #define KCOLOR_LINE         [UIColor hexStringToColor:@"999999"]
 
 /** K线图下跌颜色 */
-#define KCOLOR_KLOW         [UIColor redColor]
+#define KCOLOR_KLOW         [UIColor decreaseColor]
 /** K线图上涨颜色 */
-#define KCOLOR_KUP          [UIColor greenColor]
+#define KCOLOR_KUP          [UIColor increaseColor]
+
+    
+    
 
 /** 颜色(传string格式) */
 #define KCOLOR(a)           [UIColor hexStringToColor:a]

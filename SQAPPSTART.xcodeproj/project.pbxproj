@@ -54,6 +54,9 @@
 		E90BBDE7209C07D8006DCB7B /* SQRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDE6209C07D8006DCB7B /* SQRequest.m */; };
 		E90BBDF1209C086D006DCB7B /* SQRootNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDF0209C086D006DCB7B /* SQRootNavigationVC.m */; };
 		E90BBDF5209C0894006DCB7B /* SQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDF4209C0894006DCB7B /* SQLoginViewController.m */; };
+		E9340E3722362EAB0065F37C /* ABKLineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E3622362EAB0065F37C /* ABKLineViewModel.m */; };
+		E9340E3A22363CC20065F37C /* ABKInfoWindowWhenPress.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E3922363CC20065F37C /* ABKInfoWindowWhenPress.m */; };
+		E9340E3D2236433D0065F37C /* SQTransformTime.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E3C2236433D0065F37C /* SQTransformTime.m */; };
 		E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */; };
 		E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863522324BB5009650F7 /* UIColor+Y_StockChart.m */; };
 		E991867622324BB6009650F7 /* Y_LayoutViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */; };
@@ -215,6 +218,12 @@
 		E90BBDF0209C086D006DCB7B /* SQRootNavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQRootNavigationVC.m; sourceTree = "<group>"; };
 		E90BBDF3209C0894006DCB7B /* SQLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SQLoginViewController.h; path = SQAPPSTART/Other/AppLogin/SQLoginViewController.h; sourceTree = SOURCE_ROOT; };
 		E90BBDF4209C0894006DCB7B /* SQLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SQLoginViewController.m; path = SQAPPSTART/Other/AppLogin/SQLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		E9340E3522362EAB0065F37C /* ABKLineViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABKLineViewModel.h; sourceTree = "<group>"; };
+		E9340E3622362EAB0065F37C /* ABKLineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABKLineViewModel.m; sourceTree = "<group>"; };
+		E9340E3822363CC20065F37C /* ABKInfoWindowWhenPress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABKInfoWindowWhenPress.h; sourceTree = "<group>"; };
+		E9340E3922363CC20065F37C /* ABKInfoWindowWhenPress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABKInfoWindowWhenPress.m; sourceTree = "<group>"; };
+		E9340E3B2236433D0065F37C /* SQTransformTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTransformTime.h; sourceTree = "<group>"; };
+		E9340E3C2236433D0065F37C /* SQTransformTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTransformTime.m; sourceTree = "<group>"; };
 		E991862C22324BB5009650F7 /* Y_ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_ChartView.h; sourceTree = "<group>"; };
 		E991862F22324BB5009650F7 /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
 		E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
@@ -534,6 +543,8 @@
 				182A807C209082DE009B244B /* SQDataCache.m */,
 				182A807E2090841A009B244B /* SQGetNowDate.h */,
 				182A807F2090841A009B244B /* SQGetNowDate.m */,
+				E9340E3B2236433D0065F37C /* SQTransformTime.h */,
+				E9340E3C2236433D0065F37C /* SQTransformTime.m */,
 				182A8084209087B8009B244B /* SQTimeDelay.h */,
 				182A8085209087B8009B244B /* SQTimeDelay.m */,
 			);
@@ -783,13 +794,13 @@
 		E991864F22324BB5009650F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E991865022324BB5009650F7 /* Y_KLinePositionModel.m */,
 				E991865122324BB5009650F7 /* Y_KLineModel.h */,
-				E991865222324BB5009650F7 /* Y_KLineGroupModel.h */,
-				E991865322324BB5009650F7 /* Y_KLineVolumePositionModel.h */,
-				E991865422324BB5009650F7 /* Y_KLinePositionModel.h */,
 				E991865522324BB5009650F7 /* Y_KLineModel.m */,
+				E991865422324BB5009650F7 /* Y_KLinePositionModel.h */,
+				E991865022324BB5009650F7 /* Y_KLinePositionModel.m */,
+				E991865222324BB5009650F7 /* Y_KLineGroupModel.h */,
 				E991865622324BB5009650F7 /* Y_KLineGroupModel.m */,
+				E991865322324BB5009650F7 /* Y_KLineVolumePositionModel.h */,
 				E991865722324BB5009650F7 /* Y_KLineVolumePositionModel.m */,
 			);
 			path = Model;
@@ -856,6 +867,8 @@
 				E99186A522325960009650F7 /* Views */,
 				E991869B22325217009650F7 /* ABKLineViewController.h */,
 				E991869322325210009650F7 /* ABKLineViewController.m */,
+				E9340E3522362EAB0065F37C /* ABKLineViewModel.h */,
+				E9340E3622362EAB0065F37C /* ABKLineViewModel.m */,
 				E991869D22325217009650F7 /* ABDepthViewController.h */,
 				E991869C22325217009650F7 /* ABDepthViewController.m */,
 			);
@@ -879,6 +892,8 @@
 			children = (
 				E99186A22232590F009650F7 /* Y_StockChartSegmentView.h */,
 				E99186A32232590F009650F7 /* Y_StockChartSegmentView.m */,
+				E9340E3822363CC20065F37C /* ABKInfoWindowWhenPress.h */,
+				E9340E3922363CC20065F37C /* ABKInfoWindowWhenPress.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1110,6 +1125,7 @@
 				E90BBDDE209C04F9006DCB7B /* SQBaseHeaderFooterView.m in Sources */,
 				E99DE11B20AACE69009CEF88 /* SQHomeViewController.m in Sources */,
 				E991868722324BB6009650F7 /* Y_AccessoryInfoView.m in Sources */,
+				E9340E3A22363CC20065F37C /* ABKInfoWindowWhenPress.m in Sources */,
 				E991867F22324BB6009650F7 /* NSString+Y_StockChart.m in Sources */,
 				E991867C22324BB6009650F7 /* Y_BrokenLine.m in Sources */,
 				E90BBDDB209C04C2006DCB7B /* SQBaseTableViewCell.m in Sources */,
@@ -1142,6 +1158,7 @@
 				182A807120907E84009B244B /* UILabel+SQExtension.m in Sources */,
 				182A803B209052FB009B244B /* UIView+SDExtension.m in Sources */,
 				182A806B20907BC0009B244B /* UIImageView+SQExtension_m.m in Sources */,
+				E9340E3722362EAB0065F37C /* ABKLineViewModel.m in Sources */,
 				E90BBDE7209C07D8006DCB7B /* SQRequest.m in Sources */,
 				182A806820907A87009B244B /* UIImage+SQExtension.m in Sources */,
 				182A7FE0209031A6009B244B /* AppDelegate.m in Sources */,
@@ -1167,6 +1184,7 @@
 				182A8037209052FB009B244B /* TADotView.m in Sources */,
 				E991868322324BB6009650F7 /* Y_KLineGroupModel.m in Sources */,
 				182A804420905AC7009B244B /* SQBaseTableViewController.m in Sources */,
+				E9340E3D2236433D0065F37C /* SQTransformTime.m in Sources */,
 				182A804720905B2F009B244B /* SQBaseWebViewController.m in Sources */,
 				E991867822324BB6009650F7 /* Y_Extreme.m in Sources */,
 				E991868822324BB6009650F7 /* Y_KLineMainView.m in Sources */,

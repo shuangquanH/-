@@ -47,10 +47,10 @@
     maiLow = [self creatLabelWithFont:KSYSFONT(14) color:KCOLOR_BLACK];
     [self addSubview:maiLow];
     
-    upPresent = [self creatLabelWithFont:KSYSFONT(9) color:KCOLOR_LINE];
+    upPresent = [self creatLabelWithFont:KSYSFONT(9) color:KCOLOR_WHIT];
     [self addSubview:upPresent];
     
-    lowPresent = [self creatLabelWithFont:KSYSFONT(9) color:KCOLOR_LINE];
+    lowPresent = [self creatLabelWithFont:KSYSFONT(9) color:KCOLOR_WHIT];
     [self addSubview:lowPresent];
     
     buyButton = [self creatButtonWithBackColor:KCOLOR_KUP font:KSYSFONT(18) title:@"买涨"];
@@ -99,7 +99,7 @@
     [upPresent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(maiLow);
         make.right.equalTo(lowPresent.mas_left);
-        make.width.mas_equalTo(60);
+        make.width.mas_equalTo(80);
         make.height.equalTo(maiLow);
     }];
     
@@ -152,23 +152,15 @@
 }
 
 - (void)addDatas {
-//    UILabel *todayPan;
-//    UILabel *maiUp;
-//    UILabel *maiLow;
-//    UILabel *upPresent;
-//    UILabel *lowPresent;
-//    UIButton    *buyButton;
-//    UIButton    *sellButton;
-    
     todayPan.text = @"今日盘面";
     maiUp.text = @"买涨";
     maiLow.text = @"买跌";
     upPresent.backgroundColor = KCOLOR_KLOW;
     lowPresent.backgroundColor = KCOLOR_KUP;
-    lowPresent.textAlignment = NSTextAlignmentRight;
-    upPresent.textAlignment = NSTextAlignmentLeft;
-    upPresent.text = @" 50.0%";
-    lowPresent.text = @"50.0% ";
+    upPresent.textAlignment = NSTextAlignmentCenter;
+    lowPresent.textAlignment = NSTextAlignmentCenter;
+    upPresent.text = @"58.0%";
+    lowPresent.text = @"42.0%";
     
     canUseMoney.text = @"可用余额(USDT)：23.32  充值";
     totalWinOrLoss.text = @"总盈亏(USDT)";
@@ -192,4 +184,8 @@
     button.titleLabel.font = font;
     return button;
 }
+
+
+
+
 @end

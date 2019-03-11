@@ -20,11 +20,12 @@
 @interface Y_StockChartSegmentView : UIView
 
 - (instancetype)initWithItems:(NSArray *)items;
+@property (nonatomic, weak) id <Y_StockChartSegmentViewDelegate> delegate;
 
 @property (nonatomic, strong) NSArray *items;
 
-@property (nonatomic, weak) id <Y_StockChartSegmentViewDelegate> delegate;
 
 @property (nonatomic, assign) NSUInteger selectedIndex;
+
 
 @end

@@ -19,6 +19,8 @@
 @property (nonatomic, strong)   UIView          *popNormSegment;
 
 
+
+
 @end
 
 
@@ -97,54 +99,34 @@
     if ([btn.titleLabel.text isEqualToString:@"更多"]||
         [btn.titleLabel.text isEqualToString:@"指标"]) {
         [self showPopSegmentWithTitle:btn.titleLabel.text];
+        
     } else {
         
         if (showMoreSegment) {
             showMoreSegment = NO;
+            
+            //置灰所有按钮，只显示选中的那一个
             if ([mainAcessBtnArr containsObject:btn]) {
                 for (UIButton *temp in mainAcessBtnArr) {
                     temp.selected = NO;
                 }
-                btn.selected = YES;
+                if (![btn.titleLabel.text containsString:@"隐藏"]) {
+                    btn.selected = YES;
+                }
             }
+            
             if ([subAcessBtnArr containsObject:btn]) {
                 for (UIButton *temp in subAcessBtnArr) {
                     temp.selected = NO;
                 }
-                btn.selected = YES;
-            }
-            
-            if ([btn.titleLabel.text isEqualToString:@"隐藏"]) {
-                for (UIButton *temp in mainAcessBtnArr) {
-                    temp.selected = NO;
-                }
-            }
-            if ([btn.titleLabel.text isEqualToString:@" 隐藏"]) {
-                for (UIButton *temp in subAcessBtnArr) {
-                    temp.selected = NO;
+                if (![btn.titleLabel.text containsString:@"隐藏"]) {
+                    btn.selected = YES;
                 }
             }
             
-            
-            [self.popMoreSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.equalTo(self);
-                make.top.equalTo(self.selectedBtn.mas_bottom);
-                make.height.mas_equalTo(0);
-            }];
-            [self.popNormSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.equalTo(self);
-                make.top.equalTo(self.selectedBtn.mas_bottom);
-                make.height.mas_equalTo(0);
-            }];
-            self.popMoreSegment.hidden = YES;
-            self.popNormSegment.hidden = YES;
-            
-            [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.top.equalTo(self.superview);
-                make.height.mas_equalTo(40);
-            }];
-            
+            [self closePopSegmentView];
         }
+        
         
         if ([self.items containsObject:btn.titleLabel.text]) {
             self.selectedBtn = btn;
@@ -164,7 +146,7 @@
     selectedBtn.selected = YES;
     [UIView animateWithDuration:0.2 animations:^{
         [self.selectedLine mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.bottom.equalTo(selectedBtn);
+            make.bottom.centerX.equalTo(selectedBtn);
             make.width.mas_equalTo(28);
             make.height.mas_equalTo(1);
         }];
@@ -172,6 +154,59 @@
     }];
     
 }
+- (void)closePopSegmentView {
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(40);
+    }];
+    [self.popMoreSegment mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(0);
+    }];
+    
+    [self.popNormSegment mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(0);
+    }];
+    [self layoutIfNeeded];
+    self.popMoreSegment.hidden = YES;
+    self.popNormSegment.hidden = YES;
+}
+
+
+- (void)showPopSegmentWithTitle:(NSString *)title {
+    showMoreSegment = YES;
+    
+    if ([title isEqualToString:@"更多"]) {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(60);
+        }];
+        [self.popMoreSegment mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(20);
+        }];
+        self.popMoreSegment.hidden = NO;
+        
+        self.popNormSegment.hidden = YES;
+        [self.popNormSegment mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(0);
+        }];
+        
+        
+    } else if ([title isEqualToString:@"指标"]) {
+        
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(80);
+        }];
+        [self.popNormSegment mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(40);
+        }];
+        self.popNormSegment.hidden = NO;
+        
+        self.popMoreSegment.hidden = YES;
+        [self.popMoreSegment mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(0);
+        }];
+        
+    }
+}
+
 
 - (UIView *)selectedLine {
     if (!_selectedLine) {
@@ -191,38 +226,6 @@
 }
 
 
-- (void)showPopSegmentWithTitle:(NSString *)title {
-    if (showMoreSegment) {
-        return;
-    }
-    showMoreSegment = YES;
-    if ([title isEqualToString:@"更多"]) {
-        
-        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.top.equalTo(self.superview);
-            make.height.mas_equalTo(60);
-        }];
-        [self.popMoreSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.equalTo(self);
-            make.height.mas_equalTo(20);
-        }];
-        self.popMoreSegment.hidden = NO;
-        
-        
-    } else if ([title isEqualToString:@"指标"]) {
-        
-        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.top.equalTo(self.superview);
-            make.height.mas_equalTo(80);
-        }];
-        [self.popNormSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.equalTo(self);
-            make.height.mas_equalTo(40);
-        }];
-        self.popNormSegment.hidden = NO;
-    }
-}
-
 
 
 - (UIView *)popMoreSegment {
@@ -230,8 +233,7 @@
         _popMoreSegment = [[UIView alloc] init];
         [self addSubview:_popMoreSegment];
         [_popMoreSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
-            make.top.equalTo(self.selectedBtn.mas_bottom);
+            make.left.right.bottom.equalTo(self);
             make.height.mas_equalTo(0);
         }];
         
@@ -260,8 +262,7 @@
         subAcessBtnArr = [NSMutableArray array];
         
         [_popNormSegment mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
-            make.top.equalTo(self.selectedBtn.mas_bottom);
+            make.left.right.bottom.equalTo(self);
             make.height.mas_equalTo(0);
         }];
         
@@ -291,7 +292,7 @@
             make.left.equalTo(maBtn.mas_right);
             make.top.height.width.equalTo(mainBtn);
         }];
-        [mainAcessBtnArr addObjectsFromArray:@[maBtn, bollBtn]];
+        
         
         
         
@@ -337,7 +338,7 @@
             make.left.equalTo(rsiBtn.mas_right);
             make.top.height.width.equalTo(subBtn);
         }];
-        [subAcessBtnArr addObjectsFromArray:@[macdBtn, kdjBtn, rsiBtn, wrBtn]];
+        
         
         
         UIButton *hiddenMainBtn = [self private_createButtonWithTitle:@"隐藏"];
@@ -354,6 +355,10 @@
             make.right.equalTo(_popNormSegment).offset(-KMARGIN);
             make.centerY.equalTo(subBtn);
         }];
+        
+        
+        [mainAcessBtnArr addObjectsFromArray:@[maBtn, bollBtn, hiddenMainBtn]];
+        [subAcessBtnArr addObjectsFromArray:@[macdBtn, kdjBtn, rsiBtn, wrBtn, hiddenSubBtn]];
         
         
     }

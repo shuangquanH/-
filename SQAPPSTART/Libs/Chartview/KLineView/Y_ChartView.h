@@ -13,6 +13,7 @@
 
 @protocol Y_ChartViewDelegate <NSObject>
 
+- (void)firstTapedPoint:(CGPoint)point;
 - (void)longPressWithModel:(Y_KLineModel *)kLineModel;
 - (void)cancelLongPress;
 

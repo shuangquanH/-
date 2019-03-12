@@ -27,15 +27,20 @@
     
     for (NSInteger i = 0; i < self.positionsArray.count ; i++) {
         CGPoint point = [self.positionsArray[i] CGPointValue];
-
         NSString *amountStr = self.priceArray[i];
+        
+        UIFont  *tfont = [UIFont y_customFontWithName:@"DIN-Regular" size:8];
+        CGFloat stwidth = [self getStringWidthWithString:amountStr font:tfont];
+        
+        
+        /** 画价格  */
         if (i == self.positionsArray.count - 1) {
-            [amountStr drawAtPoint:CGPointMake(point.x, point.y - 12) withAttributes:@{NSFontAttributeName:[UIFont y_customFontWithName:@"DIN-Regular" size:8],NSForegroundColorAttributeName:[UIColor y_colorWithHexString:@"111111" alpha:0.5]}];
+            [amountStr drawAtPoint:CGPointMake(rect.size.width-stwidth-10, point.y - 12) withAttributes:@{NSFontAttributeName:tfont,NSForegroundColorAttributeName:[UIColor y_colorWithHexString:@"111111" alpha:0.5]}];
+        } else {
+            [amountStr drawAtPoint:CGPointMake(rect.size.width-stwidth-10, point.y) withAttributes:@{NSFontAttributeName:tfont,NSForegroundColorAttributeName:[UIColor y_colorWithHexString:@"111111" alpha:0.5]}];
         }
-        else {
-            [amountStr drawAtPoint:CGPointMake(point.x, point.y) withAttributes:@{NSFontAttributeName:[UIFont y_customFontWithName:@"DIN-Regular" size:8],NSForegroundColorAttributeName:[UIColor y_colorWithHexString:@"111111" alpha:0.5]}];
-        }
-
+        
+        /** 画线  */
         CGContextSetStrokeColorWithColor(context, [UIColor y_colorWithHexString:@"000000" alpha:0.1].CGColor);
         CGContextSetLineWidth(context, 0.5);
         CGContextMoveToPoint(context, point.x, point.y);
@@ -109,5 +114,17 @@
     }
     return _priceArray;
 }
+
+
+
+- (CGFloat)getStringWidthWithString:(NSString *)string font:(UIFont *)font {
+    CGSize infoSize = CGSizeMake(CGFLOAT_MAX, 10);
+    NSDictionary *dic = @{NSFontAttributeName : font};
+    CGRect infoRect =   [string boundingRectWithSize:infoSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    return infoRect.size.width;
+}
+
+
+
 
 @end

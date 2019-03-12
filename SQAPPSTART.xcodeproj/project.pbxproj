@@ -857,9 +857,9 @@
 		E991865B22324BB5009650F7 /* AccessoryView */ = {
 			isa = PBXGroup;
 			children = (
+				E991865E22324BB5009650F7 /* Y_AccessoryView.h */,
 				E991865C22324BB5009650F7 /* Y_AccessoryView.m */,
 				E991865D22324BB5009650F7 /* Y_AccessoryInfoView.h */,
-				E991865E22324BB5009650F7 /* Y_AccessoryView.h */,
 				E991865F22324BB5009650F7 /* Y_AccessoryInfoView.m */,
 			);
 			path = AccessoryView;
@@ -868,8 +868,8 @@
 		E991866022324BB5009650F7 /* KLineView */ = {
 			isa = PBXGroup;
 			children = (
-				E991866122324BB5009650F7 /* Y_KLineMainView.m */,
 				E991866222324BB5009650F7 /* Y_KLineMainView.h */,
+				E991866122324BB5009650F7 /* Y_KLineMainView.m */,
 			);
 			path = KLineView;
 			sourceTree = "<group>";

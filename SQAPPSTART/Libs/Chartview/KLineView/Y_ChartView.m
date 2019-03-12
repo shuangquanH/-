@@ -216,14 +216,12 @@ static char *observerContext = NULL;
     [self.horizontalView layoutIfNeeded];
 }
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    if ([self.delegate respondsToSelector:@selector(firstTapedPoint)]) {
-        [self.delegate firstTapedPoint:point];
-    }
+    [self.delegate firstTapedPoint:point];
     return YES;
 }
 
 - (void)kLineMainViewCurrentMaxPrice:(CGFloat)maxPrice minPrice:(CGFloat)minPrice {
-    [self.kLinePriceView setLineCount:3 maxPrice:maxPrice minPrice:minPrice];
+    [self.kLinePriceView setLineCount:4 maxPrice:maxPrice minPrice:minPrice];
 }
 
 #pragma mark Y_KLineAccessoryViewDelegate 更新副图纵坐标

@@ -10,6 +10,14 @@
 
 @implementation NSString (SQSizeOfString)
 
+- (CGFloat)getWidthWithFont:(UIFont *)font height:(CGFloat)height {
+    CGSize infoSize = CGSizeMake(CGFLOAT_MAX, height);
+    NSDictionary *dic = @{NSFontAttributeName : font};
+    CGRect infoRect =   [self boundingRectWithSize:infoSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    return infoRect.size.width;
+}
+
+
 -(CGFloat)getHeightWithFont:(UIFont *)font width:(CGFloat)width {
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
     paraStyle.lineBreakMode = NSLineBreakByWordWrapping;

@@ -10,6 +10,9 @@
 
 @interface NSString (SQSizeOfString)
 
+/** 根据高度计算文字宽度  */
+- (CGFloat)getWidthWithFont:(UIFont *)font height:(CGFloat)height;
+
 /**根据宽度计算文字高度*/
 -(CGFloat)getHeightWithFont:(UIFont *)font width:(CGFloat)width;
 

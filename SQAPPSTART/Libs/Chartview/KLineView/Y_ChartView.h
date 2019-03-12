@@ -25,7 +25,7 @@
 @property (nonatomic, assign) id<Y_ChartViewDelegate> delegate;
 
 /**
- *  更新k线样式
+ *  更新k线样式(全屏)
  */
 - (void)updateKLineStyle:(Y_StockChartScreenStyle)style;
 

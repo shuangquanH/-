@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "50C86FD934587263ECF3085F797D57E1"
+               BlueprintIdentifier = "068F9944BEB0A4929DD396A0F50B7386"
+               BuildableName = "libDXPopover.a"
                BlueprintName = "DXPopover"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libDXPopover.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

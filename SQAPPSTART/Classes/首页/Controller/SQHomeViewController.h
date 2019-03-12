@@ -8,6 +8,6 @@
 
 #import "SQBaseTableViewController.h"
 
-@interface SQHomeViewController : SQBaseTableViewController
+@interface SQHomeViewController : SQBaseViewController
 
 @end

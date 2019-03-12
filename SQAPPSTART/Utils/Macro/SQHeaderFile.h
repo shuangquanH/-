@@ -12,9 +12,13 @@
 #define SQHeaderFile_h
 #endif /* SQHeaderFile_h */
 
+/** baseViewController  */
+#import "SQBaseViewController.h"
+
 /** Category */
 #import "UIColor+Extension.h"
-#import "UIButton+JKImagePosition.h"
+#import "UIView+SQFrame.h"
+
 
 
 /** tools */

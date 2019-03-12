@@ -199,4 +199,7 @@
     return kLineTimer;
 }
 
+- (NSString *)bid_fixed {
+    return @"3";
+}
 @end

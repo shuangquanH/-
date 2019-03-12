@@ -55,6 +55,10 @@
 #define KCOLOR_BLACK        [UIColor hexStringToColor:@"333333"]
 #define KCOLOR_LINE         [UIColor hexStringToColor:@"999999"]
 
+#define kCOLOR_999          [UIColor hexStringToColor:@"999999"]
+/** 浅灰背景颜色  */
+#define KCOLOR_LIGHTBACK    [UIColor hexStringToColor:@"F0F0F0"]
+
 /** K线图下跌颜色 */
 #define KCOLOR_KLOW         [UIColor decreaseColor]
 /** K线图上涨颜色 */

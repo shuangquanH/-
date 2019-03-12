@@ -54,10 +54,15 @@
 		E90BBDE4209C05A2006DCB7B /* SQBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDE3209C05A2006DCB7B /* SQBaseTableView.m */; };
 		E90BBDE7209C07D8006DCB7B /* SQRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDE6209C07D8006DCB7B /* SQRequest.m */; };
 		E90BBDF1209C086D006DCB7B /* SQRootNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDF0209C086D006DCB7B /* SQRootNavigationVC.m */; };
-		E90BBDF5209C0894006DCB7B /* SQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDF4209C0894006DCB7B /* SQLoginViewController.m */; };
 		E9340E3722362EAB0065F37C /* ABKLineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E3622362EAB0065F37C /* ABKLineViewModel.m */; };
 		E9340E3A22363CC20065F37C /* ABKInfoWindowWhenPress.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E3922363CC20065F37C /* ABKInfoWindowWhenPress.m */; };
 		E9340E3D2236433D0065F37C /* SQTransformTime.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E3C2236433D0065F37C /* SQTransformTime.m */; };
+		E9340E402237409E0065F37C /* YGStartPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E3E2237409E0065F37C /* YGStartPageView.m */; };
+		E9340E43223745AA0065F37C /* UIView+SQFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E42223745AA0065F37C /* UIView+SQFrame.m */; };
+		E9340E48223749800065F37C /* SQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E47223749800065F37C /* SQLoginViewController.m */; };
+		E9340E4B22374A6E0065F37C /* SQLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E4A22374A6E0065F37C /* SQLoginModel.m */; };
+		E9340E4E22374B4A0065F37C /* SQLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E4D22374B4A0065F37C /* SQLoginView.m */; };
+		E9340E5122374C850065F37C /* WKInputFiledLimitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E4F22374C840065F37C /* WKInputFiledLimitUtils.m */; };
 		E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */; };
 		E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863522324BB5009650F7 /* UIColor+Y_StockChart.m */; };
 		E991867622324BB6009650F7 /* Y_LayoutViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */; };
@@ -219,14 +224,24 @@
 		E90BBDE6209C07D8006DCB7B /* SQRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SQRequest.m; path = SQAPPSTART/NetWork/SQRequest.m; sourceTree = SOURCE_ROOT; };
 		E90BBDEF209C086D006DCB7B /* SQRootNavigationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQRootNavigationVC.h; sourceTree = "<group>"; };
 		E90BBDF0209C086D006DCB7B /* SQRootNavigationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQRootNavigationVC.m; sourceTree = "<group>"; };
-		E90BBDF3209C0894006DCB7B /* SQLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SQLoginViewController.h; path = SQAPPSTART/Other/AppLogin/SQLoginViewController.h; sourceTree = SOURCE_ROOT; };
-		E90BBDF4209C0894006DCB7B /* SQLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SQLoginViewController.m; path = SQAPPSTART/Other/AppLogin/SQLoginViewController.m; sourceTree = SOURCE_ROOT; };
 		E9340E3522362EAB0065F37C /* ABKLineViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABKLineViewModel.h; sourceTree = "<group>"; };
 		E9340E3622362EAB0065F37C /* ABKLineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABKLineViewModel.m; sourceTree = "<group>"; };
 		E9340E3822363CC20065F37C /* ABKInfoWindowWhenPress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABKInfoWindowWhenPress.h; sourceTree = "<group>"; };
 		E9340E3922363CC20065F37C /* ABKInfoWindowWhenPress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABKInfoWindowWhenPress.m; sourceTree = "<group>"; };
 		E9340E3B2236433D0065F37C /* SQTransformTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQTransformTime.h; sourceTree = "<group>"; };
 		E9340E3C2236433D0065F37C /* SQTransformTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQTransformTime.m; sourceTree = "<group>"; };
+		E9340E3E2237409E0065F37C /* YGStartPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGStartPageView.m; sourceTree = "<group>"; };
+		E9340E3F2237409E0065F37C /* YGStartPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGStartPageView.h; sourceTree = "<group>"; };
+		E9340E41223745AA0065F37C /* UIView+SQFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SQFrame.h"; sourceTree = "<group>"; };
+		E9340E42223745AA0065F37C /* UIView+SQFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQFrame.m"; sourceTree = "<group>"; };
+		E9340E46223749800065F37C /* SQLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginViewController.h; sourceTree = "<group>"; };
+		E9340E47223749800065F37C /* SQLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginViewController.m; sourceTree = "<group>"; };
+		E9340E4922374A6E0065F37C /* SQLoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLoginModel.h; sourceTree = "<group>"; };
+		E9340E4A22374A6E0065F37C /* SQLoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLoginModel.m; sourceTree = "<group>"; };
+		E9340E4C22374B4A0065F37C /* SQLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLoginView.h; sourceTree = "<group>"; };
+		E9340E4D22374B4A0065F37C /* SQLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLoginView.m; sourceTree = "<group>"; };
+		E9340E4F22374C840065F37C /* WKInputFiledLimitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInputFiledLimitUtils.m; sourceTree = "<group>"; };
+		E9340E5022374C850065F37C /* WKInputFiledLimitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInputFiledLimitUtils.h; sourceTree = "<group>"; };
 		E991862C22324BB5009650F7 /* Y_ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_ChartView.h; sourceTree = "<group>"; };
 		E991862F22324BB5009650F7 /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
 		E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
@@ -424,7 +439,6 @@
 			children = (
 				182A8020209035A3009B244B /* AppStart */,
 				E90BBDEE209C0834006DCB7B /* AppRoot */,
-				E94137A8209FF65D003F3649 /* AppLogin */,
 				182A7FED209031A7009B244B /* main.m */,
 				182A7FEC209031A7009B244B /* Info.plist */,
 				182A7FDE209031A6009B244B /* AppDelegate.h */,
@@ -504,6 +518,8 @@
 				182A80762090801B009B244B /* UIButton+SQExtension.m */,
 				182A8081209084D0009B244B /* UITableView+SQAddHeadTip.h */,
 				182A8082209084D0009B244B /* UITableView+SQAddHeadTip.m */,
+				E9340E41223745AA0065F37C /* UIView+SQFrame.h */,
+				E9340E42223745AA0065F37C /* UIView+SQFrame.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -550,6 +566,10 @@
 				E9340E3C2236433D0065F37C /* SQTransformTime.m */,
 				182A8084209087B8009B244B /* SQTimeDelay.h */,
 				182A8085209087B8009B244B /* SQTimeDelay.m */,
+				E9340E3F2237409E0065F37C /* YGStartPageView.h */,
+				E9340E3E2237409E0065F37C /* YGStartPageView.m */,
+				E9340E5022374C850065F37C /* WKInputFiledLimitUtils.h */,
+				E9340E4F22374C840065F37C /* WKInputFiledLimitUtils.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -678,13 +698,25 @@
 			path = AppRoot;
 			sourceTree = "<group>";
 		};
-		E94137A8209FF65D003F3649 /* AppLogin */ = {
+		E9340E44223749440065F37C /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
-				E90BBDF3209C0894006DCB7B /* SQLoginViewController.h */,
-				E90BBDF4209C0894006DCB7B /* SQLoginViewController.m */,
+				E9340E452237494D0065F37C /* Controller */,
 			);
-			path = AppLogin;
+			path = "登录";
+			sourceTree = "<group>";
+		};
+		E9340E452237494D0065F37C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9340E46223749800065F37C /* SQLoginViewController.h */,
+				E9340E47223749800065F37C /* SQLoginViewController.m */,
+				E9340E4922374A6E0065F37C /* SQLoginModel.h */,
+				E9340E4A22374A6E0065F37C /* SQLoginModel.m */,
+				E9340E4C22374B4A0065F37C /* SQLoginView.h */,
+				E9340E4D22374B4A0065F37C /* SQLoginView.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E991862A22324BB5009650F7 /* Chartview */ = {
@@ -906,6 +938,7 @@
 		E99DE11720AACE32009CEF88 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E9340E44223749440065F37C /* 登录 */,
 				E99DE11820AACE3B009CEF88 /* 首页 */,
 			);
 			path = Classes;
@@ -1138,7 +1171,6 @@
 				E991868A22324BB6009650F7 /* DepthLongPressView.m in Sources */,
 				182A806220907916009B244B /* NSString+SQSizeOfString.m in Sources */,
 				E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */,
-				E90BBDF5209C0894006DCB7B /* SQLoginViewController.m in Sources */,
 				182A80802090841A009B244B /* SQGetNowDate.m in Sources */,
 				E991868022324BB6009650F7 /* Y_ChartView.m in Sources */,
 				E991868E22324BB6009650F7 /* DepthView.m in Sources */,
@@ -1149,17 +1181,21 @@
 				182A7FEE209031A7009B244B /* main.m in Sources */,
 				E991868C22324BB6009650F7 /* DepthGroupModel.m in Sources */,
 				182A8065209079B3009B244B /* NSString+SQCheckString.m in Sources */,
+				E9340E4E22374B4A0065F37C /* SQLoginView.m in Sources */,
 				E991868422324BB6009650F7 /* Y_KLineVolumePositionModel.m in Sources */,
 				E991868922324BB6009650F7 /* DepthPriceView.m in Sources */,
 				E99DE22420B58938009CEF88 /* SQBaseCollectionView.m in Sources */,
 				182A8039209052FB009B244B /* SDCollectionViewCell.m in Sources */,
+				E9340E48223749800065F37C /* SQLoginViewController.m in Sources */,
 				E991868B22324BB6009650F7 /* DepthModel.m in Sources */,
 				182A8035209052FB009B244B /* TAAbstractDotView.m in Sources */,
 				E99DE11620AACAA8009CEF88 /* SQRootTabBarControl.m in Sources */,
 				182A8086209087B8009B244B /* SQTimeDelay.m in Sources */,
 				E90BBDE1209C0533006DCB7B /* SQBaseImageView.m in Sources */,
 				E991868122324BB6009650F7 /* Y_KLinePositionModel.m in Sources */,
+				E9340E5122374C850065F37C /* WKInputFiledLimitUtils.m in Sources */,
 				E991869022324BB6009650F7 /* DepthAmountView.m in Sources */,
+				E9340E43223745AA0065F37C /* UIView+SQFrame.m in Sources */,
 				E99186A42232590F009650F7 /* Y_StockChartSegmentView.m in Sources */,
 				182A807120907E84009B244B /* UILabel+SQExtension.m in Sources */,
 				182A803B209052FB009B244B /* UIView+SDExtension.m in Sources */,
@@ -1167,6 +1203,7 @@
 				E9340E3722362EAB0065F37C /* ABKLineViewModel.m in Sources */,
 				E90BBDE7209C07D8006DCB7B /* SQRequest.m in Sources */,
 				182A806820907A87009B244B /* UIImage+SQExtension.m in Sources */,
+				E9340E4B22374A6E0065F37C /* SQLoginModel.m in Sources */,
 				182A7FE0209031A6009B244B /* AppDelegate.m in Sources */,
 				C6D441522233E41C00DC383C /* SQHomeTopInfosView.m in Sources */,
 				E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */,
@@ -1202,6 +1239,7 @@
 				E99DE22320B58938009CEF88 /* SQBaseCollectionViewCell.m in Sources */,
 				182A80772090801B009B244B /* UIButton+SQExtension.m in Sources */,
 				182A804120905977009B244B /* SQBaseViewController.m in Sources */,
+				E9340E402237409E0065F37C /* YGStartPageView.m in Sources */,
 				182A803A209052FB009B244B /* SDCycleScrollView.m in Sources */,
 				E991869F22325217009650F7 /* ABDepthViewController.m in Sources */,
 				E991868D22324BB6009650F7 /* NSNumber+Y_ChartView.m in Sources */,

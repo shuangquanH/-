@@ -7,10 +7,13 @@
 //
 
 #import "SQHomeViewController.h"
+#import "SQLoginViewController.h"
 
 #import "SQHomeTopInfosView.h"
 #import "ABKLineViewController.h"
 #import "SQHomeBottomDealView.h"
+
+#import "YGStartPageView.h"
 
 @interface SQHomeViewController ()
 
@@ -27,13 +30,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [YGStartPageView showLaunchWithViewController:self];
     [self addControllersAndViews];
     [self makeStockViewConstraints];
 }
 
 #pragma mark ViewsAndControllers
 - (void)addControllersAndViews {
+    [self presentVc:[[UINavigationController alloc] initWithRootViewController:[SQLoginViewController new]]];
     [self addLeftBarbuttonItemIsImage:YES title:@"home_tab__icon3" selector:@selector(leftAction)];
     [self addRightBarbuttonItemIsImage:NO title:@"优惠券" selector:@selector(leftAction)];
     [self.view addSubview:self.topInfoView];

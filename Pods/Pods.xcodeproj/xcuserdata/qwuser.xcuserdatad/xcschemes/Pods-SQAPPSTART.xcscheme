@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "926BC9343616CE2AA549D8CEC52FBDD5"
+               BlueprintIdentifier = "A2B94CF956A48536641FAD1A0D13725D"
+               BuildableName = "libPods-SQAPPSTART.a"
                BlueprintName = "Pods-SQAPPSTART"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-SQAPPSTART.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

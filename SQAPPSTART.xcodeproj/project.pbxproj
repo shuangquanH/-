@@ -780,10 +780,10 @@
 		E991863622324BB5009650F7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */,
-				E991863822324BB5009650F7 /* Y_BaseLine.m */,
 				E991863922324BB5009650F7 /* Y_LayoutViewUtil.h */,
+				E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */,
 				E991863A22324BB5009650F7 /* Y_BaseLine.h */,
+				E991863822324BB5009650F7 /* Y_BaseLine.m */,
 				E991863B22324BB5009650F7 /* KLine */,
 				E991864622324BB5009650F7 /* Accessory */,
 				E991864922324BB5009650F7 /* Categories */,
@@ -848,8 +848,8 @@
 			children = (
 				E991865922324BB5009650F7 /* Y_YAxisView.h */,
 				E991865A22324BB5009650F7 /* Y_YAxisView.m */,
-				E991865B22324BB5009650F7 /* AccessoryView */,
 				E991866022324BB5009650F7 /* KLineView */,
+				E991865B22324BB5009650F7 /* AccessoryView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1118,36 +1118,24 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/DXPopover/DXPopover.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/Pingpp/lib/Pingpp.bundle",
-				"${PODS_ROOT}/PingppAlipaySDK/AlipaySDK.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
-				"${PODS_ROOT}/ZFPlayer/ZFPlayer/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DXPopover.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Pingpp.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKPromptResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

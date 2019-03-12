@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E10BAB7C04B64DE2488F7AC40E31383"
+               BlueprintIdentifier = "B16826611BA5A1B3C7CBABFFA3A00F0F"
                BuildableName = "DXPopover.bundle"
                BlueprintName = "DXPopover-DXPopover"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E10BAB7C04B64DE2488F7AC40E31383"
+            BlueprintIdentifier = "B16826611BA5A1B3C7CBABFFA3A00F0F"
             BuildableName = "DXPopover.bundle"
             BlueprintName = "DXPopover-DXPopover"
             ReferencedContainer = "container:Pods.xcodeproj">

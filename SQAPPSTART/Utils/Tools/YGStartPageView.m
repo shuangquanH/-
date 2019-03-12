@@ -118,7 +118,7 @@
 
 /** 引导页执行完毕  */
 - (void)didLaunched {
-//    [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"lauchedStartPageView"];
+    [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"lauchedStartPageView"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"lauchedStartPageView" object:nil];
     [self removeFromSuperview];
 }

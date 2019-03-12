@@ -59,7 +59,7 @@
     [unfoldButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         make.top.equalTo(self);
-        make.width.mas_equalTo(60);
+        make.width.mas_equalTo(90);
         make.height.mas_equalTo(20);
     }];
 

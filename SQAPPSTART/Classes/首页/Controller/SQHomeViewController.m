@@ -85,6 +85,8 @@
             self.isFullScreen = NO;
             [self makeStockViewConstraints];
             self.closeFullButton.hidden = YES;
+            self.bottomDealView.hidden = NO;
+            self.unfoldDealView.hidden = NO;
         }];
     } else {
         /** 切换成横屏  */
@@ -94,6 +96,8 @@
             self.isFullScreen = YES;
             [self makeStockViewConstraints];
             self.closeFullButton.hidden = NO;
+            self.bottomDealView.hidden = YES;
+            self.unfoldDealView.hidden = YES;
         }];
     }
 }

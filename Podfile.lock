@@ -26,7 +26,6 @@ PODS:
   - MJRefresh (3.1.15.7)
   - SVProgressHUD (2.2.5)
   - Toast (4.0.0)
-  - TZImagePickerController (3.2.0)
   - UMengAnalytics (4.2.4)
   - YYCache (1.0.4)
   - YYImage (1.0.4):
@@ -49,7 +48,6 @@ DEPENDENCIES:
   - MJRefresh
   - SVProgressHUD
   - Toast
-  - TZImagePickerController
   - UMengAnalytics
   - YYCache
   - YYModel
@@ -69,7 +67,6 @@ SPEC REPOS:
     - MJRefresh
     - SVProgressHUD
     - Toast
-    - TZImagePickerController
     - UMengAnalytics
     - YYCache
     - YYImage
@@ -89,7 +86,6 @@ SPEC CHECKSUMS:
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
@@ -97,6 +93,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ccacec09d0fd904b04c72a6206e4c5503a063bba
+PODFILE CHECKSUM: ad83ad589b60e9a79234638448f165e4e7cf7a60
 
 COCOAPODS: 1.5.0

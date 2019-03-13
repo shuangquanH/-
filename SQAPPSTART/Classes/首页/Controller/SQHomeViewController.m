@@ -12,6 +12,7 @@
 #import "SQHomeTopInfosView.h"
 #import "ABKLineViewController.h"
 #import "SQHomeBottomDealView.h"
+#import "SQHomeUnfoldView.h"
 
 #import "YGStartPageView.h"
 
@@ -21,6 +22,7 @@
 @property (nonatomic, strong)   ABKLineViewController   *klineVC;
 @property (nonatomic, strong)   SQHomeTopInfosView      *topInfoView;
 @property (nonatomic, strong)   SQHomeBottomDealView    *bottomDealView;
+@property (nonatomic, strong)   SQHomeUnfoldView        *unfoldDealView;
 
 @property (nonatomic, assign)   BOOL                    isFullScreen;
 
@@ -43,29 +45,31 @@
     [self.view addSubview:self.topInfoView];
     [self.view addSubview:self.klineVC.view];
     [self.view addSubview:self.bottomDealView];
+    [self.view addSubview:self.unfoldDealView];
 }
 
 
 #pragma mark constraints
 - (void)makeStockViewConstraints {
-    self.topInfoView.frame = CGRectMake(0, KNAV_HEIGHT, KAPP_WIDTH, 80);
+    self.topInfoView.frame = CGRectMake(0, KNAV_HEIGHT, KAPP_WIDTH, kTopInfoViewH);
+    self.bottomDealView.frame = CGRectMake(0, KAPP_HEIGHT-kBottomDealViewH-kUnfoldViewH, KAPP_WIDTH, kBottomDealViewH);
+    self.unfoldDealView.frame = CGRectMake(0, KAPP_HEIGHT-kUnfoldViewH, KAPP_WIDTH, kUnfoldViewH);
+    
     if (self.isFullScreen) {
-        self.bottomDealView.hidden = YES;
         [self hiddenStatusBar:YES];
         self.navigationController.navigationBar.hidden = YES;
         self.klineVC.view.frame = CGRectMake(0, KSTATU_HEIGHT, KAPP_WIDTH, KAPP_HEIGHT-KSTATU_HEIGHT);
     } else {
-        self.bottomDealView.hidden = NO;
         [self hiddenStatusBar:NO];
         self.navigationController.navigationBar.hidden = NO;
-        self.klineVC.view.frame = CGRectMake(0, KNAV_HEIGHT+self.topInfoView.frame.size.height, KAPP_WIDTH, 400);
+        CGRect windowFrame = CGRectMake(0, KNAV_HEIGHT+kTopInfoViewH, KAPP_WIDTH, KAPP_HEIGHT-KNAV_HEIGHT-kTopInfoViewH-kBottomDealViewH-kUnfoldViewH);
+        self.klineVC.view.frame = windowFrame;
     }
+    
+    
     [self.klineVC reloadKlineViews];
     
-    [self.bottomDealView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(self.klineVC.view.mas_bottom);
-    }];
+    
 }
 
 
@@ -81,6 +85,8 @@
             self.isFullScreen = NO;
             [self makeStockViewConstraints];
             self.closeFullButton.hidden = YES;
+            self.bottomDealView.hidden = NO;
+            self.unfoldDealView.hidden = NO;
         }];
     } else {
         /** 切换成横屏  */
@@ -90,6 +96,8 @@
             self.isFullScreen = YES;
             [self makeStockViewConstraints];
             self.closeFullButton.hidden = NO;
+            self.bottomDealView.hidden = YES;
+            self.unfoldDealView.hidden = YES;
         }];
     }
 }
@@ -131,5 +139,11 @@
         _bottomDealView = [[SQHomeBottomDealView alloc] init];
     }
     return _bottomDealView;
+}
+- (SQHomeUnfoldView *)unfoldDealView {
+    if (!_unfoldDealView) {
+        _unfoldDealView = [[SQHomeUnfoldView alloc] init];
+    }
+    return _unfoldDealView;
 }
 @end

@@ -29,7 +29,7 @@ pod 'Masonry'
 
 #功能组件
 pod 'AutoScrollLabel'
-pod 'TZImagePickerController'
+#pod 'TZImagePickerController'
 
 
 #键盘

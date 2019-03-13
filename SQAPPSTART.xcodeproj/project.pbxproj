@@ -46,6 +46,7 @@
 		182A80892090896B009B244B /* SQStartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 182A80882090896B009B244B /* SQStartManager.m */; };
 		996360B8AA029987D621F671 /* libPods-SQAPPSTART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC21D2D5666D757136004434 /* libPods-SQAPPSTART.a */; };
 		C6A8B5162236968000F5DC8B /* SQHomeDataSouceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A8B5152236968000F5DC8B /* SQHomeDataSouceModel.m */; };
+		C6A8B51922369E2600F5DC8B /* SQHomeUnfoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A8B51822369E2600F5DC8B /* SQHomeUnfoldView.m */; };
 		C6D441522233E41C00DC383C /* SQHomeTopInfosView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */; };
 		C6D441552234147900DC383C /* SQHomeBottomDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D441542234147900DC383C /* SQHomeBottomDealView.m */; };
 		E90BBDDB209C04C2006DCB7B /* SQBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E90BBDDA209C04C2006DCB7B /* SQBaseTableViewCell.m */; };
@@ -207,6 +208,8 @@
 		7F81FF23EACCE665CD687ECC /* Pods-SQAPPSTART.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQAPPSTART.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A8B5142236968000F5DC8B /* SQHomeDataSouceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeDataSouceModel.h; sourceTree = "<group>"; };
 		C6A8B5152236968000F5DC8B /* SQHomeDataSouceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeDataSouceModel.m; sourceTree = "<group>"; };
+		C6A8B51722369E2600F5DC8B /* SQHomeUnfoldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeUnfoldView.h; sourceTree = "<group>"; };
+		C6A8B51822369E2600F5DC8B /* SQHomeUnfoldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeUnfoldView.m; sourceTree = "<group>"; };
 		C6D441502233E41C00DC383C /* SQHomeTopInfosView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeTopInfosView.h; sourceTree = "<group>"; };
 		C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeTopInfosView.m; sourceTree = "<group>"; };
 		C6D441532234147900DC383C /* SQHomeBottomDealView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeBottomDealView.h; sourceTree = "<group>"; };
@@ -628,6 +631,8 @@
 				C6D441512233E41C00DC383C /* SQHomeTopInfosView.m */,
 				C6D441532234147900DC383C /* SQHomeBottomDealView.h */,
 				C6D441542234147900DC383C /* SQHomeBottomDealView.m */,
+				C6A8B51722369E2600F5DC8B /* SQHomeUnfoldView.h */,
+				C6A8B51822369E2600F5DC8B /* SQHomeUnfoldView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1118,12 +1123,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/DXPopover/DXPopover.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1131,11 +1135,10 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1225,6 +1228,7 @@
 				182A805020906B58009B244B /* SQIphonePx.m in Sources */,
 				182A8038209052FB009B244B /* TAPageControl.m in Sources */,
 				E99DE22320B58938009CEF88 /* SQBaseCollectionViewCell.m in Sources */,
+				C6A8B51922369E2600F5DC8B /* SQHomeUnfoldView.m in Sources */,
 				182A80772090801B009B244B /* UIButton+SQExtension.m in Sources */,
 				182A804120905977009B244B /* SQBaseViewController.m in Sources */,
 				E9340E402237409E0065F37C /* YGStartPageView.m in Sources */,
@@ -1390,10 +1394,7 @@
 				DEVELOPMENT_TEAM = 7Y6WF3G6RV;
 				GCC_PREFIX_HEADER = SQAPPSTART/Utils/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = SQAPPSTART/Other/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTART;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1411,10 +1412,7 @@
 				DEVELOPMENT_TEAM = 7Y6WF3G6RV;
 				GCC_PREFIX_HEADER = SQAPPSTART/Utils/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = SQAPPSTART/Other/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTART;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1427,11 +1425,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1445,11 +1439,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1462,11 +1452,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1479,11 +1465,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

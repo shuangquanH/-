@@ -63,7 +63,6 @@
     [super viewDidLoad];
     [self addSubviews];
     [self addConstrains];
-    [self reloadKlineViews];
 }
 
 

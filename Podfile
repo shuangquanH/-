@@ -38,8 +38,6 @@ pod 'IQKeyboardManager', '~> 5.0.0'
 pod 'UMengAnalytics'
 
 
-pod 'VerifyCode'
-
 
 end
 

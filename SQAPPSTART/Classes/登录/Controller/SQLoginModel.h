@@ -22,10 +22,6 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) NSString       *phoneNumberStr;
 @property (nonatomic, copy) NSString       *passWordStr;
 @property (nonatomic, copy) NSString       *messageVerifyCode;
-@property (nonatomic, copy) NSString       *userNameStr;
-
-//手机UUID -> 用于获得图形验证码
-@property (nonatomic, copy) NSString        *phoneCode;
 /** 登录之前所在的控制器  */
 @property (nonatomic, weak) SQBaseViewController    *sourceVC;
 

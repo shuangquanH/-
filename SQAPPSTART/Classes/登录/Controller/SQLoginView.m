@@ -8,34 +8,13 @@
 
 #import "SQLoginView.h"
 #import "WKInputFiledLimitUtils.h"
-
-
-/** TextFieldPlacelod  */
-#define KPHONESTR       @"手机号"
-#define KPASSWORD       @"密码"
-#define KFUJIAMA        @"附加码"
-#define KVERIFYCODE     @"验证码"
-#define KSETNAME        @"姓名2~12个字"
-#define KSETPSD         @"密码6-16位"
-#define KINVETCODE      @"邀请码 非必填"
-#define KSETCOMPYNAME   @"企业名"
-#define KSETJOBSTR      @"职务"
-#define KSETNEWPSD      @"设置新密码"
-#define KREPETPSD       @"确认密码"
-
+#import "UILabel+SQAttribut.h"
+#import "UIView+SQGesture.h"
 
 
 @implementation SQLoginView {
-    BOOL didCompletPhone;
-    BOOL didCompletPsswd;//登录密码
-    BOOL didCompletFujia;
-    BOOL didCompletVerify;
-    BOOL didCompletName;
-    BOOL didCompletCompany;
-    BOOL didCompletJob;
-    BOOL didCompletSetPsd;//设置密码
-    BOOL didCompletSetNewPsd;//设置新密码
-    BOOL didCompletRePsd;//重复密码
+    UITextField *passwordTextField;
+    BOOL        isAcceptUserProtocol;
 }
 
 - (void)setViewType:(SQLoginViewType)viewType {
@@ -46,20 +25,21 @@
             
         case loginPage:/** 登陆页  */
         {
-            UIButton *closebtn = [self creatCloseButton];
-            UILabel *title = [self creatTitleWithFont:KSYSFONT(32) title:@"登录" top:closebtn.sqBottom+KMARGIN];
-            UITextField *phone = [self creatTextFieldWithString:@"请输入手机号" top:title.sqBottom+KMARGIN*2];
-            UITextField *passwd = [self creatTextFieldWithString:@"请输入密码" top:phone.sqBottom+KMARGIN*2];
+            [self creatCloseButton];
+            UIImageView *topLogo = [self topLogoImage];
+            UITextField *phone = [self creatTextFieldWithString:@"请输入手机号" top:topLogo.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
+            UITextField *passwd = [self creatTextFieldWithString:@"请输入密码" top:phone.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
+            passwordTextField = passwd;
             UIButton *showPasswd = [self creatImageButtonIntextfield:passwd image:[UIImage imageNamed:@"login_icon_password"] selectImage:[UIImage imageNamed:@"login_icon_password"]];
-            [showPasswd addTarget:self action:@selector(showPassWordAct) forControlEvents:UIControlEventTouchUpInside];
+            [showPasswd addTarget:self action:@selector(showPassWordAct:) forControlEvents:UIControlEventTouchUpInside];
             
             UIButton    *sure = [self creatSureButtonWithString:@"登录" top:passwd.sqBottom+KMARGIN*2];
-            [sure addTarget:self.delegate action:@selector(tapedSureButton) forControlEvents:UIControlEventTouchUpInside];
+            [sure addTarget:self action:@selector(makeSureAction) forControlEvents:UIControlEventTouchUpInside];
             
-            UIButton    *bleft = [self creatBottomLeftBtnWithTitle:@"忘记密码" color:kCOLOR_999 top:sure.sqBottom+KMARGIN*2];
-            [bleft addTarget:self.delegate action:@selector(tapedForgetPsswdButton) forControlEvents:UIControlEventTouchUpInside];
-            
-            UIButton    *bright = [self creatBottomRightBtnWithTitle:@"立即注册" color:KCOLOR_MAIN top:bleft.sqTop];
+            UIButton *forget = [self creatBtnWithTitle:@"忘记密码" color:kCOLOR_999 top:sure.sqBottom+KMARGIN*2];
+            [forget addTarget:self.delegate action:@selector(tapedForgetPsswdButton) forControlEvents:UIControlEventTouchUpInside];
+
+            UIButton    *bright = [self creatBottomRegistBtn];
             [bright addTarget:self.delegate action:@selector(tapedRegistButton) forControlEvents:UIControlEventTouchUpInside];
             
 
@@ -68,50 +48,46 @@
             
         case registPage:/** 注册页  */
         {
-            UIButton *backButton = [self creatBackButton];
-            UILabel *title = [self creatTitleWithFont:KSYSFONT(32) title:@"注册" top:backButton.sqBottom+KMARGIN];
-            UITextField *phone = [self creatTextFieldWithString:@"本人实名手机号" top:title.sqBottom+KMARGIN*2];
-            UITextField *verify = [self creatTextFieldWithString:@"请输入短信验证码" top:phone.sqBottom+KMARGIN*2];
+            [self creatBackButton];
+            UIImageView *topLogo = [self topLogoImage];
+            UITextField *phone = [self creatTextFieldWithString:@"本人实名手机号" top:topLogo.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
+            UITextField *verify = [self creatTextFieldWithString:@"请输入短信验证码" top:phone.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
             UIButton *getVerifyBtn = [self creatTextButtonIntextfield:verify text:@"获取验证码"];
             [getVerifyBtn addTarget:self action:@selector(getVerifyAction) forControlEvents:UIControlEventTouchUpInside];
             
-            UITextField *passwd = [self creatTextFieldWithString:@"6-16位的数字或字母" top:verify.sqBottom+KMARGIN*2];
+            UITextField *passwd = [self creatTextFieldWithString:@"6-16位的数字或字母" top:verify.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
+            passwordTextField = passwd;
             UIButton *showPasswd = [self creatImageButtonIntextfield:passwd image:[UIImage imageNamed:@"login_icon_password"] selectImage:[UIImage imageNamed:@"login_icon_password"]];
-            [showPasswd addTarget:self action:@selector(showPassWordAct) forControlEvents:UIControlEventTouchUpInside];
+            [showPasswd addTarget:self action:@selector(showPassWordAct:) forControlEvents:UIControlEventTouchUpInside];
             
-            UIButton    *sure = [self creatSureButtonWithString:@"立即注册" top:passwd.sqBottom+KMARGIN*2];
-            [sure addTarget:self.delegate action:@selector(tapedSureButton) forControlEvents:UIControlEventTouchUpInside];
+            UILabel *userProl = [self creatUserProtolLabelWithTop:passwd.sqBottom+KMARGIN];
             
-            UIButton    *bleft = [self creatBottomLeftBtnWithTitle:@"已有账号" color:kCOLOR_999 top:sure.sqBottom+KMARGIN*2];
-            [bleft addTarget:self.delegate action:@selector(tapedGoToLogin) forControlEvents:UIControlEventTouchUpInside];
+            UIButton    *sure = [self creatSureButtonWithString:@"立即注册" top:userProl.sqBottom+KMARGIN];
+            [sure addTarget:self action:@selector(makeSureAction) forControlEvents:UIControlEventTouchUpInside];
             
-            UIButton    *bright = [self creatBottomRightBtnWithTitle:@"马上登录" color:KCOLOR_MAIN top:bleft.sqTop];
-            [bright addTarget:self.delegate action:@selector(tapedGoToLogin) forControlEvents:UIControlEventTouchUpInside];
+            UIButton *tologin = [self creatBtnWithTitle:@"已有账号,马上登录" color:kCOLOR_999 top:sure.sqBottom+KMARGIN*2];
+            [tologin addTarget:self.delegate action:@selector(tapedGoToLogin) forControlEvents:UIControlEventTouchUpInside];
 
         }
             break;
             
         case forgetPsd:
         {
-            UIButton *backButton = [self creatBackButton];
-            UILabel *title = [self creatTitleWithFont:KSYSFONT(32) title:@"忘记密码" top:backButton.sqBottom+KMARGIN];
-            UITextField *phone = [self creatTextFieldWithString:@"本人实名手机号" top:title.sqBottom+KMARGIN*2];
-            UITextField *verify = [self creatTextFieldWithString:@"请输入短信验证码" top:phone.sqBottom+KMARGIN*2];
+            [self creatBackButton];
+            UIImageView *topLogo = [self topLogoImage];
+            UITextField *phone = [self creatTextFieldWithString:@"本人实名手机号" top:topLogo.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
+            UITextField *verify = [self creatTextFieldWithString:@"请输入短信验证码" top:phone.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
             UIButton *getVerifyBtn = [self creatTextButtonIntextfield:verify text:@"获取验证码"];
             [getVerifyBtn addTarget:self action:@selector(getVerifyAction) forControlEvents:UIControlEventTouchUpInside];
             
-            UITextField *passwd = [self creatTextFieldWithString:@"6-16位的数字或字母" top:verify.sqBottom+KMARGIN*2];
+            UITextField *passwd = [self creatTextFieldWithString:@"6-16位的数字或字母" top:verify.sqBottom+KMARGIN*2 icon:[UIImage imageNamed:@"login_icon_password"]];
+            passwordTextField = passwd;
             UIButton *showPasswd = [self creatImageButtonIntextfield:passwd image:[UIImage imageNamed:@"login_icon_password"] selectImage:[UIImage imageNamed:@"login_icon_password"]];
-            [showPasswd addTarget:self action:@selector(showPassWordAct) forControlEvents:UIControlEventTouchUpInside];
+            [showPasswd addTarget:self action:@selector(showPassWordAct:) forControlEvents:UIControlEventTouchUpInside];
             
-            UIButton    *sure = [self creatSureButtonWithString:@"立即注册" top:passwd.sqBottom+KMARGIN*2];
-            [sure addTarget:self.delegate action:@selector(tapedSureButton) forControlEvents:UIControlEventTouchUpInside];
+            UIButton    *sure = [self creatSureButtonWithString:@"确定" top:passwd.sqBottom+KMARGIN*2];
+            [sure addTarget:self action:@selector(makeSureAction) forControlEvents:UIControlEventTouchUpInside];
             
-            UIButton    *bleft = [self creatBottomLeftBtnWithTitle:@"已有账号" color:kCOLOR_999 top:sure.sqBottom+KMARGIN*2];
-            [bleft addTarget:self.delegate action:@selector(tapedGoToLogin) forControlEvents:UIControlEventTouchUpInside];
-            
-            UIButton    *bright = [self creatBottomRightBtnWithTitle:@"马上登录" color:KCOLOR_MAIN top:bleft.sqTop];
-            [bright addTarget:self.delegate action:@selector(tapedGoToLogin) forControlEvents:UIControlEventTouchUpInside];
         }
             break;
             
@@ -119,6 +95,7 @@
             break;
     }
 }
+
 /** 返回按钮  */
 - (UIButton *)creatBackButton {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -138,34 +115,45 @@
     [btn addTarget:self.delegate action:@selector(tapedCloseBtn) forControlEvents:UIControlEventTouchUpInside];
     return btn;
 }
-
-/** 创建title并返回底部的y坐标  */
-- (UILabel *)creatTitleWithFont:(UIFont *)font title:(NSString *)title top:(CGFloat)top{
-    UILabel *label = [[UILabel alloc] init];
-    label.text = title;
-    label.font = font;
-    label.frame = CGRectMake(KMARGIN, top, KAPP_WIDTH, 60);
-    [self addSubview:label];
-    return label;
+- (UIImageView *)topLogoImage {
+    UIImageView *imagev = [UIImageView new];
+    imagev.frame = CGRectMake(0, KNAV_HEIGHT, 80, 80);
+    imagev.backgroundColor = KCOLOR_MAIN;
+    [self addSubview:imagev];
+    imagev.sqCenterX=self.sqWidth/2.0;
+    return imagev;
 }
 
+
+
 /** 创建输入框  */
-- (UITextField *)creatTextFieldWithString:(NSString *)plachode top:(CGFloat)top{
-    UITextField *textField = [[UITextField alloc] init];
-    [self addSubview:textField];
-    textField.placeholder = plachode;
+- (UITextField *)creatTextFieldWithString:(NSString *)plachode top:(CGFloat)top icon:(UIImage *)icon {
     UIView  *bottomLine = [[UIView alloc] init];
     bottomLine.backgroundColor = KCOLOR_LINE;
-    [textField addSubview:bottomLine];
+    [self addSubview:bottomLine];
     
+    UITextField *textField = [[UITextField alloc] init];
+    textField.backgroundColor = KCOLOR_WHIT;
+    [self addSubview:textField];
+    textField.placeholder = plachode;
     textField.delegate = self;
     [textField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventAllEditingEvents];
-    [textField setValue:kCOLOR_999 forKeyPath:@"_placeholderLabel.textColor"];
+    if ([textField.placeholder containsString:@"密码"]||
+        [textField.placeholder containsString:@"6-16位"]) {
+        textField.secureTextEntry = YES;
+    }
     
     
-    textField.frame = CGRectMake(0, top, KAPP_WIDTH-2*KMARGIN, 60);
-    textField.sqCenterX=self.sqCenterX;
-    bottomLine.frame = CGRectMake(0, textField.sqHeight-1, textField.sqWidth, 1);
+    
+    if (icon) {
+        UIImageView *iconimage = [[UIImageView alloc] initWithImage:icon];
+        [self addSubview:iconimage];
+        textField.frame = CGRectMake(KMARGIN*2, top, KAPP_WIDTH-KMARGIN*3, 30);
+        iconimage.frame = CGRectMake(KMARGIN, top, KMARGIN, 30);
+    } else {
+        textField.frame = CGRectMake(KMARGIN, top, KAPP_WIDTH-KMARGIN*2, 30);
+    }
+    bottomLine.frame = CGRectMake(KMARGIN, textField.sqBottom, KAPP_WIDTH-KMARGIN*2, 1);
     return textField;
 }
 /** 创建确认按钮  */
@@ -185,10 +173,9 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:normale forState:UIControlStateNormal];
     [button setImage:selected forState:UIControlStateSelected];
-    [textfield addSubview:button];
-    [button sizeToFit];
-    button.sqRight=textfield.sqWidth;
-    button.sqCenterY = textfield.sqHeight/2.0;
+    [self addSubview:button];
+    button.frame = CGRectMake(textfield.sqRight-44, textfield.sqTop, 44, 44);
+    button.sqCenterY = textfield.sqCenterY;
     return button;
 }
 /** 创建textfield上的文字按钮  */
@@ -201,52 +188,135 @@
     button.sqRight=textfield.sqWidth;
     return button;
 }
-/** 创建底部左边按钮  */
-- (UIButton *)creatBottomLeftBtnWithTitle:(NSString *)title color:(UIColor *)color top:(CGFloat)top {
+/** 创建忘记密码按钮  */
+- (UIButton *)creatBtnWithTitle:(NSString *)title color:(UIColor *)color top:(CGFloat)top {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, top, 100, 100);
     [self addSubview:button];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:color forState:UIControlStateNormal];
     [button sizeToFit];
-    button.sqLeft = KAPP_WIDTH/2.0-button.sqWidth-KMARGIN;
+    button.sqCenterX = self.sqWidth/2.0;
     return button;
 }
-/** 创建底部右边按钮  */
-- (UIButton *)creatBottomRightBtnWithTitle:(NSString *)title color:(UIColor *)color top:(CGFloat)top {
+- (UIButton *)creatBottomRegistBtn {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, top, 100, 100);
+    button.frame = CGRectMake(0, self.sqHeight-100, 100, 100);
     [self addSubview:button];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:color forState:UIControlStateNormal];
+    [button setTitle:@"注册账号,送0.1BTC" forState:UIControlStateNormal];
+    [button setTitleColor:kCOLOR_999 forState:UIControlStateNormal];
     [button sizeToFit];
-    button.sqLeft = KAPP_WIDTH/2.0+KMARGIN;
+    button.sqCenterX = self.sqWidth/2.0;
+    button.sqBottom = self.sqHeight-KMARGIN*2;
     return button;
 }
-
+- (UILabel *)creatUserProtolLabelWithTop:(CGFloat)top {
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"我同意《注册使用服务协议》和《个人隐私协议》";
+    label.font = KSYSFONT(12);
+    label.frame = CGRectMake(KMARGIN, top, KAPP_WIDTH-KMARGIN, 10);
+    [self addSubview:label];
+    label.userInteractionEnabled = YES;
+    WeakSelf(weakSelf);
+    [label sq_addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        [weakSelf.delegate tapedUserProtocol];
+    }];
+    
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:label.text];
+    [attrStr addAttribute:NSForegroundColorAttributeName
+                    value:KCOLOR_MAIN
+                    range:NSMakeRange(3, 10)];
+    [attrStr addAttribute:NSForegroundColorAttributeName
+                    value:KCOLOR_MAIN
+                    range:NSMakeRange(14, 8)];
+    label.attributedText = attrStr;
+    
+    UIButton    *accept = [UIButton buttonWithType:UIButtonTypeCustom];
+    [accept setImage:[UIImage imageNamed:@"login_icon_password"] forState:UIControlStateNormal];
+    [self addSubview:accept];
+    [accept addTarget:self action:@selector(acceptUserProtocol:) forControlEvents:UIControlEventTouchUpInside];
+    accept.frame = CGRectMake(label.sqLeft, label.sqTop, 22, 22);
+    label.sqLeft=accept.sqRight;
+    return label;
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if ([textField.placeholder containsString:@"手机号"]) {
+        textField.keyboardType = UIKeyboardTypePhonePad;
+    }
+    if ([textField.placeholder containsString:@"密码"]||
+        [textField.placeholder containsString:@"6-16位"]) {
+        textField.keyboardType = UIKeyboardTypeASCIICapable;
+        textField.secureTextEntry = YES;
+    }
+    if ([textField.placeholder containsString:@"验证码"]) {
+        textField.keyboardType = UIKeyboardTypePhonePad;
+    }
 }
 
 #pragma mark Notifications:
 - (void)textFieldChange:(UITextField *)textField {
-}
-
-
-
-- (void)showPassWordAct {
+    if ([textField.placeholder containsString:@"手机号"]) {
+        [WKInputFiledLimitUtils textField:textField limitCount:11 filterEmoji:YES];
+        [SQLoginModel shareModel].phoneNumberStr = textField.text;
+    }
+    if ([textField.placeholder containsString:@"密码"]||
+        [textField.placeholder containsString:@"6-16位"]) {
+        [WKInputFiledLimitUtils textField:textField limitCount:16 filterEmoji:YES];
+        [SQLoginModel shareModel].passWordStr = textField.text;
+    }
+    if ([textField.placeholder containsString:@"验证码"]) {
+        [WKInputFiledLimitUtils textField:textField limitCount:6 filterEmoji:YES];
+        [SQLoginModel shareModel].messageVerifyCode = textField.text;
+    }
+    
     
 }
+
+
+#pragma mark Actions
+- (void)showPassWordAct:(UIButton *)btn {
+    btn.selected = !btn.selected;
+    NSString *text = passwordTextField.text;
+    if (btn.selected) {
+        passwordTextField.text = @"";
+        passwordTextField.secureTextEntry = NO;
+        passwordTextField.text = text;
+    } else {
+        passwordTextField.text = @"";
+        passwordTextField.secureTextEntry = YES;
+        passwordTextField.text = text;
+    }
+}
+
 - (void)getVerifyAction {
-    
+    [self.codeManager openVerifyCodeView:self];
+}
+- (void)acceptUserProtocol:(UIButton *)btn {
+    btn.selected = !btn.selected;
+    isAcceptUserProtocol = btn.selected;
 }
 
+- (void)makeSureAction {
+    if (self.viewType==loginPage) {
+        
+    } else if (self.viewType==registPage) {
+        if (isAcceptUserProtocol) {
+            [self.delegate tapedSureButton];
+        } else {
+            [SVProgressHUD showInfoWithStatus:@"请同意用户协议!"];
+        }
+        
+    } else if (self.viewType==forgetPsd) {
+        
+    }
+}
 
 
 - (UITextField *)getTextFieldWithPlace:(NSString *)place {
     for (UITextField *textField in self.subviews) {
         if ([textField isKindOfClass:[UITextField class]]) {
-            if ([textField.placeholder isEqualToString:place]) {
+            if ([textField.placeholder containsString:place]) {
                 return textField;
             }
         }
@@ -258,4 +328,33 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+
+
+
+- (NTESVerifyCodeManager *)codeManager {
+    if (!_codeManager) {
+        _codeManager = [NTESVerifyCodeManager sharedInstance];
+        _codeManager.delegate = self;
+        // 设置透明度
+        _codeManager.alpha = 0.7;
+        
+        // 设置frame
+        _codeManager.frame = CGRectNull;
+        // 无感知验证码
+        NSString *captchaid = @"50f93d937669429bb2008b2334a67911";
+        _codeManager.mode = NTESVerifyCodeNormal;
+        [_codeManager configureVerifyCode:captchaid timeout:10.0];
+    }
+    return _codeManager;
+}
+
+#pragma mark - NTESVerifyCodeManagerDelegate
+- (void)verifyCodeValidateFinish:(BOOL)result validate:(NSString *)validate message:(NSString *)message{
+    if (result) {//成功
+        [self.delegate tapedGetVerifyCode];
+    }
+}
+
+
 @end

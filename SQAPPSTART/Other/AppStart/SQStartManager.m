@@ -25,7 +25,7 @@
 
 - (void)startApplication:(UIApplication *)appcation withOptions:(NSDictionary *)launchOptions {
     
-    
+    [SVProgressHUD setMaximumDismissTimeInterval:2];
     /** UMeng统计  */
     UMConfigInstance.appKey = KUMAPPKEY;
     [MobClick setAppVersion:[self getAppVersion]];
@@ -40,7 +40,8 @@
     manager.toolbarManageBehaviour = IQAutoToolbarByPosition;
     manager.toolbarTintColor = KCOLOR_MAIN;
     
-    self.userId = [[NSUserDefaults standardUserDefaults] valueForKey:KUSERIDKEY];   
+    self.userId = [[NSUserDefaults standardUserDefaults] valueForKey:KUSERIDKEY];
+    
 }
 
 - (void)setUserId:(NSString *)userId {

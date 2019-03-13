@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SQLoginModel.h"
+#import <VerifyCode/NTESVerifyCodeManager.h>
 
 
 @protocol sqLoginViewDelegate
@@ -16,18 +17,25 @@
 - (void)tapedForgetPsswdButton;
 - (void)tapedRegistButton;
 - (void)tapedGoToLogin;
+- (void)tapedGetVerifyCode;
+- (void)tapedUserProtocol;
 
 - (void)tapedBackBtn;
 - (void)tapedCloseBtn;
 @end
 
 
-@interface SQLoginView : UIView <UITextFieldDelegate>
+@interface SQLoginView : UIView <UITextFieldDelegate, NTESVerifyCodeManagerDelegate>
 
 @property (nonatomic, strong) UIButton    *sureButton;
 
 @property (nonatomic, assign) SQLoginViewType       viewType;
 @property (nonatomic, weak) id <sqLoginViewDelegate>       delegate;
+
+
+
+
+@property(nonatomic,strong)     NTESVerifyCodeManager *codeManager;
 
 
 

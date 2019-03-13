@@ -64,6 +64,16 @@
 		E9340E4B22374A6E0065F37C /* SQLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E4A22374A6E0065F37C /* SQLoginModel.m */; };
 		E9340E4E22374B4A0065F37C /* SQLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E4D22374B4A0065F37C /* SQLoginView.m */; };
 		E9340E5122374C850065F37C /* WKInputFiledLimitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E4F22374C840065F37C /* WKInputFiledLimitUtils.m */; };
+		E9340E53223899210065F37C /* VerifyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9340E52223899210065F37C /* VerifyCode.framework */; };
+		E9340E5522389A3B0065F37C /* NTESVerifyCodeResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E9340E5422389A3B0065F37C /* NTESVerifyCodeResources.bundle */; };
+		E9340E5722389A900065F37C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9340E5622389A900065F37C /* SystemConfiguration.framework */; };
+		E9340E5922389A9A0065F37C /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9340E5822389A9A0065F37C /* JavaScriptCore.framework */; };
+		E9340E5B22389AA30065F37C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9340E5A22389AA30065F37C /* WebKit.framework */; };
+		E9340E5E2238AF7A0065F37C /* UILabel+SQAttribut.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E5D2238AF7A0065F37C /* UILabel+SQAttribut.m */; };
+		E9340E612238AF890065F37C /* UIView+SQGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E602238AF890065F37C /* UIView+SQGesture.m */; };
+		E9340E642238AF950065F37C /* UIView+SQAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E622238AF940065F37C /* UIView+SQAnimations.m */; };
+		E9340E672238AFB80065F37C /* NSString+SQAttributeString.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E652238AFB80065F37C /* NSString+SQAttributeString.m */; };
+		E9340E6A2238AFD70065F37C /* NSMutableAttributedString+AppendImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E692238AFD70065F37C /* NSMutableAttributedString+AppendImage.m */; };
 		E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */; };
 		E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863522324BB5009650F7 /* UIColor+Y_StockChart.m */; };
 		E991867622324BB6009650F7 /* Y_LayoutViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */; };
@@ -245,6 +255,21 @@
 		E9340E4D22374B4A0065F37C /* SQLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLoginView.m; sourceTree = "<group>"; };
 		E9340E4F22374C840065F37C /* WKInputFiledLimitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInputFiledLimitUtils.m; sourceTree = "<group>"; };
 		E9340E5022374C850065F37C /* WKInputFiledLimitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInputFiledLimitUtils.h; sourceTree = "<group>"; };
+		E9340E52223899210065F37C /* VerifyCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VerifyCode.framework; sourceTree = "<group>"; };
+		E9340E5422389A3B0065F37C /* NTESVerifyCodeResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NTESVerifyCodeResources.bundle; sourceTree = "<group>"; };
+		E9340E5622389A900065F37C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E9340E5822389A9A0065F37C /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E9340E5A22389AA30065F37C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E9340E5C2238AF7A0065F37C /* UILabel+SQAttribut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SQAttribut.h"; sourceTree = "<group>"; };
+		E9340E5D2238AF7A0065F37C /* UILabel+SQAttribut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SQAttribut.m"; sourceTree = "<group>"; };
+		E9340E5F2238AF890065F37C /* UIView+SQGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQGesture.h"; sourceTree = "<group>"; };
+		E9340E602238AF890065F37C /* UIView+SQGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQGesture.m"; sourceTree = "<group>"; };
+		E9340E622238AF940065F37C /* UIView+SQAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQAnimations.m"; sourceTree = "<group>"; };
+		E9340E632238AF950065F37C /* UIView+SQAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQAnimations.h"; sourceTree = "<group>"; };
+		E9340E652238AFB80065F37C /* NSString+SQAttributeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQAttributeString.m"; sourceTree = "<group>"; };
+		E9340E662238AFB80065F37C /* NSString+SQAttributeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQAttributeString.h"; sourceTree = "<group>"; };
+		E9340E682238AFD70065F37C /* NSMutableAttributedString+AppendImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+AppendImage.h"; sourceTree = "<group>"; };
+		E9340E692238AFD70065F37C /* NSMutableAttributedString+AppendImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+AppendImage.m"; sourceTree = "<group>"; };
 		E991862C22324BB5009650F7 /* Y_ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_ChartView.h; sourceTree = "<group>"; };
 		E991862F22324BB5009650F7 /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
 		E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
@@ -333,6 +358,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9340E5B22389AA30065F37C /* WebKit.framework in Frameworks */,
+				E9340E5922389A9A0065F37C /* JavaScriptCore.framework in Frameworks */,
+				E9340E5722389A900065F37C /* SystemConfiguration.framework in Frameworks */,
+				E9340E53223899210065F37C /* VerifyCode.framework in Frameworks */,
 				996360B8AA029987D621F671 /* libPods-SQAPPSTART.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +386,9 @@
 		16C6589ABB3CEE1B1C66457D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9340E5A22389AA30065F37C /* WebKit.framework */,
+				E9340E5822389A9A0065F37C /* JavaScriptCore.framework */,
+				E9340E5622389A900065F37C /* SystemConfiguration.framework */,
 				FC21D2D5666D757136004434 /* libPods-SQAPPSTART.a */,
 			);
 			name = Frameworks;
@@ -501,6 +533,12 @@
 		182A801C209033F3009B244B /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E9340E632238AF950065F37C /* UIView+SQAnimations.h */,
+				E9340E622238AF940065F37C /* UIView+SQAnimations.m */,
+				E9340E5F2238AF890065F37C /* UIView+SQGesture.h */,
+				E9340E602238AF890065F37C /* UIView+SQGesture.m */,
+				E9340E5C2238AF7A0065F37C /* UILabel+SQAttribut.h */,
+				E9340E5D2238AF7A0065F37C /* UILabel+SQAttribut.m */,
 				182A8078209081BA009B244B /* UIBarButtonItem+SQExtension.h */,
 				182A8079209081BA009B244B /* UIBarButtonItem+SQExtension.m */,
 				182A803C20905956009B244B /* UINavigationController+FDFullscreenPopGesture.h */,
@@ -540,6 +578,10 @@
 				182A806120907916009B244B /* NSString+SQSizeOfString.m */,
 				182A8063209079B3009B244B /* NSString+SQCheckString.h */,
 				182A8064209079B3009B244B /* NSString+SQCheckString.m */,
+				E9340E662238AFB80065F37C /* NSString+SQAttributeString.h */,
+				E9340E652238AFB80065F37C /* NSString+SQAttributeString.m */,
+				E9340E682238AFD70065F37C /* NSMutableAttributedString+AppendImage.h */,
+				E9340E692238AFD70065F37C /* NSMutableAttributedString+AppendImage.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -686,6 +728,8 @@
 		E90BBDEA209C0801006DCB7B /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E9340E5422389A3B0065F37C /* NTESVerifyCodeResources.bundle */,
+				E9340E52223899210065F37C /* VerifyCode.framework */,
 				E991862A22324BB5009650F7 /* Chartview */,
 				E9EB2BC62230C1F300F7F152 /* NetWorking */,
 			);
@@ -1074,6 +1118,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9340E5522389A3B0065F37C /* NTESVerifyCodeResources.bundle in Resources */,
 				E991869A22325211009650F7 /* ABDepthBidsData.json in Resources */,
 				182A7FE8209031A7009B244B /* Assets.xcassets in Resources */,
 				E99186A022325217009650F7 /* ABKLineData.json in Resources */,
@@ -1123,7 +1168,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/DXPopover/DXPopover.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
@@ -1138,7 +1183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SQAPPSTART/Pods-SQAPPSTART-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1167,8 +1212,10 @@
 				E991868E22324BB6009650F7 /* DepthView.m in Sources */,
 				182A807420907F72009B244B /* UITabBar+SQExtension.m in Sources */,
 				E991868222324BB6009650F7 /* Y_KLineModel.m in Sources */,
+				E9340E642238AF950065F37C /* UIView+SQAnimations.m in Sources */,
 				E991867722324BB6009650F7 /* Y_BaseLine.m in Sources */,
 				182A8036209052FB009B244B /* TAAnimatedDotView.m in Sources */,
+				E9340E6A2238AFD70065F37C /* NSMutableAttributedString+AppendImage.m in Sources */,
 				182A7FEE209031A7009B244B /* main.m in Sources */,
 				E991868C22324BB6009650F7 /* DepthGroupModel.m in Sources */,
 				182A8065209079B3009B244B /* NSString+SQCheckString.m in Sources */,
@@ -1204,6 +1251,7 @@
 				E991867B22324BB6009650F7 /* Y_KLine.m in Sources */,
 				E991867622324BB6009650F7 /* Y_LayoutViewUtil.m in Sources */,
 				182A80892090896B009B244B /* SQStartManager.m in Sources */,
+				E9340E672238AFB80065F37C /* NSString+SQAttributeString.m in Sources */,
 				E90BBDE4209C05A2006DCB7B /* SQBaseTableView.m in Sources */,
 				E991867922324BB6009650F7 /* Y_MALine.m in Sources */,
 				E991869922325211009650F7 /* ABDataSourceManager.m in Sources */,
@@ -1216,6 +1264,7 @@
 				182A807D209082DE009B244B /* SQDataCache.m in Sources */,
 				182A807A209081BA009B244B /* UIBarButtonItem+SQExtension.m in Sources */,
 				182A8037209052FB009B244B /* TADotView.m in Sources */,
+				E9340E612238AF890065F37C /* UIView+SQGesture.m in Sources */,
 				E991868322324BB6009650F7 /* Y_KLineGroupModel.m in Sources */,
 				182A804420905AC7009B244B /* SQBaseTableViewController.m in Sources */,
 				E9340E3D2236433D0065F37C /* SQTransformTime.m in Sources */,
@@ -1231,6 +1280,7 @@
 				C6A8B51922369E2600F5DC8B /* SQHomeUnfoldView.m in Sources */,
 				182A80772090801B009B244B /* UIButton+SQExtension.m in Sources */,
 				182A804120905977009B244B /* SQBaseViewController.m in Sources */,
+				E9340E5E2238AF7A0065F37C /* UILabel+SQAttribut.m in Sources */,
 				E9340E402237409E0065F37C /* YGStartPageView.m in Sources */,
 				182A803A209052FB009B244B /* SDCycleScrollView.m in Sources */,
 				E991869F22325217009650F7 /* ABDepthViewController.m in Sources */,
@@ -1391,10 +1441,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Y6WF3G6RV;
+				DEVELOPMENT_TEAM = C4WP4QR8QG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SQAPPSTART/Libs",
+				);
 				GCC_PREFIX_HEADER = SQAPPSTART/Utils/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = SQAPPSTART/Other/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTART;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1409,10 +1466,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Y6WF3G6RV;
+				DEVELOPMENT_TEAM = C4WP4QR8QG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SQAPPSTART/Libs",
+				);
 				GCC_PREFIX_HEADER = SQAPPSTART/Utils/Macro/PrefixHeader.pch;
 				INFOPLIST_FILE = SQAPPSTART/Other/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTART;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1425,7 +1489,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1439,7 +1507,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1452,7 +1524,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1465,7 +1541,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQAPPSTARTUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butry.SQAPPSTARTUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -24,6 +24,7 @@
 /** tools */
 #import "SQIphonePx.h"
 #import "YYModel.h"
+#import "SVProgressHUD.h"
 
 /** layout  */
 #import "Masonry.h"

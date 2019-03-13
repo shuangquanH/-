@@ -55,7 +55,7 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - AutoScrollLabel
     - DXPopover
@@ -93,6 +93,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ad83ad589b60e9a79234638448f165e4e7cf7a60
+PODFILE CHECKSUM: 2fb98363e8974b6b5a0479f484f8636260585782
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.1

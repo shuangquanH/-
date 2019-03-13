@@ -8,9 +8,10 @@
 
 #import "SQLoginViewController.h"
 #import "SQLoginView.h"
+#import "SQBaseWebViewController.h"
+ 
 
 @interface SQLoginViewController () <sqLoginViewDelegate>
-
 @property (nonatomic, strong)   SQLoginView        *loginTypeView;
 
 @end
@@ -19,13 +20,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
     self.view = self.loginTypeView;
     self.loginTypeView.viewType = self.viewType;
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+
+
+
+
+
 
 - (void)tapedSureButton {
     SQLoginViewController *vc = [[SQLoginViewController alloc] init];
+    [[NTESVerifyCodeManager sharedInstance] openVerifyCodeView:nil];
 }
 - (void)tapedForgetPsswdButton {
     SQLoginViewController *vc = [[SQLoginViewController alloc] init];
@@ -41,6 +52,16 @@
     SQLoginViewController *vc = [[SQLoginViewController alloc] init];
     vc.viewType = loginPage;
     [self pushVc:vc];
+}
+- (void)tapedGetVerifyCode {
+    //获取短信验证码
+}
+- (void)tapedUserProtocol {
+    self.navigationController.navigationBar.hidden = NO;
+    SQBaseWebViewController *web = [[SQBaseWebViewController alloc] init];
+    web.title = @"用户协议";
+    web.webUrl = @"https://www.baidu.com";
+    [self pushVc:web];
 }
 
 - (void)tapedBackBtn {
@@ -60,6 +81,8 @@
     }
     return _loginTypeView;
 }
+
+
 
 
 @end

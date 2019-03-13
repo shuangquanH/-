@@ -22,18 +22,4 @@
 }
 
 
-- (NSString *)phoneCode {
-    if (!_phoneCode) {
-        NSString *uuid = [[NSUserDefaults standardUserDefaults] valueForKey:@"com.ganglian.uuid"];
-        if (!uuid.length) {
-            uuid = [NSUUID UUID].UUIDString;
-            [[NSUserDefaults standardUserDefaults] setObject:uuid forKey:@"com.ganglian.uuid"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
-        _phoneCode = uuid;
-    }
-    return _phoneCode;
-}
-
-
 @end

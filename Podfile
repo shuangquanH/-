@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '8.0'
 
 target ‘SQAPPSTART’ do
 
@@ -37,6 +37,8 @@ pod 'IQKeyboardManager', '~> 5.0.0'
 #友盟统计
 pod 'UMengAnalytics'
 
+
+pod 'VerifyCode'
 
 
 end

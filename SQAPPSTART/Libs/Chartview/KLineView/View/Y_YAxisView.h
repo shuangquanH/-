@@ -12,6 +12,8 @@
 
 - (void)setLineCount:(NSInteger)verticalCount maxPrice:(CGFloat )maxPrice minPrice:(CGFloat )minPrice;
 
+- (void)getStopLossPrice:(CGFloat)lossPrice stopProfitPrice:(CGFloat)profitPrice;
+
 @property (nonatomic, copy) NSString *ask_fixed;
 @property (nonatomic, copy) NSString *bid_fixed;
 

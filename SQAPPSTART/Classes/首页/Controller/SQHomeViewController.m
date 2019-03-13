@@ -7,6 +7,7 @@
 //
 
 #import "SQHomeViewController.h"
+#import "SQHomeFullScreenVC.h"
 #import "SQLoginViewController.h"
 
 #import "SQHomeTopInfosView.h"
@@ -18,7 +19,7 @@
 
 @interface SQHomeViewController ()
 
-@property (nonatomic, strong)   UIButton                *closeFullButton;
+@property (nonatomic, strong)   SQHomeFullScreenVC      *fullScreenVC;
 @property (nonatomic, strong)   ABKLineViewController   *klineVC;
 @property (nonatomic, strong)   SQHomeTopInfosView      *topInfoView;
 @property (nonatomic, strong)   SQHomeBottomDealView    *bottomDealView;
@@ -39,7 +40,9 @@
 
 #pragma mark ViewsAndControllers
 - (void)addControllersAndViews {
-    [self presentVc:[[UINavigationController alloc] initWithRootViewController:[SQLoginViewController new]]];
+    //如果未登录的话
+//    [self presentVc:[[UINavigationController alloc] initWithRootViewController:[SQLoginViewController new]]];
+    
     [self addLeftBarbuttonItemIsImage:YES title:@"home_tab__icon3" selector:@selector(leftAction)];
     [self addRightBarbuttonItemIsImage:NO title:@"优惠券" selector:@selector(leftAction)];
     [self.view addSubview:self.topInfoView];
@@ -54,22 +57,7 @@
     self.topInfoView.frame = CGRectMake(0, KNAV_HEIGHT, KAPP_WIDTH, kTopInfoViewH);
     self.bottomDealView.frame = CGRectMake(0, KAPP_HEIGHT-kBottomDealViewH-kUnfoldViewH, KAPP_WIDTH, kBottomDealViewH);
     self.unfoldDealView.frame = CGRectMake(0, KAPP_HEIGHT-kUnfoldViewH, KAPP_WIDTH, kUnfoldViewH);
-    
-    if (self.isFullScreen) {
-        [self hiddenStatusBar:YES];
-        self.navigationController.navigationBar.hidden = YES;
-        self.klineVC.view.frame = CGRectMake(0, KSTATU_HEIGHT, KAPP_WIDTH, KAPP_HEIGHT-KSTATU_HEIGHT);
-    } else {
-        [self hiddenStatusBar:NO];
-        self.navigationController.navigationBar.hidden = NO;
-        CGRect windowFrame = CGRectMake(0, KNAV_HEIGHT+kTopInfoViewH, KAPP_WIDTH, KAPP_HEIGHT-KNAV_HEIGHT-kTopInfoViewH-kBottomDealViewH-kUnfoldViewH);
-        self.klineVC.view.frame = windowFrame;
-    }
-    
-    
-    [self.klineVC reloadKlineViews];
-    
-    
+    self.klineVC.view.frame= CGRectMake(0, KNAV_HEIGHT+kTopInfoViewH, KAPP_WIDTH, KAPP_HEIGHT-KNAV_HEIGHT-kTopInfoViewH-kBottomDealViewH-kUnfoldViewH);
 }
 
 
@@ -77,49 +65,10 @@
 
 #pragma mark Actions
 - (void)leftAction {
-    /** 切换成竖屏  */
-    if (self.isFullScreen) {
-        [UIView animateWithDuration:0.2f animations:^{
-            self.klineVC.view.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            self.isFullScreen = NO;
-            [self makeStockViewConstraints];
-            self.closeFullButton.hidden = YES;
-            self.bottomDealView.hidden = NO;
-            self.unfoldDealView.hidden = NO;
-        }];
-    } else {
-        /** 切换成横屏  */
-        [UIView animateWithDuration:0.2f animations:^{
-            self.klineVC.view.transform = CGAffineTransformMakeRotation(M_PI/2);
-        } completion:^(BOOL finished) {
-            self.isFullScreen = YES;
-            [self makeStockViewConstraints];
-            self.closeFullButton.hidden = NO;
-            self.bottomDealView.hidden = YES;
-            self.unfoldDealView.hidden = YES;
-        }];
-    }
+    [self presentVc:self.fullScreenVC];
 }
 
 #pragma mark lazyLoad
-- (UIButton *)closeFullButton {
-    if (!_closeFullButton) {
-        _closeFullButton = [[UIButton alloc] init];
-        _closeFullButton.layer.cornerRadius = 11;
-        _closeFullButton.layer.masksToBounds = YES;
-        _closeFullButton.backgroundColor = KCOLOR_MAIN;
-        [_closeFullButton addTarget:self action:@selector(leftAction) forControlEvents:UIControlEventTouchUpInside];
-        _closeFullButton.hidden = YES;
-        [self.view addSubview:_closeFullButton];
-        [_closeFullButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.mas_equalTo(22);
-            make.bottom.right.equalTo(self.view).offset(-8);
-        }];
-    }
-    return _closeFullButton;
-}
-
 - (SQHomeTopInfosView *)topInfoView {
     if (!_topInfoView) {
         _topInfoView = [[SQHomeTopInfosView alloc] init];
@@ -145,5 +94,14 @@
         _unfoldDealView = [[SQHomeUnfoldView alloc] init];
     }
     return _unfoldDealView;
+}
+
+- (SQHomeFullScreenVC *)fullScreenVC {
+    if (!_fullScreenVC) {
+        _fullScreenVC = [[SQHomeFullScreenVC alloc] init];
+        _fullScreenVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        _fullScreenVC.view.transform = CGAffineTransformMakeRotation(M_PI/2);
+    }
+    return _fullScreenVC;
 }
 @end

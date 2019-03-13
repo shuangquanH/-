@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SQHomeTopInfosView : UIView
 
+
+@property (nonatomic, assign)   BOOL        isFullScreen;
+
 @end
 
 NS_ASSUME_NONNULL_END

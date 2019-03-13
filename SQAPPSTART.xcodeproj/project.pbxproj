@@ -74,6 +74,8 @@
 		E9340E642238AF950065F37C /* UIView+SQAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E622238AF940065F37C /* UIView+SQAnimations.m */; };
 		E9340E672238AFB80065F37C /* NSString+SQAttributeString.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E652238AFB80065F37C /* NSString+SQAttributeString.m */; };
 		E9340E6A2238AFD70065F37C /* NSMutableAttributedString+AppendImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E692238AFD70065F37C /* NSMutableAttributedString+AppendImage.m */; };
+		E9340E6D2238B6D60065F37C /* SQHomeFullScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E6C2238B6D60065F37C /* SQHomeFullScreenVC.m */; };
+		E9340E712238FB130065F37C /* SQStopLossProfitLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E9340E702238FB130065F37C /* SQStopLossProfitLine.m */; };
 		E991867422324BB6009650F7 /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */; };
 		E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863522324BB5009650F7 /* UIColor+Y_StockChart.m */; };
 		E991867622324BB6009650F7 /* Y_LayoutViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E991863722324BB5009650F7 /* Y_LayoutViewUtil.m */; };
@@ -270,6 +272,11 @@
 		E9340E662238AFB80065F37C /* NSString+SQAttributeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQAttributeString.h"; sourceTree = "<group>"; };
 		E9340E682238AFD70065F37C /* NSMutableAttributedString+AppendImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+AppendImage.h"; sourceTree = "<group>"; };
 		E9340E692238AFD70065F37C /* NSMutableAttributedString+AppendImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+AppendImage.m"; sourceTree = "<group>"; };
+		E9340E6B2238B6D60065F37C /* SQHomeFullScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQHomeFullScreenVC.h; sourceTree = "<group>"; };
+		E9340E6C2238B6D60065F37C /* SQHomeFullScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQHomeFullScreenVC.m; sourceTree = "<group>"; };
+		E9340E6E2238E9D10065F37C /* SQAPPSTART.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SQAPPSTART.entitlements; sourceTree = "<group>"; };
+		E9340E6F2238FB130065F37C /* SQStopLossProfitLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQStopLossProfitLine.h; sourceTree = "<group>"; };
+		E9340E702238FB130065F37C /* SQStopLossProfitLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQStopLossProfitLine.m; sourceTree = "<group>"; };
 		E991862C22324BB5009650F7 /* Y_ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_ChartView.h; sourceTree = "<group>"; };
 		E991862F22324BB5009650F7 /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
 		E991863022324BB5009650F7 /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
@@ -419,6 +426,7 @@
 		182A7FDD209031A6009B244B /* SQAPPSTART */ = {
 			isa = PBXGroup;
 			children = (
+				E9340E6E2238E9D10065F37C /* SQAPPSTART.entitlements */,
 				E99DE11720AACE32009CEF88 /* Classes */,
 				182A80122090320F009B244B /* Bases */,
 				182A80182090335A009B244B /* Category */,
@@ -693,6 +701,8 @@
 			children = (
 				E99DE11920AACE69009CEF88 /* SQHomeViewController.h */,
 				E99DE11A20AACE69009CEF88 /* SQHomeViewController.m */,
+				E9340E6B2238B6D60065F37C /* SQHomeFullScreenVC.h */,
+				E9340E6C2238B6D60065F37C /* SQHomeFullScreenVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -843,15 +853,15 @@
 		E991863B22324BB5009650F7 /* KLine */ = {
 			isa = PBXGroup;
 			children = (
-				E991863C22324BB5009650F7 /* Y_Extreme.m */,
-				E991863D22324BB5009650F7 /* Y_MALine.h */,
-				E991863E22324BB5009650F7 /* Y_TimeLine.h */,
-				E991863F22324BB5009650F7 /* Y_BrokenLine.h */,
-				E991864022324BB5009650F7 /* Y_KLine.h */,
 				E991864122324BB5009650F7 /* Y_Extreme.h */,
-				E991864222324BB5009650F7 /* Y_MALine.m */,
-				E991864322324BB5009650F7 /* Y_TimeLine.m */,
+				E991863C22324BB5009650F7 /* Y_Extreme.m */,
+				E991864022324BB5009650F7 /* Y_KLine.h */,
 				E991864422324BB5009650F7 /* Y_KLine.m */,
+				E991863D22324BB5009650F7 /* Y_MALine.h */,
+				E991864222324BB5009650F7 /* Y_MALine.m */,
+				E991863E22324BB5009650F7 /* Y_TimeLine.h */,
+				E991864322324BB5009650F7 /* Y_TimeLine.m */,
+				E991863F22324BB5009650F7 /* Y_BrokenLine.h */,
 				E991864522324BB5009650F7 /* Y_BrokenLine.m */,
 			);
 			path = KLine;
@@ -897,6 +907,8 @@
 			children = (
 				E991865922324BB5009650F7 /* Y_YAxisView.h */,
 				E991865A22324BB5009650F7 /* Y_YAxisView.m */,
+				E9340E6F2238FB130065F37C /* SQStopLossProfitLine.h */,
+				E9340E702238FB130065F37C /* SQStopLossProfitLine.m */,
 				E991866022324BB5009650F7 /* KLineView */,
 				E991865B22324BB5009650F7 /* AccessoryView */,
 			);
@@ -1082,6 +1094,11 @@
 				TargetAttributes = {
 					182A7FDA209031A6009B244B = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					182A7FF2209031A7009B244B = {
 						CreatedOnToolsVersion = 9.3;
@@ -1206,6 +1223,7 @@
 				E90BBDDB209C04C2006DCB7B /* SQBaseTableViewCell.m in Sources */,
 				E991868A22324BB6009650F7 /* DepthLongPressView.m in Sources */,
 				182A806220907916009B244B /* NSString+SQSizeOfString.m in Sources */,
+				E9340E712238FB130065F37C /* SQStopLossProfitLine.m in Sources */,
 				E991867522324BB6009650F7 /* UIColor+Y_StockChart.m in Sources */,
 				182A80802090841A009B244B /* SQGetNowDate.m in Sources */,
 				E991868022324BB6009650F7 /* Y_ChartView.m in Sources */,
@@ -1233,6 +1251,7 @@
 				E991868122324BB6009650F7 /* Y_KLinePositionModel.m in Sources */,
 				E9340E5122374C850065F37C /* WKInputFiledLimitUtils.m in Sources */,
 				E991869022324BB6009650F7 /* DepthAmountView.m in Sources */,
+				E9340E6D2238B6D60065F37C /* SQHomeFullScreenVC.m in Sources */,
 				E9340E43223745AA0065F37C /* UIView+SQFrame.m in Sources */,
 				E99186A42232590F009650F7 /* Y_StockChartSegmentView.m in Sources */,
 				182A807120907E84009B244B /* UILabel+SQExtension.m in Sources */,

@@ -25,6 +25,7 @@
 #import "SQIphonePx.h"
 #import "YYModel.h"
 #import "SVProgressHUD.h"
+#import "SQTimeDelay.h"
 
 /** layout  */
 #import "Masonry.h"

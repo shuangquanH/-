@@ -37,7 +37,9 @@
 
 
 - (void)addViews {
-    _nowMainPriceLabel = [self creatLabelWithFont:KSYSFONT(18) color:KCOLOR_BLACK];
+    self.backgroundColor = KCOLOR_BLACK;
+    
+    _nowMainPriceLabel = [self creatLabelWithFont:KSYSFONT(18) color:KCOLOR_KUP];
     [self addSubview:_nowMainPriceLabel];
     
     _wavePrice = [self creatLabelWithFont:KSYSFONT(14) color:KCOLOR_KUP];
@@ -46,10 +48,10 @@
     _wavePercent = [self creatLabelWithFont:KSYSFONT(14) color:KCOLOR_KUP];
     [self addSubview:_wavePercent];
     
-    _highestPrice = [self creatLabelWithFont:KSYSFONT(14) color:KCOLOR_BLACK];
+    _highestPrice = [self creatLabelWithFont:KSYSFONT(14) color:KCOLOR_MAIN];
     [self addSubview:_highestPrice];
     
-    _lowestPrice = [self creatLabelWithFont:KSYSFONT(14) color:KCOLOR_BLACK];
+    _lowestPrice = [self creatLabelWithFont:KSYSFONT(14) color:KCOLOR_MAIN];
     [self addSubview:_lowestPrice];
     
 }
@@ -77,6 +79,49 @@
     
 }
 
+- (void)setIsFullScreen:(BOOL)isFullScreen {
+    _isFullScreen = isFullScreen;
+    if (!isFullScreen) {
+        return;
+    }
+    UILabel *titleLabel = [self creatLabelWithFont:KSYSFONT(30) color:KCOLOR_MAIN];
+    titleLabel.text = @"BTC/USDT";
+    [self addSubview:titleLabel];
+    
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(KMARGIN);
+        make.centerY.equalTo(self);
+    }];
+    
+    
+    [_nowMainPriceLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(titleLabel.mas_right).offset(KMARGIN);
+        make.centerY.equalTo(self);
+    }];
+    
+    [_wavePrice mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_nowMainPriceLabel.mas_right).offset(KMARGIN);
+        make.centerY.equalTo(self);
+    }];
+    
+    [_wavePercent mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_wavePrice.mas_right).offset(KMARGIN);
+        make.centerY.equalTo(self);
+    }];
+    
+    [_lowestPrice mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-80);
+        make.centerY.equalTo(self);
+    }];
+    
+    [_highestPrice mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_lowestPrice.mas_left).offset(-KMARGIN);
+        make.centerY.equalTo(self);
+    }];
+
+    
+    
+}
 
 - (UILabel  *)creatLabelWithFont:(UIFont *)font color:(UIColor *)color {
     UILabel *label = [[UILabel alloc] init];

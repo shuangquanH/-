@@ -1,64 +1,62 @@
 //
-//  ABKLineViewController.m
-//  Y_ChartView_Example
+//  SQHomeFullScreenVC.m
+//  SQAPPSTART
 //
-//  Created by ly on 2019/1/4.
-//  Copyright © 2019 iCoobin. All rights reserved.
+//  Created by qwuser on 2019/3/13.
+//  Copyright © 2019 apple. All rights reserved.
 //
 
-#import "ABKLineViewController.h"
-#import "UIColor+Y_StockChart.h"
-#import "Y_ChartView.h"
-#import "Y_StockChartSegmentView.h"
-
-#import "ABKInfoWindowWhenPress.h"
-
+#import "SQHomeFullScreenVC.h"
 #import "ABKLineViewModel.h"
+#import "Y_StockChartSegmentView.h"
+#import "Y_ChartView.h"
+#import "ABKInfoWindowWhenPress.h"
+#import "SQHomeTopInfosView.h"
 
 
+@interface SQHomeFullScreenVC () <Y_ChartViewDelegate, Y_StockChartSegmentViewDelegate, ABKLineViewModelDelegate>
 
-@interface ABKLineViewController ()<Y_ChartViewDelegate, Y_StockChartSegmentViewDelegate, ABKLineViewModelDelegate>
+@property (nonatomic, strong)   UIButton                *closeFullButton;
 
-@property (nonatomic, strong) Y_ChartView *customKLineView;
-
-@property (nonatomic, strong)   Y_StockChartSegmentView        *segment;
 
 @property (nonatomic, strong)   ABKLineViewModel        *viewModel;
+
+@property (nonatomic, strong)   SQHomeTopInfosView      *topInfoView;
+@property (nonatomic, strong)   Y_StockChartSegmentView        *segment;
+@property (nonatomic, strong) Y_ChartView *customKLineView;
 
 @property (nonatomic, strong)   ABKInfoWindowWhenPress        *infoWindow;
 
 @property (nonatomic, assign)   CGPoint        firstTapedPoint;
 
-
 @end
 
-@implementation ABKLineViewController {
+@implementation SQHomeFullScreenVC {
     BOOL    _showInLeftWindow;
-}
-- (void)addSubviews {
-    self.view.backgroundColor = [UIColor backgroundColor];
-    [self.view addSubview:self.customKLineView];
-    [self.view addSubview:self.segment];
 }
 
 - (void)addConstrains {
+    [self.topInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view);
+        make.height.mas_equalTo(60);
+    }];
+    
     [self.segment mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.equalTo(self.view);
+        make.top.equalTo(_topInfoView.mas_bottom);
+        make.left.right.equalTo(self.view);
         make.height.mas_equalTo(40);
     }];
     
     [self.customKLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self.view);
-        make.top.equalTo(self.segment.mas_bottom).offset(6);
-    }];
-
-    [self.infoWindow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_customKLineView);
-        make.right.equalTo(_customKLineView).offset(-10);
-        make.width.mas_equalTo(120);
-        make.height.mas_equalTo(160);
+        make.left.right.bottom.equalTo(self.view);
+        make.top.equalTo(_segment.mas_bottom);
     }];
     
+    [self.closeFullButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(22);
+        make.right.inset(KMARGIN);
+        make.centerY.equalTo(_topInfoView);
+    }];
 }
 
 - (void)viewDidLoad {
@@ -66,24 +64,30 @@
     [self addSubviews];
     [self addConstrains];
     [self reloadKlineViews];
-    [self.customKLineView getStopLossPrice:3800 stopProfitPrice:3900];
 }
-
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self hiddenStatusBar:YES];
+    self.navigationController.navigationBar.hidden = YES;
+}
+- (void)addSubviews {
+    [self hiddenStatusBar:YES];
+    [self.view addSubview:self.topInfoView];
+    [self.view addSubview:self.customKLineView];
+    [self.view addSubview:self.segment];
+    [self.view addSubview:self.closeFullButton];
+}
 - (void)reloadKlineViews {
     [self.viewModel getGroupModelSuccess:^(Y_KLineGroupModel * _Nonnull groupModel) {
         [self.customKLineView updateKLineData:groupModel];
         [self.customKLineView updateAccessoryData:[groupModel.models lastObject]];
     }];
 }
-
-
-
 #pragma delegate - Y_ChartViewDelegate
 - (void)longPressWithModel:(Y_KLineModel *)kLineModel {
     self.infoWindow.model = kLineModel;
-    [UIView animateWithDuration:0.4 animations:^{
-        self.infoWindow.hidden = NO;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.infoWindow.alpha = 1;
     }];
     [self infoWindowShowInLeft:self.firstTapedPoint.x>self.customKLineView.frame.size.width/2.0];
 }
@@ -92,14 +96,14 @@
         if (showInLeft) {
             [self.infoWindow mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(_customKLineView);
-                make.right.equalTo(_customKLineView).offset(-10);
+                make.left.equalTo(_customKLineView).offset(KSTATU_HEIGHT);
                 make.width.mas_equalTo(120);
                 make.height.mas_equalTo(160);
             }];
         } else {
             [self.infoWindow mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(_customKLineView);
-                make.left.equalTo(_customKLineView).offset(10);
+                make.right.equalTo(_customKLineView).offset(-10);
                 make.width.mas_equalTo(120);
                 make.height.mas_equalTo(160);
             }];
@@ -109,8 +113,8 @@
 }
 
 - (void)cancelLongPress {
-    [UIView animateWithDuration:0.1 animations:^{
-        self.infoWindow.hidden = YES;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.infoWindow.alpha = 0;
     }];
 }
 - (void)firstTapedPoint:(CGPoint)point {
@@ -137,6 +141,7 @@
 
 
 
+
 - (Y_ChartView *)customKLineView {
     if (!_customKLineView) {
         _customKLineView = [[Y_ChartView alloc] init];
@@ -155,6 +160,14 @@
     }
     return _segment;
 }
+- (SQHomeTopInfosView *)topInfoView {
+    if (!_topInfoView) {
+        _topInfoView = [[SQHomeTopInfosView alloc] init];
+        _topInfoView.isFullScreen = YES;
+    }
+    return _topInfoView;
+}
+
 - (ABKLineViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [[ABKLineViewModel alloc] init];
@@ -163,13 +176,30 @@
     return _viewModel;
 }
 
+
 - (ABKInfoWindowWhenPress *)infoWindow {
     if (!_infoWindow) {
         _infoWindow = [[ABKInfoWindowWhenPress alloc] init];
+        _infoWindow.alpha = 0;
         [self.view addSubview:_infoWindow];
-        _infoWindow.hidden = YES;
     }
     return _infoWindow;
+}
+
+- (UIButton *)closeFullButton {
+    if (!_closeFullButton) {
+        _closeFullButton = [[UIButton alloc] init];
+        _closeFullButton.layer.cornerRadius = 11;
+        _closeFullButton.layer.masksToBounds = YES;
+        _closeFullButton.backgroundColor = KCOLOR_MAIN;
+        [_closeFullButton addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _closeFullButton;
+}
+- (void)closeAction {
+    [self hiddenStatusBar:NO];
+    self.navigationController.navigationBar.hidden = NO;
+    [self dismiss];
 }
 
 @end

@@ -100,7 +100,7 @@
         make.height.equalTo(@(Y_StockChartLongPressVerticalViewWidth));
         make.top.equalTo(@(-10));
     }];
-    
+    /** k线图  */
     [self.kLineMainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.equalTo(weakSelf.scrollView);
         make.width.equalTo(weakSelf.scrollView);
@@ -220,6 +220,7 @@ static char *observerContext = NULL;
     return YES;
 }
 
+//当前MainView的最大值和最小值
 - (void)kLineMainViewCurrentMaxPrice:(CGFloat)maxPrice minPrice:(CGFloat)minPrice {
     [self.kLinePriceView setLineCount:4 maxPrice:maxPrice minPrice:minPrice];
 }
@@ -459,7 +460,9 @@ static char *observerContext = NULL;
         self.fullScreenAccessoryInformationView.kLineModel = model;
     }
 }
-
+- (void)getStopLossPrice:(CGFloat)lossPrice stopProfitPrice:(CGFloat)profitPrice {
+    [self.kLinePriceView getStopLossPrice:lossPrice stopProfitPrice:profitPrice];
+}
 #pragma mark - dealloc
 - (void)dealloc {
     //移除所有监听

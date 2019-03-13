@@ -11,14 +11,22 @@
 #import "UIFont+Y_StockChart.h"
 #import "NSString+Y_StockChart.h"
 
+#import "SQStopLossProfitLine.h"
+
 @interface Y_YAxisView ()
 
 @property (nonatomic, strong) NSMutableArray *priceArray;
 @property (nonatomic, strong) NSMutableArray *positionsArray;
 
+@property (nonatomic, strong)   SQStopLossProfitLine        *stopLossLine;
+@property (nonatomic, strong)   SQStopLossProfitLine        *stopProfitLine;
+
 @end
 
-@implementation Y_YAxisView
+@implementation Y_YAxisView {
+    CGFloat _lossPrice;
+    CGFloat _profitPrice;
+}
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
@@ -48,6 +56,7 @@
     }
 
     CGContextStrokePath(context);
+    
 }
 
 /**
@@ -97,6 +106,25 @@
         [self.positionsArray addObject:[NSValue valueWithCGPoint:verticalPoint]];
     }
     [self reloaView];
+    
+    CGFloat tempScale = (maxPrice-minPrice)/self.sqHeight;
+    if (_lossPrice) {
+        self.stopLossLine.hidden = NO;
+        self.stopLossLine.sqTop =(maxPrice-_lossPrice)*tempScale;
+    } else {
+        self.stopLossLine.hidden = YES;
+    }
+    
+    if (_profitPrice) {
+        self.stopProfitLine.hidden = NO;
+        self.stopProfitLine.sqTop =(maxPrice-_profitPrice)/heightScale;
+    } else {
+        self.stopProfitLine.hidden = YES;
+    }
+}
+- (void)getStopLossPrice:(CGFloat)lossPrice stopProfitPrice:(CGFloat)profitPrice {
+    _lossPrice = lossPrice;
+    _profitPrice = profitPrice;
 }
 
 #pragma mark - Getters & Setters
@@ -125,6 +153,23 @@
 }
 
 
+
+- (SQStopLossProfitLine *)stopLossLine {
+    if (!_stopLossLine) {
+        _stopLossLine = [[SQStopLossProfitLine alloc] initWithFrame:CGRectMake(0, 100, self.sqWidth, 1)];
+        [self addSubview:_stopLossLine];
+    }
+    return _stopLossLine;
+}
+
+- (SQStopLossProfitLine *)stopProfitLine {
+    if (!_stopProfitLine) {
+        _stopProfitLine = [[SQStopLossProfitLine alloc] initWithFrame:CGRectMake(0, 0, self.sqWidth, 1)];
+        _stopProfitLine.hidden = YES;
+        [self addSubview:_stopProfitLine];
+    }
+    return _stopProfitLine;
+}
 
 
 @end

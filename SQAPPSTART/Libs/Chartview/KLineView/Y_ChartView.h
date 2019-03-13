@@ -40,5 +40,7 @@
 /** 修改副图的技术图形  */
 - (void)changeDeputyChartSegmentType:(Y_StockChartTargetLineStatus )lineType;
 
+/** 设置止损止盈线  */
+- (void)getStopLossPrice:(CGFloat)lossPrice stopProfitPrice:(CGFloat)profitPrice;
 
 @end

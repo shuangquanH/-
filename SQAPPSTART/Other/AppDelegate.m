@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[SQStartManager shareManager] startApplication:application withOptions:launchOptions];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = KCOLOR_WHIT;
     SQHomeViewController    *homeVC = [[SQHomeViewController alloc] init];
     homeVC.title = @"BTC/USDT";
     self.window.rootViewController = [[SQRootNavigationVC alloc] initWithRootViewController:homeVC];

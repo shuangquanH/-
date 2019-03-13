@@ -17,10 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    self.navigationBar.tintColor = KCOLOR_WHIT;
-//    self.navigationBar.barTintColor = KCOLOR_MAIN;
-//    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:KCOLOR_WHIT}];
+    self.navigationBar.tintColor = KCOLOR_BLACK;
+    self.navigationBar.barTintColor = KCOLOR_BLACK;
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:KCOLOR_MAIN}];
     
 }
 

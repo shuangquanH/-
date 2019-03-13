@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #define kTopInfoViewH       80
-#define kBottomDealViewH    140
+#define kBottomDealViewH    180
 #define kUnfoldViewH        60
 
 @interface SQHomeUnfoldView : UIView
